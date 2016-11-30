@@ -13,56 +13,12 @@
 </template>
 
 <script>
-import Bar from './components/Bar'
-import BarItem from './components/BarItem'
-import {hpApi, planApi} from './util/service'
-import {loadScrollMsgForPlan, loadBannerForPlan, loadRangeList, loadBannerForHP, loadScrollMsgForHP, loadHpList, loadHpList10, loadUserUnreadMsg, loadNotice, setShowImg} from './vuex/actions'
-import store from './vuex/store'
 // import {wxShareConfig} from './util/util'
 import $ from 'zepto'
 import wx from 'wx'
 
 export default {
-  vuex: {
-    actions: {
-      loadScrollMsgForPlan,
-      loadBannerForPlan,
-      loadRangeList,
-      loadBannerForHP,
-      loadScrollMsgForHP,
-      loadHpList,
-      loadHpList10,
-      loadUserUnreadMsg,
-      loadNotice,
-      setShowImg
-    },
-    getters: {
-      // 注意在这里你需要'getCount'函数本身而不是它的执行结果'getCount()'
-      planScrollMsg: state => state.planScrollMsg,
-      planBanner: state=> state.planBanner,
-      rangeList: state=> state.rangeList,
-      limitPlans: state=> state.limitPlans,
-      hpBanner: state=> state.hpBanner,
-      hpScrollmsg: state => state.hpScrollmsg,
-      itemList: state => state.hpList,
-      itemList10: sate => sate.hpList10,
-      showImg: state => state.showImg,
-      userUnreadMsg: state => state.userUnreadMsg,
-      notice: state => state.notice
-    }
-  },
   ready () {
-    // 获取乐夺宝的banner,滚动展示,商品列表
-    this.loadBannerForHP()
-    this.loadScrollMsgForHP()
-    this.loadHpList()
-    this.loadHpList10()
-    if (window.localStorage.getItem('user')) {
-      this.loadBannerForPlan()
-      this.loadScrollMsgForPlan()
-      this.loadRangeList()
-      this.loadNotice()
-    }
     // 微信配置参数
     $.sign = {
       appId: 'wx74e81e3aa7edce63',
@@ -98,21 +54,6 @@ export default {
     })
     // 在需要配置分享内容的时候调用
     // wxShareConfig('123')
-    // if (window.localStorage.getItem('imageSwitch') === null) {
-    window.localStorage.setItem('imageSwitch', true)
-    // }
-    // 设置购物车图标
-    this.setCardBadge()
-  },
-  data () {
-    return {
-      isIndex: true,
-      cardBadge: 0,
-      userBadge: 0,
-      planScrolltop: 0,
-      hpScrolltop: 0,
-      showPlan: false
-    }
   },
   methods: {
     back () {
@@ -129,66 +70,13 @@ export default {
         pwd += $chars.charAt(Math.floor(Math.random() * maxPos))
       }
       return pwd
-    },
-    setCardBadge () {
-      let token = window.localStorage.getItem('token')
-      if (token) {
-        // 处理购物车图标右上角的数字
-        this.cardBadge = 0
-        /*
-         * 获取服务器中的乐夺宝购物车信息
-         */
-        this.$http.get(hpApi.redisCart, {},
-          {
-            headers: {
-              'x-token': window.localStorage.getItem('token')
-            },
-            emulateJSON: true
-          })
-        .then(({data: {code, msg, info}})=>{
-          if (info) {
-            this.cardBadge += info.length
-          }
-        }).catch((e)=>{
-          console.error('无法获取乐夺宝购物车:' + e)
-        })
-        /*
-         * 获取服务器中的方案购物车信息
-         */
-        this.$http.post(planApi.queryCart, {},
-          {
-            headers: {
-              'x-token': window.localStorage.getItem('token')
-            },
-            emulateJSON: true
-          })
-        .then(({data: {code, msg, result}})=>{
-          if (code === 1) {
-            // 展示方案的菜单
-            this.showPlan = true
-            if (result) {
-              this.cardBadge += result.length
-            }
-          }
-        }).catch((e)=>{
-          console.error('无法获取方案购物车:' + e)
-        })
-      }
     }
-  },
-  components: {
-    Bar,
-    BarItem
-  },
-  /*
-   * 在根组件加入 store，让它的子组件和 store 连接
-   */
-  store: store
+  }
 }
 </script>
 
 <style>
-@import './assets/css/sm.css';
+@import './assets/css/global.css';
 @import './assets/css/style.css';
 [v-cloak] {
   display: none;
