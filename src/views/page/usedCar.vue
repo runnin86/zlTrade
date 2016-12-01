@@ -50,6 +50,142 @@
     </div>
     <div class="used-black" id="used-fade"></div>
   </div>
+
+  <!--筛选弹窗:over-->
+ <link href="/css/tabBox-used.css" rel="stylesheet" />
+ <div class="tabBox-hd-h"></div>
+ <div id="tabBox1" class="tabBox">
+    <div class="hd">
+      <ul>
+        <li><a href="javascript:void(0)">综合排序</a></li>
+        <li><a href="javascript:void(0)">价格</a></li>
+        <input type="button" class="sx-btn" value="筛选" onclick="show_sel()" />
+      </ul>
+    </div>
+    <div class="bd" id="tabBox1-bd">
+      <!--综合排序-->
+      <div class="con">
+       <ul>
+        <li>
+         <a v-link="{path: '/page/usedCarCont', replace: false}">
+         	<div class="used-img"><span></span><img src="/img/pic-esc1.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+        <li>
+         <a href="used-car-cont.html">
+         	<div class="used-img"><span></span><img src="/img/pic-esc2.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+        <li>
+         <a href="used-car-cont.html">
+         	<div class="used-img"><span></span><img src="/img/pic-esc3.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+        <li>
+         <a href="used-car-cont.html">
+         	<div class="used-img"><span></span><img src="/img/pic-esc1.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+        <li>
+         <a href="used-car-cont.html">
+         	<div class="used-img"><span></span><img src="/img/pic-esc2.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+        <li>
+         <a href="used-car-cont.html">
+         	<div class="used-img"><span></span><img src="/img/pic-esc3.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!--综合排序:over-->
+      <!--价格-->
+      <div class="con">
+       <li>
+         <a href="#">
+         	<div class="used-img"><span></span><img src="/img/pic-esc3.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+       <li>
+         <a href="#">
+         	<div class="used-img"><span></span><img src="/img/pic-esc1.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+        <li>
+         <a href="#">
+         	<div class="used-img"><span></span><img src="/img/pic-esc2.png"></div>
+         	<div class="used-div">
+         		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
+         		<p>3.1万公里 / 2012年 / 商家</p>
+         		<div class="used-price">
+         			<span>14.80</span>万
+         		</div>
+         	</div>
+         </a>
+        </li>
+
+      </div>
+      <!--价格:over-->
+
+
+    </div>
+  </div>
 </template>
 
 <script>

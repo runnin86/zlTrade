@@ -214,7 +214,7 @@
        </a>
       </li>
       <li>
-       <a v-link="{ path: '/usedCar', replace: false}">
+       <a v-link="{ path: '/page/usedCar', replace: false}">
         <div class="fw-img"><span></span><img src="/img/fw-escmm.png"></div>
         <div class="fw-div">
          <h3>二手车买卖</h3><p>你需要的我有</p>
