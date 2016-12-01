@@ -28,7 +28,7 @@
         <div class="con">
          <ul>
           <li>
-           <a href="#">
+           <a v-link="{path: '/user/orderCont', replace: false}">
             <div class="odlb-top"><strong>订单编号：AED48815646</strong><span>交易成功</span></div>
             <div class="odlb-middle">
              <div class="od-img"><span></span><img src="/img/pic-odnr.png"></div>

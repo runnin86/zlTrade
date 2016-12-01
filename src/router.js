@@ -37,6 +37,11 @@ export default function (router) {
         require(['./views/user/userOrder'], resolve)
       }
     },
+    '/user/orderCont': {
+      component (resolve) {
+        require(['./views/user/userOrderCont'], resolve)
+      }
+    },
     '/vicinity': {
       component (resolve) {
         require(['./views/vicinity/stores'], resolve)
