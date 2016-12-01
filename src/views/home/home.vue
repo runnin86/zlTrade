@@ -56,7 +56,11 @@
                <ul>
                 <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
                 <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
-                <li><a href="#"><img src="/img/icon-zc.png" alt="租车"><p>租车</p></a></li>
+                <li>
+                  <a v-link="{ path: '/page/rentalCar', replace: false}">
+                    <img src="/img/icon-zc.png" alt="租车"><p>租车</p>
+                  </a>
+                </li>
                 <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
                 <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
                 <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
