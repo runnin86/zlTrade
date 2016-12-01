@@ -60,7 +60,12 @@
                 <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
                 <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
                 <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
-                <li><a href="#"><img src="/img/icon-cxdb.png" alt="车险代办"><p>车险代办</p></a></li>
+                <li>
+                  <a v-link="{ path: '/page/safeCar', replace: false}">
+                    <img src="/img/icon-cxdb.png" alt="车险代办">
+                    <p>车险代办</p>
+                  </a>
+                </li>
                 <li><a href="#"><img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p></a></li>
                </ul>
               </div>

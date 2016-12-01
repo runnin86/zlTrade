@@ -61,6 +61,21 @@ export default function (router) {
       component (resolve) {
         require(['./views/page/usedCarCont'], resolve)
       }
+    },
+    '/page/rentalCar': {
+      component (resolve) {
+        require(['./views/page/rentalCar'], resolve)
+      }
+    },
+    '/page/safeCar': {
+      component (resolve) {
+        require(['./views/page/safeCar'], resolve)
+      }
+    },
+    '/page/safeCarCont': {
+      component (resolve) {
+        require(['./views/page/safeCarCont'], resolve)
+      }
     }
   })
 
