@@ -1,7 +1,9 @@
 <template>
-<nav class="bar bar-tab">
-  <slot></slot>
-</nav>
+<div class="tool">
+ <ul>
+   <slot></slot>
+ </ul>
+</div>
 </template>
 
 <style scoped>

@@ -1,24 +1,44 @@
 <template>
-  <div class="page page-current">
-      <bar v-if="isIndex" class="barHeight">
-        <bar-item v-show="showPlan" path="/plan" label="购买方案" icon="plan"></bar-item>
-        <bar-item path="/happyPurchase" label="一元夺宝" icon="gift"></bar-item>
-        <bar-item path="/shopCart" label="购物车" icon="cart" :b="cardBadge"></bar-item>
-        <bar-item path="/user" label="个人中心" icon="me" :b="userBadge"></bar-item>
-        <!-- <bar-item path="/more" label="更多" icon="more"></bar-item> -->
-      </bar>
-      <router-view transition-mode="out-in"></router-view>
-      <!-- <router-view transition-mode="out-in" keep-alive></router-view> -->
+  <div>
+    <bar v-if="isIndex">
+      <!-- <bar-item v-show="showPlan" path="/plan" label="购买方案" icon="plan"></bar-item> -->
+      <bar-item path="/home" label="首页" icon="&#xe648;"></bar-item>
+      <!-- <bar-item path="/shopCart" label="分类" icon="&#xe641;" :b="cardBadge"></bar-item> -->
+      <bar-item path="/home" label="附近门店" icon="&#xe65e;"></bar-item>
+      <bar-item path="/home" label="购物车" icon="&#xe61a;"></bar-item>
+      <bar-item path="/user" label="我" icon="&#xe644;" :b="3"></bar-item>
+    </bar>
+    <router-view transition-mode="out-in"></router-view>
+    <!-- <router-view transition-mode="out-in" keep-alive></router-view> -->
   </div>
 </template>
 
 <script>
 // import {wxShareConfig} from './util/util'
+import Bar from './components/Bar'
+import BarItem from './components/BarItem'
 import $ from 'zepto'
 import wx from 'wx'
 
 export default {
+  data () {
+    return {
+      isIndex: true
+    }
+  },
   ready () {
+    // 处理REM单位核心代码
+    let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+    let recalc = function () {
+      var clientWidth = document.documentElement.clientWidth
+      if (!clientWidth) return
+      document.documentElement.style.fontSize = 20 * (clientWidth / 320) + 'px'
+      document.getElementsByTagName('body')[0].style.opacity = '1'
+    }
+    if (!document.addEventListener) return
+    window.addEventListener(resizeEvt, recalc, false)
+    document.addEventListener('DOMContentLoaded', recalc, false)
+
     // 微信配置参数
     $.sign = {
       appId: 'wx74e81e3aa7edce63',
@@ -71,6 +91,10 @@ export default {
       }
       return pwd
     }
+  },
+  components: {
+    Bar,
+    BarItem
   }
 }
 </script>
@@ -80,16 +104,6 @@ export default {
 @import './assets/css/style.css';
 [v-cloak] {
   display: none;
-}
-.barHeight {
-  background: #efeff4;
-  height: 3rem;
-  /*position: relative;*/
-  box-shadow: 0 .01rem .05rem rgba(0,0,0,.3);
-}
-.barHeight .tab-item {
-  height: 3rem;
-  background-color: #1e2126;
 }
 
 /*

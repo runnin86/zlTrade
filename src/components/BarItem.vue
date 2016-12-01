@@ -1,14 +1,12 @@
 <template>
-  <a class="tab-item" v-link="{path: path, activeClass: 'active', replace: false}"
-    @click="initTop()">
-    <span v-if="img" :style="{ height: h + 'px',top: -1*t + 'rem'}" class="icon">
-      <img v-if="img" :src="img" :basepath="img" :focuspath="focusimg" class="text-center"
-        :style="{ height: i + 'px',width: i + 'px'}">
-    </span>
-    <span v-else class="icon" :class="iconClass"></span>
-    <span class="tab-label" v-text="label" :style="{top: t + 'rem'}"></span>
-    <span class="badge" v-if="b>0" v-text="b>99?'99':b"></span>
-  </a>
+  <li>
+   <a v-link="{path: path, activeClass: 'active', replace: false}"
+     @click="initTop()">
+    <div class="tool-iconfont" v-text="icon"></div>
+    <h3 v-text="label"></h3>
+    <span style="display:block;" v-if="b>0"></span>
+   </a>
+  </li>
 </template>
 <script>
 export default {
@@ -37,11 +35,13 @@ export default {
 }
 </script>
 <style scoped>
-.tab-item.active {
-  color:  #ed8e07 !important;
-  /*color: #0894ec;*/
-  /*color: rgb(216, 65, 65);*/
-}
-.tab-item.inactive {
+.tab-item {
+  position: relative;
+  display: table-cell;
+  width: 1%;
+  height: 2.5rem;
+  color: #929292;
+  text-align: center;
+  vertical-align: middle;
 }
 </style>
