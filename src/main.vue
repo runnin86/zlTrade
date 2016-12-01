@@ -3,7 +3,7 @@
     <bar v-if="isIndex">
       <!-- <bar-item v-show="showPlan" path="/plan" label="购买方案" icon="plan"></bar-item> -->
       <bar-item path="/home" label="首页" icon="&#xe648;"></bar-item>
-      <bar-item path="/home" label="附近门店" icon="&#xe65e;"></bar-item>
+      <bar-item path="/vicinity" label="附近门店" icon="&#xe65e;"></bar-item>
       <bar-item path="/home" label="购物车" icon="&#xe600;"></bar-item>
       <bar-item path="/user" label="我" icon="&#xe644;" :b="3"></bar-item>
     </bar>
