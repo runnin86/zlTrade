@@ -16,7 +16,7 @@
   <div class="store-list">
    <ul>
     <li>
-     <a href="stores-cont.html">
+     <a v-link="{ path: '/vicinity/cont', replace: false}">
       <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
       <div class="md-bottom">
        <div class="md-img"><img src="/img/pic-md1.png"></div>
@@ -33,7 +33,7 @@
      </a>
     </li>
     <li>
-     <a href="stores-cont.html">
+     <a v-link="{ path: '/vicinity/cont', replace: false}">
       <div class="md-top"><img src="/img/icon-md.png"><strong>科凯汽车服务中心(北光明港路店)</strong></div>
       <div class="md-bottom">
        <div class="md-img"><img src="/img/pic-md2.png"></div>
@@ -50,7 +50,7 @@
      </a>
     </li>
     <li>
-     <a href="stores-cont.html">
+     <a v-link="{ path: '/vicinity/cont', replace: false}">
       <div class="md-top"><img src="/img/icon-md.png"><strong>新车联汽车美容店(太平路)</strong></div>
       <div class="md-bottom">
        <div class="md-img"><img src="/img/pic-md3.png"></div>
@@ -67,7 +67,7 @@
      </a>
     </li>
     <li>
-     <a href="stores-cont.html">
+     <a v-link="{ path: '/vicinity/cont', replace: false}">
       <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
       <div class="md-bottom">
        <div class="md-img"><img src="/img/pic-md1.png"></div>
@@ -84,7 +84,7 @@
      </a>
     </li>
     <li>
-     <a href="stores-cont.html">
+     <a v-link="{ path: '/vicinity/cont', replace: false}">
       <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
       <div class="md-bottom">
        <div class="md-img"><img src="/img/pic-md2.png"></div>
@@ -101,7 +101,7 @@
      </a>
     </li>
     <li>
-     <a href="stores-cont.html">
+     <a v-link="{ path: '/vicinity/cont', replace: false}">
       <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
       <div class="md-bottom">
        <div class="md-img"><img src="/img/pic-md3.png"></div>

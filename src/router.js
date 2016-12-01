@@ -42,6 +42,11 @@ export default function (router) {
         require(['./views/vicinity/stores'], resolve)
       }
     },
+    '/vicinity/cont': {
+      component (resolve) {
+        require(['./views/vicinity/storesCont'], resolve)
+      }
+    },
     '/page/usedCar': {
       component (resolve) {
         require(['./views/page/usedCar'], resolve)
