@@ -248,6 +248,34 @@
 </div>
 </template>
 
+<script>
+// import jQuery from '../../assets/js/jquery.min'
+// import TouchSlide from '../../assets/js/touchSlider'
+import $ from 'zepto'
+
+export default {
+  ready () {
+    $.toast('43')
+    // TouchSlide
+    // console.log(jQuery)
+    // console.log(TouchSlide)
+    // TouchSlide({
+    //   slideCell: '#tabBox1',
+    //   endFun: function(i) {
+    //     // 高度自适应
+    //     var bd = document.getElementById('tabBox1-bd') bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
+    //     // 添加动画效果
+    //     if (i > 0) {
+    //       bd.parentNode.style.transition = '200ms'
+    //     }
+    //   }
+    // })
+  },
+  methods: {
+  }
+}
+</script>
+
 <style scoped>
 /*@import './../../assets/css/tabBox-order.css';*/
 
