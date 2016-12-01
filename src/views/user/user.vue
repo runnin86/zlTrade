@@ -4,7 +4,7 @@
       <img src="/img/bg-user.jpg">
     </div>
     <div class="set">
-      <a href="user-info.html">
+      <a v-link="{path: '/user/info', replace: false}">
         <img src="/img/icon-set.png">
       </a>
     </div>

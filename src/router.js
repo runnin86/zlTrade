@@ -12,11 +12,11 @@ export default function (router) {
         require(['./views/welcome'], resolve)
       }
     },
-    // '/login': {
-    //   component (resolve) {
-    //     require(['./views/user/login'], resolve)
-    //   }
-    // },
+    '/login': {
+      component (resolve) {
+        require(['./views/user/login'], resolve)
+      }
+    },
     '/home': {
       component (resolve) {
         require(['./views/home/home'], resolve)
@@ -30,6 +30,11 @@ export default function (router) {
     '/user': {
       component (resolve) {
         require(['./views/user/user'], resolve)
+      }
+    },
+    '/user/info': {
+      component (resolve) {
+        require(['./views/user/userInfo'], resolve)
       }
     },
     '/user/order': {
