@@ -125,8 +125,8 @@ opacity:1;
 .tool-h { width: 16rem; height: 2.2rem; overflow: hidden; }
 .tool { width: 16rem; height: 2.2rem; overflow: hidden; border-top: 1px rgba(153,153,153,0.4) solid; background-color: #fff; position: fixed; left: 0; bottom: 0; z-index: 1001; }
 .tool ul { width: 16.5rem; }
-.tool li { width: 3.2rem; height: 2.2rem; display: block; float: left; }
-.tool li a { width: 3.2rem; height: 2.2rem; display: block; text-align: center; position: relative; }
+.tool li { width: 4rem; height: 2.2rem; display: block; float: left; }
+.tool li a { width: 4rem; height: 2.2rem; display: block; text-align: center; position: relative; }
 .tool li a .tool-iconfont { font-family: "iconfont" !important; font-size: 1rem; font-style: normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; color: #8e8e9e; line-height: 1.2rem; padding-top: 0.15rem; }
 .tool li a h3 { text-align: center; font-size: 0.55rem; color: #8e8e9e; line-height: 0.6rem; }
 .tool li a span { width: 0.325rem; height: 0.325rem; background-color: #de2f51; border-radius: 50%; position: absolute; left: 50%; margin-left: 0.325rem; top: 0.1rem; display: none; }
@@ -464,7 +464,7 @@ opacity:1;
 .car-list li a .car-top .car-div h3{ font-size: 0.65; color: #383838; padding: 0.2rem;}
 .car-list li a .car-top .car-div p{ font-size: 0.55rem; color: #ffb744; line-height: 0.8rem;}
 .car-list li a .car-bottom{ width: 15rem; overflow: hidden; margin: 0 auto; line-height: 1.3rem; font-size: 0.55rem; color: #b4b4b4;}
-.car-list li a .car-bottom img{ width: 0.25rem; vertical-align: middle; margin: 0 0.3rem 0.1rem 0;} 
+.car-list li a .car-bottom img{ width: 0.25rem; vertical-align: middle; margin: 0 0.3rem 0.1rem 0;}
 .car-cont1{ width: 16rem; overflow: hidden; padding: 0.5rem 0; background-color: #fff; border-top: 0.375rem #f0f0f0 solid;}
 .car-cont1 .c-img{ width: 3rem; height: 3rem; overflow: hidden; float: left; margin-left: 0.5rem; text-align: center; vertical-align: middle;}
 .car-cont1 .c-img span{ height: 100%; vertical-align: middle; display: inline-block;}
