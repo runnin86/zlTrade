@@ -25,7 +25,7 @@
    <div class="member2">
     <ul>
     	<li>
-    	 <a href="user-order.html">
+    	 <a v-link="{ path: '/user/order', replace: false}">
          <img src="/img/icon-wddd.png">
          <strong>我的订单</strong>
          <i class="icon">&#xe624;</i>

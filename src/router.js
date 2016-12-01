@@ -21,6 +21,11 @@ export default function (router) {
       component (resolve) {
         require(['./views/user/user'], resolve)
       }
+    },
+    '/user/order': {
+      component (resolve) {
+        require(['./views/user/userOrder'], resolve)
+      }
     }
   })
 
