@@ -17,6 +17,16 @@ export default function (router) {
     //     require(['./views/user/login'], resolve)
     //   }
     // },
+    '/home': {
+      component (resolve) {
+        require(['./views/home/home'], resolve)
+      }
+    },
+    '/cart': {
+      component (resolve) {
+        require(['./views/cart/cart'], resolve)
+      }
+    },
     '/user': {
       component (resolve) {
         require(['./views/user/user'], resolve)
