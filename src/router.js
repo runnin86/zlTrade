@@ -76,6 +76,16 @@ export default function (router) {
       component (resolve) {
         require(['./views/page/safeCarCont'], resolve)
       }
+    },
+    '/page/goodsList': {
+      component (resolve) {
+        require(['./views/page/goodsList'], resolve)
+      }
+    },
+    '/page/goodsCont': {
+      component (resolve) {
+        require(['./views/page/goodsCont'], resolve)
+      }
     }
   })
 

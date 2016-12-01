@@ -19,7 +19,7 @@ export default {
         this.$route.router.go({path: '/user', replace: true})
       }
       else {
-        this.$route.router.go({path: '/user', replace: true})
+        this.$route.router.go({path: '/home', replace: true})
       }
     }, 800)
   }
