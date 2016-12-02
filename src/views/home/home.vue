@@ -15,38 +15,6 @@
     </div>
    </div>
    <!--顶部:over-->
-   <!--会员享受服务-->
-   <div class="ind-serve">
-    <div class="ind-serve-top">
-     <div id="con_one_1" class="hover">
-      <div class="serve-pthy gradual">
-       <ul>
-        <li><strong>免费洗车<label>（20次/年）</label></strong><span>已用<label class="cl-009ad9">12</label>次，剩余<label class="cl-f11b1b">8</label>次</span></li>
-        <li><strong>免费拖车<label>（20次/年）</label></strong><span>已用<label class="cl-009ad9">11</label>次，剩余<label class="cl-f11b1b">9</label>次</span></li>
-        <li><strong>本城免费接送<label>（20次/年）</label></strong><span>已用<label class="cl-009ad9">2</label>次，剩余<label class="cl-f11b1b">18</label>次</span></li>
-        <li><strong>免费送油<label>（20次/年）</label></strong><span>已用<label class="cl-009ad9">1</label>次，剩余<label class="cl-f11b1b">19</label>次</span></li>
-       </ul>
-      </div>
-     </div>
-     <div id="con_one_2" style="display:none">
-      <div class="serve-jphy gradual">
-       <ul>
-        <li><strong>免费洗车<label>（40次/年）</label></strong></li>
-        <li><strong>免费拖车<label>（40次/年）</label></strong></li>
-        <li><strong>本城免费接送<label>（60次/年）</label></strong></li>
-        <li><strong>免费送油<label>（40次/年）</label></strong></li>
-       </ul>
-      </div>
-     </div>
-    </div>
-    <div class="ind-serve-bottom">
-     <ul>
-      <li id="one1" onclick="setTab('one',1,2)"  class="hover">普通会员可享受服务</li>
-      <li id="one2" onclick="setTab('one',2,2)" >金牌会员可享受服务</li>
-     </ul>
-    </div>
-   </div>
-   <!--会员享受服务:over-->
    <!--图标-->
    <link rel="stylesheet" href="css/swiper.min.css">
    <div class="ind-menu">
@@ -112,23 +80,8 @@
           <!--<div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>-->
       </div>
-      <style>
-       .swiper-container {
-          width: 100%;
-          height: 9rem;
-      }
-      .swiper-slide {
-  		 width:100%; height:100%;
-          text-align: center;
-          font-size: 18px;
-          background: #fff;
-
-      }
-      .swiper-container .swiper-slide {
-          height: 9rem;
-      }
-      </style>
-      <script src="js/swiper.min.js"></script>
+      <script src="/js/swiper.min.js"></script>
+      <script src="/js/tabs.js"></script>
       <script>
       var swiper = new Swiper('.swiper-container', {
           pagination: '.swiper-pagination',
@@ -257,5 +210,18 @@
 </script>
 
 <style>
+.swiper-container {
+   width: 100%;
+   height: 9rem;
+}
+.swiper-slide {
+width:100%; height:100%;
+   text-align: center;
+   font-size: 18px;
+   background: #fff;
 
+}
+.swiper-container .swiper-slide {
+   height: 9rem;
+}
 </style>

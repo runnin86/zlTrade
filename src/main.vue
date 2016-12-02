@@ -89,6 +89,14 @@ export default {
         pwd += $chars.charAt(Math.floor(Math.random() * maxPos))
       }
       return pwd
+    },
+    setTab (name, cursel, n) {
+      for (let i = 1;i <= n; i++) {
+        var menu = document.getElementById(name + i)
+        var con = document.getElementById('con_' + name + '_' + i)
+        menu.className = (i === cursel ? 'hover' : '')
+        con.style.display = (i === cursel ? 'block' : 'none')
+      }
     }
   },
   components: {
