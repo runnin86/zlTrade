@@ -8,24 +8,26 @@
   <!--顶部:over-->
   <!--图片展示-->
   <div class="banner">
-   <div class="main_visual">
- 	<div class="flicking_con">
- 		<span><a href="#">1</a>
- 		<a href="#">2</a>
- 		<a href="#">3</a>
- 		<a href="#">4</a></span>
- 	</div>
- 	<div class="main_image">
- 		<ul>
- 			<li><span><a href="#"><img src="/img/pic-nr1.png" style="width:16rem;" alt="" /></a></span></li>
- 			<li><span><a href="#"><img src="/img/pic-nr2.png" style="width:16rem;" alt="" /></a></span></li>
- 			<li><span><a href="#"><img src="/img/pic-nr1.png" style="width:16rem;" alt="" /></a></span></li>
- 			<li><span><a href="#"><img src="/img/pic-nr2.png" style="width:16rem;" alt="" /></a></span></li>
- 		</ul>
-         <a href="javascript:;" id="btn_prev"></a>
- 		<a href="javascript:;" id="btn_next"></a>
- 	</div>
- </div>
+    <div class="main_visual">
+      <div class="flicking_con">
+        <span>
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+        </span>
+      </div>
+      <div class="main_image">
+        <ul>
+          <li><span><a href="#"><img src="/img/pic-nr1.png" style="width:16rem;" alt="" /></a></span></li>
+          <li><span><a href="#"><img src="/img/pic-nr2.png" style="width:16rem;" alt="" /></a></span></li>
+          <li><span><a href="#"><img src="/img/pic-nr1.png" style="width:16rem;" alt="" /></a></span></li>
+          <li><span><a href="#"><img src="/img/pic-nr2.png" style="width:16rem;" alt="" /></a></span></li>
+        </ul>
+        <a href="javascript:;" id="btn_prev"></a>
+        <a href="javascript:;" id="btn_next"></a>
+      </div>
+    </div>
   </div>
   <!--图片展示:over-->
   <div class="cont-title">
