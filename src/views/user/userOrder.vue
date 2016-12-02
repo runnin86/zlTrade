@@ -50,14 +50,14 @@
    			       <div class="od-div">
          			   <div class="od-div-left">
           			    360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-         			     <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
+         			    <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
          			   </div>
        		       <div class="od-div-right">
-        			     <p><strong>￥200.00</strong></p>
-        			     <p>X 1</p>
+        			    <p><strong>￥200.00</strong></p>
+        			    <p>X 1</p>
         			   </div>
-  		         </div>
-             </div>
+  		        </div>
+            </div>
            </a>
            <div class="odlb-bottom">
             <p>共计1件商品  合计:<span>￥200.00</span></p>
