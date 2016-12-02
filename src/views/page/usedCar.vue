@@ -1,5 +1,5 @@
 <template>
-  <div class="content" transition="bounce">
+  <div class="content" transition="">
   <!--顶部-->
   <div class="com-header">
     <div class="return"><a href="javascript:history.go(-1)"><i class="iconfont">&#xe624;</i></a></div>
@@ -8,9 +8,9 @@
   <div class="header-h"></div>
   <!--顶部:over-->
    <!--筛选弹窗-->
-    <div class="used-dialog" id="used-light">
+    <div class="used-dialog" id="used-light" :style="{'display': (showSel?'block':'none')}">
      <div class="used-dialog-top">
-      <a href="javascript:;" onclick="hide_sel()"><i class="icon">&#xe624;</i></a>
+      <a href="javascript:;" @click="showSel=false"><i class="icon">&#xe624;</i></a>
       <h3>价格 · 品牌 · 车型</h3>
      </div>
      <div class="used-dialog-top-h"></div>
@@ -44,11 +44,10 @@
      <div class="used-dialog-bottom-h"></div>
      <div class="used-dialog-bottom">
       <input type="button" class="btn-ok"  value="确定"/>
-      <input type="button" class="btn-no" value="取消" onclick="hide_sel()" />
+      <input type="button" class="btn-no" value="取消" @click="showSel=false"/>
      </div>
-
     </div>
-    <div class="used-black" id="used-fade"></div>
+    <div class="used-black" id="used-fade" :style="{'display': (showSel?'block':'none')}"></div>
   </div>
 
   <!--筛选弹窗:over-->
@@ -58,7 +57,7 @@
       <ul>
         <li><a href="javascript:void(0)">综合排序</a></li>
         <li><a href="javascript:void(0)">价格</a></li>
-        <input type="button" class="sx-btn" value="筛选" onclick="show_sel()" />
+        <input type="button" class="sx-btn" value="筛选" @click="showSel=true"/>
       </ul>
     </div>
     <div class="bd" id="tabBox1-bd">
@@ -178,21 +177,34 @@
          	</div>
          </a>
         </li>
-
       </div>
       <!--价格:over-->
-
-
     </div>
   </div>
 </template>
 
 <script>
+require('../../assets/js/jquery.min')
+let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
+
 export default {
   ready () {
+    TouchSlide({
+      slideCell: '#tabBox1',
+      endFun: function (i) {
+        // 高度自适应
+        var bd = document.getElementById('tabBox1-bd')
+        bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
+        if (i > 0) {
+          // 添加动画效果
+          bd.parentNode.style.transition = '200ms'
+        }
+      }
+    })
   },
   data () {
     return {
+      showSel: false
     }
   },
   methods: {
