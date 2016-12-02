@@ -11,7 +11,6 @@
   </div>
   <div class="header-h"></div>
     <!--顶部:over-->
-    <link href="/css/tabBox-order.css" rel="stylesheet" />
     <div class="tabBox-hd-h"></div>
     <div id="tabBox1" class="tabBox">
       <div class="hd">
@@ -277,6 +276,6 @@ export default {
 </script>
 
 <style scoped>
-/*@import './../../assets/css/tabBox-order.css';*/
+@import './../../assets/css/tabBox-order.css';
 
 </style>

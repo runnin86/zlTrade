@@ -63,7 +63,6 @@
     </ul>
    </div>
   </div>
-  <link href="/css/tabBox-cont.css" rel="stylesheet" />
   <div id="tabBox1" class="tabBox">
      <div class="hd">
        <ul>
@@ -173,5 +172,6 @@ export default {
 </script>
 
 <style>
+@import './../../assets/css/tabBox-cont.css';
 
 </style>

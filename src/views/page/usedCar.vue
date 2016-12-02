@@ -52,7 +52,6 @@
   </div>
 
   <!--筛选弹窗:over-->
- <link href="/css/tabBox-used.css" rel="stylesheet" />
  <div class="tabBox-hd-h"></div>
  <div id="tabBox1" class="tabBox">
     <div class="hd">
@@ -202,5 +201,6 @@ export default {
 </script>
 
 <style>
+@import './../../assets/css/tabBox-used.css';
 
 </style>

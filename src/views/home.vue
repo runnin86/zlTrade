@@ -16,7 +16,6 @@
    </div>
    <!--顶部:over-->
    <!--图标-->
-   <link rel="stylesheet" href="css/swiper.min.css">
    <div class="ind-menu">
     <div class="swiper-container">
           <div class="swiper-wrapper">
@@ -214,6 +213,8 @@ export default {
 </script>
 
 <style scoped>
+@import './../assets/css/swiper.min.css';
+
 .swiper-container {
    width: 100%;
    height: 9rem;
