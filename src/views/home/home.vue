@@ -80,17 +80,6 @@
           <!--<div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>-->
       </div>
-      <script src="/js/swiper.min.js"></script>
-      <script src="/js/tabs.js"></script>
-      <script>
-      var swiper = new Swiper('.swiper-container', {
-          pagination: '.swiper-pagination',
-          paginationClickable: true,
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          autoHeight: true, //enable auto height
-      });
-      </script>
    </div>
    <!--图标:over-->
    <!--三张广告图-->
@@ -206,10 +195,25 @@
 </template>
 
 <script>
+import swiper from 'swiper'
 
+export default {
+  ready () {
+    // swiper初始化
+    swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      autoHeight: true // enable auto height
+    })
+  },
+  methods: {
+  }
+}
 </script>
 
-<style>
+<style scoped>
 .swiper-container {
    width: 100%;
    height: 9rem;

@@ -13,11 +13,12 @@
     "url": "https://github.com/runnin86/zl-h5.git"
   },
   "dependencies": {
+    "md5": "^2.1.0",
     "qr.js": "0.0.0",
+    "swiper": "^3.4.0",
     "vue": "^1.0.18",
     "vue-resource": "^0.6.1",
-    "vue-router": "^0.7.11",
-    "md5": "^2.1.0"
+    "vue-router": "^0.7.11"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
