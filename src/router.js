@@ -19,12 +19,12 @@ export default function (router) {
     },
     '/home': {
       component (resolve) {
-        require(['./views/home/home'], resolve)
+        require(['./views/home'], resolve)
       }
     },
     '/cart': {
       component (resolve) {
-        require(['./views/cart/cart'], resolve)
+        require(['./views/page/cart'], resolve)
       }
     },
     '/user': {
@@ -47,14 +47,14 @@ export default function (router) {
         require(['./views/user/userOrderCont'], resolve)
       }
     },
-    '/vicinity': {
+    '/stores': {
       component (resolve) {
-        require(['./views/vicinity/stores'], resolve)
+        require(['./views/page/stores'], resolve)
       }
     },
-    '/vicinity/cont': {
+    '/stores/cont': {
       component (resolve) {
-        require(['./views/vicinity/storesCont'], resolve)
+        require(['./views/page/storesCont'], resolve)
       }
     },
     '/page/usedCar': {
