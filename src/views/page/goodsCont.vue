@@ -26,9 +26,6 @@
  		<a href="javascript:;" id="btn_next"></a>
  	</div>
  </div>
-   <script src="js/jquery.event.drag-1.5.min.js"></script>
-   <script src="js/jquery.touchSlider.js"></script>
-   <script src="js/banner.js"></script>
   </div>
   <!--图片展示:over-->
   <div class="cont-title">
@@ -46,7 +43,7 @@
    </div>
   </div>
   <div class="cont-sel">
-   <a href="javascript:buy_show();">
+   <a @click="showBuy=true">
     <strong>已选： 黑色  46码  X1 </strong><i class="icon">&#xe624;</i>
    </a>
   </div>
@@ -101,33 +98,22 @@
        <!--售后保障:over-->
      </div>
    </div>
-   <script src="js/TouchSlide.1.1.js"></script>
-   <script type="text/javascript">
- 			TouchSlide( { slideCell:"#tabBox1",
-
- 				endFun:function(i){ //高度自适应
- 					var bd = document.getElementById("tabBox1-bd");
- 					bd.parentNode.style.height = bd.children[i].children[0].offsetHeight+"px";
- 					if(i>0)bd.parentNode.style.transition="200ms";//添加动画效果
- 				}
-
- 			} );</script>
   <!--悬浮-->
   <div class="cont-tool-h"></div>
   <div class="cont-tool">
-   <input type="button" class="btn-jrgwc" value="加入购物车" onClick="buy_show()">
-   <input type="button" class="btn-ljgm" value="立即购买" onClick="buy_show()">
+   <input type="button" class="btn-jrgwc" value="加入购物车" @click="showBuy=true">
+   <input type="button" class="btn-ljgm" value="立即购买" @click="showBuy=true">
   </div>
   <!--悬浮:over-->
   <!--购买信息弹窗-->
-  <div class="buy-info" id="buy-light">
+  <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
    <div class="buy-info1">
     <div class="gm-img"><img src="/img/pic-gm.jpg"></div>
     <div class="gm-div">
      <h3>迪加伦 汽车钥匙扣 金属 创意挂件装饰品 bv编织 卡通 车用钥...</h3>
      <p>￥230.00</p>
     </div>
-    <div class="gm-close"><i class="icon" onClick="buy_hide()">&#xe62f;</i></div>
+    <div class="gm-close"><i class="icon" @click="showBuy=false">&#xe62f;</i></div>
    </div>
    <div class="buy-info2">
     <p><span class="span1">颜色：</span><span class="span2"><label class="active">蓝色</label><label>红色</label><label>青色</label><label>白色</label><label>红色</label><label>青色</label><label>白色</label></span></p>
@@ -142,28 +128,35 @@
     </div>
    </div>
   </div>
-  <div class="black" id="buy-black" onClick="buy_hide()"></div>
-  <script>
-   var id_light = document.getElementById('buy-light');
-   var id_black = document.getElementById('buy-black');
-   function buy_show(){
- 	   id_light.style.display='block';
- 	   id_black.style.display='block';
- 	  }
-   function buy_hide(){
- 	   id_light.style.display='none';
- 	   id_black.style.display='none';
- 	  }
-  </script>
+  <div class="black" id="buy-black" @click="showBuy=false" :style="{'display': (showBuy?'block':'none')}"></div>
   <!--购买信息弹窗-->
 </template>
 
 <script>
+require('../../assets/js/jquery.min')
+require('../../assets/js/jquery.event.drag-1.5.min')
+require('../../assets/js/jquery.touchSlider')
+require('../../assets/js/banner')
+let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
+
 export default {
   ready () {
+    TouchSlide({
+      slideCell: '#tabBox1',
+      endFun: function (i) {
+        // 高度自适应
+        var bd = document.getElementById('tabBox1-bd')
+        bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
+        if (i > 0) {
+          // 添加动画效果
+          bd.parentNode.style.transition = '200ms'
+        }
+      }
+    })
   },
   data () {
     return {
+      showBuy: false
     }
   },
   methods: {
@@ -171,7 +164,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import './../../assets/css/tabBox-cont.css';
 
 </style>
