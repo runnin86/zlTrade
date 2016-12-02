@@ -1,15 +1,15 @@
 <template>
   <!--顶部-->
-<div class="com-header">
-  <div class="return"><a href="javascript:history.go(-1)"><i class="iconfont">&#xe624;</i></a></div>
-  <div class="header-title">租车</div>
-</div>
-<div class="header-h"></div>
-<!--顶部:over-->
- <!--筛选弹窗-->
-  <div class="used-dialog" id="used-light">
+  <div class="com-header">
+    <div class="return"><a href="javascript:history.go(-1)"><i class="iconfont">&#xe624;</i></a></div>
+    <div class="header-title">租车</div>
+  </div>
+  <div class="header-h"></div>
+  <!--顶部:over-->
+  <!--筛选弹窗-->
+  <div class="used-dialog" id="used-light" :style="{'display': (showSel?'block':'none')}">
    <div class="used-dialog-top">
-    <a href="javascript:;" onclick="hide_sel()"><i class="icon">&#xe624;</i></a>
+    <a href="javascript:;" @click="showSel=false"><i class="icon">&#xe624;</i></a>
     <h3>价格 · 品牌 · 车型</h3>
    </div>
    <div class="used-dialog-top-h"></div>
@@ -43,34 +43,11 @@
    <div class="used-dialog-bottom-h"></div>
    <div class="used-dialog-bottom">
     <input type="button" class="btn-ok"  value="确定"/>
-    <input type="button" class="btn-no" value="取消" onclick="hide_sel()" />
+    <input type="button" class="btn-no" value="取消" @click="showSel=false" />
    </div>
 
   </div>
-  <div class="used-black" id="used-fade"></div>
-  <script>
-    var id_light = document.getElementById('used-light');
-    var id_fade = document.getElementById('used-fade');
-  	function show_sel(){
-  		id_light.style.display='block';
-  		id_fade.style.display='block';
-  	}
-  	function hide_sel(){
-  		id_light.style.display='none';
-  		id_fade.style.display='none';
-  	}
-
-  </script>
- <script type="text/javascript">
-$(document).ready(function(){
-	var h = $(window).height(), h2;
-	$(".used-dialog").css("height", h);
-	$(window).resize(function() {
-		h2 = $(this).height();
-		$(".used-dialog").css("min-height", h2);
-	});
-});
-</script>
+  <div class="used-black" id="used-fade" :style="{'display': (showSel?'block':'none')}"></div>
  <!--筛选弹窗:over-->
  <link href="/css/tabBox-used.css" rel="stylesheet" />
  <div class="tabBox-hd-h"></div>
@@ -79,7 +56,7 @@ $(document).ready(function(){
       <ul>
         <li><a href="javascript:void(0)">综合排序</a></li>
         <li><a href="javascript:void(0)">价格</a></li>
-        <input type="button" class="sx-btn" value="筛选" onclick="show_sel()" />
+        <input type="button" class="sx-btn" value="筛选" @click="showSel=true" />
       </ul>
     </div>
     <div class="bd" id="tabBox1-bd">
@@ -187,24 +164,10 @@ $(document).ready(function(){
          	</div>
          </a>
         </li>
-
-
       </div>
       <!--价格:over-->
-
-
     </div>
   </div>
-  <script src="js/TouchSlide.1.1.js"></script>
-  <script type="text/javascript">
-			TouchSlide( { slideCell:"#tabBox1",
-				endFun:function(i){ //高度自适应
-					var bd = document.getElementById("tabBox1-bd");
-					bd.parentNode.style.height = bd.children[i].children[0].offsetHeight+"px";
-					if(i>0)bd.parentNode.style.transition="200ms";//添加动画效果
-				}
-
-			} );</script>
 </template>
 
 <script>
@@ -228,6 +191,7 @@ export default {
   },
   data () {
     return {
+      showSel: false
     }
   },
   methods: {
