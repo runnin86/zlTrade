@@ -208,7 +208,16 @@ $(document).ready(function(){
 </template>
 
 <script>
-
+export default {
+  ready () {
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+  }
+}
 </script>
 
 <style>

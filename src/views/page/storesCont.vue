@@ -98,7 +98,16 @@
 </template>
 
 <script>
-
+export default {
+  ready () {
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+  }
+}
 </script>
 
 <style>
