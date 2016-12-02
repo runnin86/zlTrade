@@ -56,6 +56,11 @@
 </template>
 
 <script>
+require('../../assets/js/jquery.min')
+require('../../assets/js/jquery.event.drag-1.5.min')
+require('../../assets/js/jquery.touchSlider')
+require('../../assets/js/used-banner')
+
 export default {
   ready () {
   },
