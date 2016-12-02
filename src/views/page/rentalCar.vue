@@ -208,8 +208,23 @@ $(document).ready(function(){
 </template>
 
 <script>
+require('../../assets/js/jquery.min')
+let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
+
 export default {
   ready () {
+    TouchSlide({
+      slideCell: '#tabBox1',
+      endFun: function (i) {
+        // 高度自适应
+        var bd = document.getElementById('tabBox1-bd')
+        bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
+        if (i > 0) {
+          // 添加动画效果
+          bd.parentNode.style.transition = '200ms'
+        }
+      }
+    })
   },
   data () {
     return {
