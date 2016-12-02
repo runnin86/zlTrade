@@ -248,27 +248,25 @@
 </template>
 
 <script>
-// import jQuery from '../../assets/js/jquery.min'
-// import TouchSlide from '../../assets/js/touchSlider'
 import $ from 'zepto'
+require('../../assets/js/jquery.min')
+let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
 
 export default {
   ready () {
     $.toast('43')
-    // TouchSlide
-    // console.log(jQuery)
-    // console.log(TouchSlide)
-    // TouchSlide({
-    //   slideCell: '#tabBox1',
-    //   endFun: function(i) {
-    //     // 高度自适应
-    //     var bd = document.getElementById('tabBox1-bd') bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
-    //     // 添加动画效果
-    //     if (i > 0) {
-    //       bd.parentNode.style.transition = '200ms'
-    //     }
-    //   }
-    // })
+    TouchSlide({
+      slideCell: '#tabBox1',
+      endFun: function (i) {
+        // 高度自适应
+        var bd = document.getElementById('tabBox1-bd')
+        bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
+        if (i > 0) {
+          // 添加动画效果
+          bd.parentNode.style.transition = '200ms'
+        }
+      }
+    })
   },
   methods: {
   }
