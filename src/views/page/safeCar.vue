@@ -9,7 +9,7 @@
   <div class="car-list">
    <ul>
    	<li>
-   	 <a v-link="{path: '/page/safeCarCont', replace: false}">
+   	 <a v-link="{path: '/safeCarCont', replace: false}">
    	 	<div class="car-top">
    	 	 <div class="car-img"><span></span><img src="/img/pic-cx1.png"></div>
    	 	 <div class="car-div">
@@ -24,7 +24,7 @@
    	 </a>
    	</li>
    	<li>
-   	 <a v-link="{path: '/page/safeCarCont', replace: false}">
+   	 <a v-link="{path: '/safeCarCont', replace: false}">
    	 	<div class="car-top">
    	 	 <div class="car-img"><span></span><img src="/img/pic-cx2.png"></div>
    	 	 <div class="car-div">
@@ -39,7 +39,7 @@
    	 </a>
    	</li>
    	<li>
-   	 <a v-link="{path: '/page/safeCarCont', replace: false}">
+   	 <a v-link="{path: '/safeCarCont', replace: false}">
    	 	<div class="car-top">
    	 	 <div class="car-img"><span></span><img src="/img/pic-cx3.png"></div>
    	 	 <div class="car-div">
@@ -54,7 +54,7 @@
    	 </a>
    	</li>
    	<li>
-   	 <a v-link="{path: '/page/safeCarCont', replace: false}">
+   	 <a v-link="{path: '/safeCarCont', replace: false}">
    	 	<div class="car-top">
    	 	 <div class="car-img"><span></span><img src="/img/pic-cx1.png"></div>
    	 	 <div class="car-div">
@@ -69,7 +69,7 @@
    	 </a>
    	</li>
    	<li>
-   	 <a v-link="{path: '/page/safeCarCont', replace: false}">
+   	 <a v-link="{path: '/safeCarCont', replace: false}">
    	 	<div class="car-top">
    	 	 <div class="car-img"><span></span><img src="/img/pic-cx2.png"></div>
    	 	 <div class="car-div">
@@ -84,7 +84,7 @@
    	 </a>
    	</li>
    	<li>
-   	 <a v-link="{path: '/page/safeCarCont', replace: false}">
+   	 <a v-link="{path: '/safeCarCont', replace: false}">
    	 	<div class="car-top">
    	 	 <div class="car-img"><span></span><img src="/img/pic-cx3.png"></div>
    	 	 <div class="car-div">

@@ -65,7 +65,7 @@
       <div class="con">
        <ul>
         <li>
-         <a v-link="{path: '/page/usedCarCont', replace: false}">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc1.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>

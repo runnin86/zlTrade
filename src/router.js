@@ -57,37 +57,37 @@ export default function (router) {
         require(['./views/page/storesCont'], resolve)
       }
     },
-    '/page/usedCar': {
+    '/usedCar': {
       component (resolve) {
         require(['./views/page/usedCar'], resolve)
       }
     },
-    '/page/usedCarCont': {
+    '/usedCarCont': {
       component (resolve) {
         require(['./views/page/usedCarCont'], resolve)
       }
     },
-    '/page/rentalCar': {
+    '/rentalCar': {
       component (resolve) {
         require(['./views/page/rentalCar'], resolve)
       }
     },
-    '/page/safeCar': {
+    '/safeCar': {
       component (resolve) {
         require(['./views/page/safeCar'], resolve)
       }
     },
-    '/page/safeCarCont': {
+    '/safeCarCont': {
       component (resolve) {
         require(['./views/page/safeCarCont'], resolve)
       }
     },
-    '/page/goodsList': {
+    '/goodsList': {
       component (resolve) {
         require(['./views/page/goodsList'], resolve)
       }
     },
-    '/page/goodsCont': {
+    '/goodsCont': {
       component (resolve) {
         require(['./views/page/goodsCont'], resolve)
       }

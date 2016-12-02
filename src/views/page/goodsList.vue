@@ -20,7 +20,7 @@
    <ul>
     <li>
      <div class="lb-img">
-       <a v-link="{path: '/page/goodsCont', replace: false}">
+       <a v-link="{path: '/goodsCont', replace: false}">
          <img src="/img/pic-lb1.png">
        </a>
      </div>
@@ -31,7 +31,7 @@
     </li>
     <li>
      <div class="lb-img">
-       <a v-link="{path: '/page/goodsCont', replace: false}">
+       <a v-link="{path: '/goodsCont', replace: false}">
          <img src="/img/pic-lb2.png">
        </a>
      </div>
@@ -41,56 +41,56 @@
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb2.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb2.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb2.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb2.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
      </div>
     </li>
     <li>
-     <div class="lb-img"><a v-link="{path: '/page/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
      <div class="lb-div">
       <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
       <p><strong>￥230.00</strong><span>已售10件</span></p>
