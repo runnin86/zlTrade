@@ -2,7 +2,11 @@
   <div class="content" transition="pushtop">
     <!--顶部-->
   <div class="com-header">
-    <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
+    <div class="return">
+      <a @click="this.$root.back()">
+        <i class="iconfont">&#xe624;</i>
+      </a>
+    </div>
     <div class="header-title">用户登录</div>
   </div>
   <div class="header-h"></div>
