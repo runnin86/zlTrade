@@ -9,7 +9,6 @@ var compiler = webpack(config)
 // 设置资源目录
 app.use('/static', express.static(path.join(__dirname, '../src')))
 app.use('/img', express.static(path.join(__dirname, '../src/assets/images')))
-app.use('/css', express.static(path.join(__dirname, '../src/assets/css')))
 
 app.use(favicon(path.join(__dirname, '../favicon.ico')))
 // handle fallback for HTML5 history API
