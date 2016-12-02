@@ -2,7 +2,7 @@
   <div class="content" transition="">
   <!--顶部-->
   <div class="com-header">
-    <div class="return"><a href="javascript:history.go(-1)"><i class="iconfont">&#xe624;</i></a></div>
+    <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
     <div class="header-title">二手车买卖</div>
   </div>
   <div class="header-h"></div>
@@ -77,7 +77,7 @@
          </a>
         </li>
         <li>
-         <a href="used-car-cont.html">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc2.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -89,7 +89,7 @@
          </a>
         </li>
         <li>
-         <a href="used-car-cont.html">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc3.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -101,7 +101,7 @@
          </a>
         </li>
         <li>
-         <a href="used-car-cont.html">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc1.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -113,7 +113,7 @@
          </a>
         </li>
         <li>
-         <a href="used-car-cont.html">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc2.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -125,7 +125,7 @@
          </a>
         </li>
         <li>
-         <a href="used-car-cont.html">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc3.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -142,7 +142,7 @@
       <!--价格-->
       <div class="con">
        <li>
-         <a href="#">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc3.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -154,7 +154,7 @@
          </a>
         </li>
        <li>
-         <a href="#">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc1.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>
@@ -166,7 +166,7 @@
          </a>
         </li>
         <li>
-         <a href="#">
+         <a v-link="{path: '/usedCarCont', replace: false}">
          	<div class="used-img"><span></span><img src="/img/pic-esc2.png"></div>
          	<div class="used-div">
          		<h3>凯美瑞 2012款 俊瑞 2.0S耀动版  </h3>

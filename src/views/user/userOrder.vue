@@ -3,7 +3,7 @@
   <!--顶部-->
   <div class="com-header">
     <div class="return">
-      <a href="javascript:history.go(-1)">
+      <a @click="this.$root.back()">
         <i class="iconfont">&#xe624;</i>
       </a>
     </div>

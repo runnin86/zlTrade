@@ -2,7 +2,7 @@
   <div class="content" transition="bounce">
     <!--门店图片-->
 <div class="store-pic"><img src="/img/pic-md.jpg">
- <div class="return"><a href="javascript:history.go(-1)"><i class="iconfont">&#xe624;</i></a></div>
+ <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
 </div>
 <!--门店图片:over-->
 <div class="store-cont">

@@ -1,7 +1,7 @@
 <template>
   <!--顶部-->
   <div class="com-header">
-   <div class="return"><a href="javascript:history.go(-1)"><i class="iconfont">&#xe624;</i></a></div>
+   <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
    <div class="header-title">商品详情</div>
   </div>
   <div class="header-h"></div>
