@@ -101,6 +101,7 @@ export default {
 <style>
 @import './assets/css/global.css';
 @import './assets/css/style.css';
+
 [v-cloak] {
   display: none;
 }
