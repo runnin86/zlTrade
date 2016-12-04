@@ -86,115 +86,96 @@
   </div>
   <!--图标:over-->
   <!--三张广告图-->
-  <div class="ind-ads">
+  <!-- <div class="ind-ads">
     <div class="ads-img"><a href="#"><img src="/img/pic-ad1.png" alt=""></a></div>
     <div class="ads-img"><a href="#"><img src="/img/pic-ad2.png" alt=""></a></div>
     <div class="ads-img mg-b0"><a href="#"><img src="/img/pic-ad3.png" alt=""></a></div>
-  </div>
+  </div> -->
   <!--三张广告图:over-->
-  <!--服务列表-->
-  <div class="ind-fw1-div">
-    <div class="ind-fw1">
-      <div class="fw1">
-        <a href="#">
-          <div class="fw1-img"><span></span><img src="/img/fw-tcfw.png"></div>
-          <div class="fw1-div">
-            <h3>拖车服务</h3><p>最快捷 最安全</p>
-          </div>
-        </a>
-      </div>
-      <div class="fw2">
-        <a href="#">
-          <div class="fw2-img"><span></span><img src="/img/fw-bxgm.png"></div>
-          <div class="fw2-div">
-            <h3>接送服务</h3><p>真正的服务到家</p>
-          </div>
-        </a>
-      </div>
-      <div class="fw2">
-        <a href="#">
-          <div class="fw2-img"><span></span><img src="/img/fw-dbwz.png"></div>
-          <div class="fw2-div">
-            <h3>代办违章</h3><p>省时省力好帮手</p>
-          </div>
-        </a>
-      </div>
-    </div>
+  <!--列表-->
+  <div class="list" style="padding-top:0.4rem;">
+   <ul>
+    <li>
+     <div class="lb-img">
+       <a v-link="{path: '/usedCarCont', replace: false}">
+         <img src="/img/pic-lb1.png">
+       </a>
+     </div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>有货</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img">
+       <a v-link="{path: '/usedCarCont', replace: false}">
+         <img src="/img/pic-lb2.png">
+       </a>
+     </div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>缺货</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>库存紧张</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb2.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb2.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/usedCarCont', replace: false}"><img src="/img/pic-lb3.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+    <li>
+     <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
+     <div class="lb-div">
+      <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
+      <p><strong>￥230.00</strong><span>已售10件</span></p>
+     </div>
+    </li>
+   </ul>
   </div>
-  <div class="ind-fw2">
-    <ul>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-qcpj.png"></div>
-          <div class="fw-div">
-            <h3>汽车配件</h3><p>好又多</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-yhxc.png"></div>
-          <div class="fw-div">
-            <h3>优惠洗车</h3><p>闪闪发光的体验</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-qczh.png"></div>
-          <div class="fw-div">
-            <h3>汽车装潢</h3><p>至尊品味</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-bxgm.png"></div>
-          <div class="fw-div">
-            <h3>保险购买</h3><p>低至5折+10%优惠</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="ind-fw2">
-    <ul>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-qcyh.png"></div>
-          <div class="fw-div">
-            <h3>汽车养护</h3><p>天天送豪礼</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-fwzq.png"></div>
-          <div class="fw-div">
-            <h3>服务专区</h3><p>马上上路吧</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a v-link="{ path: '/usedCar', replace: false}">
-          <div class="fw-img"><span></span><img src="/img/fw-escmm.png"></div>
-          <div class="fw-div">
-            <h3>二手车买卖</h3><p>你需要的我有</p>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <div class="fw-img"><span></span><img src="/img/fw-qcwx.png"></div>
-          <div class="fw-div">
-            <h3>汽车维修</h3><p>最专业的服务</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="div-space"></div>
-  <!--服务列表:over-->
+  <!--列表:over-->
 </template>
 
 <script>
