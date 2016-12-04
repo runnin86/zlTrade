@@ -53,7 +53,7 @@ opacity:1;
 .ind-user { width: 16rem; height: 3.25rem; background-color: #009ad9; }
 .ind-user .tx { width: 2.1rem; height: 2.1rem; float: left; border: 0.1rem #007bbf solid; margin: 0.5rem 0 0 0.5rem; border-radius: 100%; overflow: hidden; }
 .ind-user .tx img { width: 2.1rem; height: 2.1rem; border-radius: 100%; }
-.ind-user .hy { width: 12.25rem; height: 2.1rem; float: left; margin: 0.55rem 0 0 0.4rem; }
+.ind-user .hy { width: 12.25rem; height: 2.1rem; float: left; margin: 1rem 0 0 0.4rem; }
 .ind-user .hy h3 { font-size: 0.7rem; color: #fff; }
 .ind-user .hy h3 img { vertical-align: middle; margin: 0 0.3rem 0.1rem 0.5rem; }
 .ind-user .hy h3 span { font-size: 0.6rem; color: #fae451; }

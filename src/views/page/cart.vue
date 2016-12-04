@@ -1,12 +1,22 @@
 <template>
 <!--顶部-->
-<div class="com-header">ß
+<div class="com-header">
   <div class="header-title">购物车</div>
 </div>
 <div class="header-h"></div>
+
+<div v-cloak style="width:100%;height:100%;text-align:center;margin-top:40%;">
+  <div>
+    <img src="/img/tips.png" height="20" width="152">
+  </div>
+  <div style="font-size:0.38rem;color:#A9A9A9;margin-top:0.2rem;">
+    购物车打造中,敬请期待!
+  </div>
+</div>
+
 <!--顶部:over-->
 <!--购物车-->
-<div class="cart-top">
+<!-- <div class="cart-top">
 	<label><img src="/img/icon-radio.png" class="img1"><img src="/img/icon-radio-h.png" class="img2">全选</label><a href="javascript:;">清空</a>
 </div>
 <div class="cart-middle">
@@ -102,17 +112,17 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->
 <!--购物车:over-->
 <!--悬浮-->
-<div class="cart-tool-h"></div>
+<!-- <div class="cart-tool-h"></div>
 <div class="cart-tool">
   <div class="cart-tool-left">
     <label class="active"><img src="/img/icon-radio.png" class="img1"><img src="/img/icon-radio-h.png" class="img2">全选</label>
     <span>总计：<strong>￥220.00</strong></span>
   </div>
   <input type="button" class="cart-tool-btn" value="结算(1)" onclick="location.href='user-confirm.html'">
-</div>
+</div> -->
 <!--悬浮:over-->
 </template>
 

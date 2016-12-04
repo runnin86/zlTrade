@@ -10,7 +10,7 @@
     </div>
     <div class="tx">
       <a>
-        <img src="/img/user-tx.png">
+        <img src="/img/user-tx1.png">
       </a>
     </div>
     <div class="name">
@@ -19,9 +19,9 @@
     </div>
     <div class="member1-tool">
     	<ul>
-        <li><a href="#">0<br/>预付款</a></li>
-        <li><a href="#">0<br/>佣金</a></li>
-        <li><a href="#">100.00<br/>余额</a></li>
+        <li><a href="javascript:void(0)">11500<br/>预付款</a></li>
+        <li><a href="javascript:void(0)">1500000<br/>佣金</a></li>
+        <li><a href="javascript:void(0)">100.00<br/>余额</a></li>
     	</ul>
     </div>
   </div>

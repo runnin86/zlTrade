@@ -8,76 +8,80 @@
   </div>
   <div class="header-h"></div>
   <div class="ind-user">
-    <div class="tx"><a href="#"><img src="/img/user-tx.png"></a></div>
+    <div class="tx"><a href="#"><img src="/img/user-tx1.png"></a></div>
     <div class="hy">
-      <h3>听说昵称越长越牛逼 <img src="/img/icon-vip.png"><span>普通会员</span></h3>
-      <p>(温馨提示：XXX就可升级金牌会员)</p>
+      <h3>
+        听说昵称越长越牛逼
+        <!-- <img src="/img/icon-vip.png"> -->
+        <!-- <span>普通会员</span> -->
+      </h3>
+      <!-- <p>(温馨提示：XXX就可升级金牌会员)</p> -->
     </div>
   </div>
   <!--顶部:over-->
   <!--图标-->
-  <div class="ind-menu">
+  <div class="ind-menu" style="display:block;">
     <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <ul>
-          <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
-          <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
-          <li>
-            <a v-link="{ path: '/rentalCar', replace: false}">
-              <img src="/img/icon-zc.png" alt="租车"><p>租车</p>
-            </a>
-          </li>
-          <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
-          <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
-          <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
-          <li>
-            <a v-link="{ path: '/safeCar', replace: false}">
-              <img src="/img/icon-cxdb.png" alt="车险代办">
-              <p>车险代办</p>
-            </a>
-          </li>
-          <li>
-            <a v-link="{path: '/goodsList', replace: false}">
-              <img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p>
-            </a>
-          </li>
-        </ul>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <ul>
+            <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
+            <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
+            <li>
+              <a v-link="{ path: '/rentalCar', replace: false}">
+                <img src="/img/icon-zc.png" alt="租车"><p>租车</p>
+              </a>
+            </li>
+            <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
+            <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
+            <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
+            <li>
+              <a v-link="{ path: '/safeCar', replace: false}">
+                <img src="/img/icon-cxdb.png" alt="车险代办">
+                <p>车险代办</p>
+              </a>
+            </li>
+            <li>
+              <a v-link="{path: '/goodsList', replace: false}">
+                <img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper-slide">
+          <ul>
+            <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
+            <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
+            <li><a href="#"><img src="/img/icon-zc.png" alt="租车"><p>租车</p></a></li>
+            <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
+            <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
+            <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
+            <li><a href="#"><img src="/img/icon-cxdb.png" alt="车险代办"><p>车险代办</p></a></li>
+            <li>
+              <a v-link="{path: '/goodsList', replace: false}">
+                <img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper-slide">
+          <ul>
+            <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
+            <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
+            <li><a href="#"><img src="/img/icon-zc.png" alt="租车"><p>租车</p></a></li>
+            <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
+            <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
+            <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
+            <li><a href="#"><img src="/img/icon-cxdb.png" alt="车险代办"><p>车险代办</p></a></li>
+            <li><a href="#"><img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p></a></li>
+          </ul>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <ul>
-          <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
-          <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
-          <li><a href="#"><img src="/img/icon-zc.png" alt="租车"><p>租车</p></a></li>
-          <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
-          <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
-          <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
-          <li><a href="#"><img src="/img/icon-cxdb.png" alt="车险代办"><p>车险代办</p></a></li>
-          <li>
-            <a v-link="{path: '/goodsList', replace: false}">
-              <img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="swiper-slide">
-        <ul>
-          <li><a href="#"><img src="/img/icon-xc.png" alt="洗车"><p>洗车</p></a></li>
-          <li><a href="#"><img src="/img/icon-tc.png" alt="拖车"><p>拖车</p></a></li>
-          <li><a href="#"><img src="/img/icon-zc.png" alt="租车"><p>租车</p></a></li>
-          <li><a href="#"><img src="/img/icon-wx.png" alt="维修"><p>维修</p></a></li>
-          <li><a href="#"><img src="/img/icon-mfyy.png" alt="免费云油"><p>免费运油</p></a></li>
-          <li><a href="#"><img src="/img/icon-qcmr.png" alt="汽车美容"><p>汽车美容</p></a></li>
-          <li><a href="#"><img src="/img/icon-cxdb.png" alt="车险代办"><p>车险代办</p></a></li>
-          <li><a href="#"><img src="/img/icon-jptj.png" alt="精品推荐"><p>精品推荐</p></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Pagination -->
-    <!--<div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>-->
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Pagination -->
+      <!--<div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>-->
     </div>
   </div>
   <!--图标:over-->
