@@ -1,118 +1,137 @@
 <template>
   <!--顶部-->
   <div class="com-header">
-    <div class="header-title">附近门店</div>
+    <div class="header-title">赠品</div>
   </div>
   <div class="header-h"></div>
-  <!--顶部:over-->
-  <div class="store-sel">
+  <!-- 顶部:over-->
+  <!-- <div class="store-sel">
    <ul>
     <li><a href="#"><span>区域</span></a></li>
     <li><a href="#"><span>默认排序</span></a></li>
    </ul>
   </div>
-  <div class="store-sel-h"></div>
-  <!--列表:over-->
-  <div class="store-list">
+  <div class="store-sel-h"></div> -->
+  <!--列表:over -->
+  <div class="store-list bc-f0f0f0">
    <ul>
     <li>
-     <a v-link="{ path: '/stores/cont', replace: false}">
-      <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
+     <!-- <a v-link="{ path: '/stores/cont', replace: false}"> -->
+     <a href="javascript:void(0)">
+      <div class="md-top">
+        <img src="/img/icon-dhzq.png">
+        <strong>梦之蓝</strong>
+      </div>
       <div class="md-bottom">
-       <div class="md-img"><img src="/img/pic-md1.png"></div>
+       <div class="md-img"><img src="/img/yh-mzl.jpg"></div>
        <div class="md-div">
-        <h3>六一中路115号(海潮东路如家酒店停...</h3>
+        <h3>洋河梦之蓝</h3>
         <div class="md-zf">
-         <span><i class="icon">&#xe643;</i>支付宝</span>
-         <span><i class="icon">&#xe643;</i>刷卡</span>
-         <span><i class="icon">&#xe643;</i>现金</span>
+         <span><i class="icon">&#xe643;</i>余额</span>
+         <span><i class="icon">&#xe643;</i>到店刷卡</span>
+         <span><i class="icon">&#xe643;</i>到店现金</span>
         </div>
-        <p>相距：856m</p>
+        <p>江苏洋河酒厂股份有限公司生产的白酒</p>
        </div>
       </div>
      </a>
     </li>
     <li>
-     <a v-link="{ path: '/stores/cont', replace: false}">
-      <div class="md-top"><img src="/img/icon-md.png"><strong>科凯汽车服务中心(北光明港路店)</strong></div>
+     <a href="javascript:void(0)">
+      <div class="md-top">
+        <img src="/img/icon-dhzq.png">
+        <strong>天之蓝</strong>
+      </div>
       <div class="md-bottom">
-       <div class="md-img"><img src="/img/pic-md2.png"></div>
+       <div class="md-img"><img src="/img/yh-tzl.jpg"></div>
        <div class="md-div">
-        <h3>北光明港路30号</h3>
+        <h3>洋河天之蓝</h3>
         <div class="md-zf">
-         <span><i class="icon">&#xe643;</i>支付宝</span>
-         <span><i class="icon">&#xe643;</i>刷卡</span>
-         <span><i class="icon">&#xe643;</i>现金</span>
+         <span><i class="icon">&#xe643;</i>余额</span>
+         <span><i class="icon">&#xe643;</i>到店刷卡</span>
+         <span><i class="icon">&#xe643;</i>到店现金</span>
         </div>
-        <p>相距：856m</p>
+        <p>江苏洋河酒厂股份有限公司生产的白酒</p>
        </div>
       </div>
      </a>
     </li>
     <li>
-     <a v-link="{ path: '/stores/cont', replace: false}">
-      <div class="md-top"><img src="/img/icon-md.png"><strong>新车联汽车美容店(太平路)</strong></div>
+     <a href="javascript:void(0)">
+      <div class="md-top">
+        <img src="/img/icon-dhzq.png">
+        <strong>海之蓝</strong>
+      </div>
       <div class="md-bottom">
-       <div class="md-img"><img src="/img/pic-md3.png"></div>
+       <div class="md-img"><img src="/img/yh-hzl.jpg"></div>
        <div class="md-div">
-        <h3>福州市台江区太平路28号</h3>
+        <h3>洋河海之蓝</h3>
         <div class="md-zf">
-         <span><i class="icon">&#xe643;</i>支付宝</span>
-         <span><i class="icon">&#xe643;</i>刷卡</span>
-         <span><i class="icon">&#xe643;</i>现金</span>
+         <span><i class="icon">&#xe643;</i>余额</span>
+         <span><i class="icon">&#xe643;</i>到店刷卡</span>
+         <span><i class="icon">&#xe643;</i>到店现金</span>
         </div>
-        <p>相距：856m</p>
+        <p>江苏洋河酒厂股份有限公司生产的白酒</p>
        </div>
       </div>
      </a>
     </li>
     <li>
-     <a v-link="{ path: '/stores/cont', replace: false}">
-      <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
+     <a href="javascript:void(0)">
+      <div class="md-top">
+        <img src="/img/icon-dhzq.png">
+        <strong>梦之蓝</strong>
+      </div>
       <div class="md-bottom">
-       <div class="md-img"><img src="/img/pic-md1.png"></div>
+       <div class="md-img"><img src="/img/yh-mzl.jpg"></div>
        <div class="md-div">
-        <h3>六一中路115号(海潮东路如家酒店停...</h3>
+        <h3>洋河梦之蓝</h3>
         <div class="md-zf">
-         <span><i class="icon">&#xe643;</i>支付宝</span>
-         <span><i class="icon">&#xe643;</i>刷卡</span>
-         <span><i class="icon">&#xe643;</i>现金</span>
+         <span><i class="icon">&#xe643;</i>余额</span>
+         <span><i class="icon">&#xe643;</i>到店刷卡</span>
+         <span><i class="icon">&#xe643;</i>到店现金</span>
         </div>
-        <p>相距：856m</p>
+        <p>江苏洋河酒厂股份有限公司生产的白酒</p>
        </div>
       </div>
      </a>
     </li>
     <li>
-     <a v-link="{ path: '/stores/cont', replace: false}">
-      <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
+     <a href="javascript:void(0)">
+      <div class="md-top">
+        <img src="/img/icon-dhzq.png">
+        <strong>天之蓝</strong>
+      </div>
       <div class="md-bottom">
-       <div class="md-img"><img src="/img/pic-md2.png"></div>
+       <div class="md-img"><img src="/img/yh-tzl.jpg"></div>
        <div class="md-div">
-        <h3>六一中路115号(海潮东路如家酒店停...</h3>
+        <h3>洋河天之蓝</h3>
         <div class="md-zf">
-         <span><i class="icon">&#xe643;</i>支付宝</span>
-         <span><i class="icon">&#xe643;</i>刷卡</span>
-         <span><i class="icon">&#xe643;</i>现金</span>
+         <span><i class="icon">&#xe643;</i>余额</span>
+         <span><i class="icon">&#xe643;</i>到店刷卡</span>
+         <span><i class="icon">&#xe643;</i>到店现金</span>
         </div>
-        <p>相距：856m</p>
+        <p>江苏洋河酒厂股份有限公司生产的白酒</p>
        </div>
       </div>
      </a>
     </li>
     <li>
-     <a v-link="{ path: '/stores/cont', replace: false}">
-      <div class="md-top"><img src="/img/icon-md.png"><strong>开心汽车生活馆(海潮东路店)</strong></div>
+     <a href="javascript:void(0)">
+      <div class="md-top">
+        <img src="/img/icon-dhzq.png">
+        <strong>海之蓝</strong>
+      </div>
       <div class="md-bottom">
-       <div class="md-img"><img src="/img/pic-md3.png"></div>
+       <div class="md-img"><img src="/img/yh-hzl.jpg"></div>
        <div class="md-div">
-        <h3>六一中路115号(海潮东路如家酒店停...</h3>
+        <h3>洋河海之蓝</h3>
         <div class="md-zf">
-         <span><i class="icon">&#xe643;</i>支付宝</span>
-         <span><i class="icon">&#xe643;</i>刷卡</span>
-         <span><i class="icon">&#xe643;</i>现金</span>
+         <span><i class="icon">&#xe643;</i>余额</span>
+         <span><i class="icon">&#xe643;</i>到店刷卡</span>
+         <span><i class="icon">&#xe643;</i>到店现金</span>
         </div>
-        <p>相距：856m</p>
+        <p>江苏洋河酒厂股份有限公司生产的白酒</p>
        </div>
       </div>
      </a>
