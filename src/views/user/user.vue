@@ -46,7 +46,7 @@
   <div class="member2">
     <ul>
       <li>
-        <a v-link="{ path: '/user/order', replace: false}">
+        <a v-link="{ path: '/user/team', replace: false}">
           <img src="/img/icon-czxm.png">
           <strong>我的团队</strong>
           <i class="icon">&#xe624;</i>

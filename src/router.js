@@ -42,14 +42,19 @@ export default function (router) {
         require(['./views/user/userOrder'], resolve)
       }
     },
+    '/user/orderCont': {
+      component (resolve) {
+        require(['./views/user/userOrderCont'], resolve)
+      }
+    },
     '/user/comm': {
       component (resolve) {
         require(['./views/user/userCommission'], resolve)
       }
     },
-    '/user/orderCont': {
+    '/user/team': {
       component (resolve) {
-        require(['./views/user/userOrderCont'], resolve)
+        require(['./views/user/userTeam'], resolve)
       }
     },
     '/stores': {

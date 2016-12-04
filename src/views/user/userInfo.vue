@@ -16,15 +16,11 @@
     <div class="user-info2">
       <p>
         <strong>账户</strong>
-        <input type="text" class="txt" value="18012345678">
+        <input type="button" class="txt" value="18012345678">
       </p>
       <p>
         <strong>昵称</strong>
-        <input type="text" class="txt" value="听说昵称越长越牛逼">
-      </p>
-      <p>
-        <strong>性别</strong>
-        <select class="sel"><option>女</option><option>男</option></select>
+        <input type="button" class="txt" value="听说昵称越长越牛逼">
       </p>
     </div>
     <input type="button" class="com-btn" style="height: 2.2rem;margin:1rem auto;" value="退出登录" />
