@@ -13,7 +13,10 @@
         <img src="/img/user-tx.png">
       </a>
     </div>
-    <div class="name">听说昵称越长越牛逼<img src="/img/icon-vip.png"></div>
+    <div class="name">
+      听说昵称越长越牛逼
+      <!-- <img src="/img/icon-vip.png"> -->
+    </div>
     <div class="member1-tool">
     	<ul>
     	 <li><a href="#">0<br/>待付款</a></li>
