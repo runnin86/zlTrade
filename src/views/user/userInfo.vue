@@ -23,7 +23,8 @@
         <input type="button" class="txt" value="听说昵称越长越牛逼">
       </p>
     </div>
-    <input type="button" class="com-btn" style="height: 2.2rem;margin:1rem auto;" value="退出登录" />
+    <input type="button" v-link="{path: '/login', replace: false}"
+      class="com-btn" style="height: 2.2rem;margin:1rem auto;" value="退出登录" />
   </div>
 </template>
 

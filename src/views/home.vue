@@ -3,7 +3,7 @@
   <div class="ind-header">
     <div class="logo"><a href="#"><img src="/img/logo.png" alt="易车E族"></a></div>
     <div class="local">
-      <a href="#"><i class="iconfont">&#xe614;</i> 北京</a>
+      <a href="javascript:void(0)"><i class="iconfont">&#xe614;</i> <!--北京--></a>
     </div>
   </div>
   <div class="header-h"></div>
@@ -20,7 +20,7 @@
   </div>
   <!--顶部:over-->
   <!--图标-->
-  <div class="ind-menu" style="display:block;">
+  <div class="ind-menu" style="display:none;">
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
