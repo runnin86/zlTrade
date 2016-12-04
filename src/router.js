@@ -42,6 +42,11 @@ export default function (router) {
         require(['./views/user/userOrder'], resolve)
       }
     },
+    '/user/comm': {
+      component (resolve) {
+        require(['./views/user/userCommission'], resolve)
+      }
+    },
     '/user/orderCont': {
       component (resolve) {
         require(['./views/user/userOrderCont'], resolve)

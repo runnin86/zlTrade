@@ -305,7 +305,7 @@ opacity:1;
 .store-serve-bottom { width: 15rem; overflow: hidden; margin: 0 auto; }
 .store-serve-bottom ul { width: 15rem; margin-bottom: -1px; }
 .store-serve-bottom li { width: 15rem; padding: 0.5rem 0; display: block; overflow: hidden; position: relative; border-bottom: 1px #cdcdcd dashed; }
-.store-serve-bottom li section { width: 10.6rem; overflow: hidden; }
+.store-serve-bottom li section { /*width: 10.6rem;*/ overflow: hidden; }
 .store-serve-bottom li section h3 { font-size: 0.6rem; color: #383838; }
 .store-serve-bottom li section p { font-size: 0.5rem; color: #9c9c9c; line-height: 0.65rem; padding: 0.2rem 0; }
 .store-serve-bottom li section span { font-size: 0.6rem; color: #ff0000; }
