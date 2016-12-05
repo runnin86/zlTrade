@@ -51,27 +51,22 @@ export default {
       window.localStorage.removeItem('globalNoticeId')
       if (!this.userName || !this.password) {
         $.toast('请输入用户名或密码')
-        this.$route.router.go({path: '/home', replace: true})
         return
       }
       this.$http.post(userApi.login, {
-        'userName': this.userName,
-        'password': this.password
-      }).then(({data: {code, msg, info}})=>{
+        'uphone': this.userName,
+        'upass': this.password,
+        'code': '123'
+      }).then(({data: {code, msg, data}})=>{
         if (code === 1) {
-          if (info.user.user_status === 0) {
-            $.toast('账户未激活，充值后激活账户')
+          if (data.user.userStatus === 0) {
+            $.toast('账户暂时不可用')
           }
-          else if (info.user.user_status === 1) {
+          else if (data.user.userStatus === 1) {
             $.toast('登录成功')
-            window.localStorage.setItem('user', JSON.stringify(info.user))
-            window.localStorage.setItem('token', info.token)
-            window.localStorage.setItem('imageSwitch', true)
-            // 调用公告处理
-            this.$root.loadNotice()
-            this.$route.router.go({path: this.path, replace: true})
-            // 设置购物车图标
-            this.$root.setCardBadge()
+            window.localStorage.setItem('zlUser', JSON.stringify(data.user))
+            window.localStorage.setItem('token', data.token)
+            this.$route.router.go({path: '/user', replace: true})
           }
         }
         else {

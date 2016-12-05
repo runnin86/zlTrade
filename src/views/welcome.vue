@@ -16,7 +16,7 @@ export default {
   ready () {
     setTimeout(()=>{
       if (JSON.parse(window.localStorage.getItem('zlUser'))) {
-        this.$route.router.go({path: '/login', replace: true})
+        this.$route.router.go({path: '/user', replace: true})
       }
       else {
         this.$route.router.go({path: '/home', replace: true})
