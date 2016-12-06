@@ -65,7 +65,7 @@ export default {
       this.$route.router.go({path: '/login', replace: true})
     }
     else {
-      let token = window.localStorage.getItem('token')
+      let token = window.localStorage.getItem('zlToken')
       // 获取账户
       this.getUseAccount(token)
     }

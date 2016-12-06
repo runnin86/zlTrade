@@ -8,10 +8,14 @@
   </div>
   <div class="header-h"></div>
   <div class="ind-user">
-    <div class="tx"><a href="#"><img src="/img/user-tx1.png"></a></div>
+    <div class="tx">
+      <a href="javactipt:void(0)">
+        <img src="/img/user-tx1.png">
+      </a>
+    </div>
     <div class="hy">
       <h3>
-        听说昵称越长越牛逼
+        {{user?user.userName:'足力商贸欢迎您!'}}
         <!-- <img src="/img/icon-vip.png"> -->
         <!-- <span>普通会员</span> -->
       </h3>
@@ -191,6 +195,11 @@ export default {
       prevButton: '.swiper-button-prev',
       autoHeight: true // enable auto height
     })
+  },
+  data () {
+    return {
+      user: JSON.parse(window.localStorage.getItem('zlUser'))
+    }
   },
   methods: {
   }

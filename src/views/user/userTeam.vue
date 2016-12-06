@@ -108,7 +108,7 @@ export default {
   ready () {
     // this.$http.post(userApi.team, {}, {
     //   headers: {
-    //     'x-token': window.localStorage.getItem('token')
+    //     'x-token': window.localStorage.getItem('zlToken')
     //   },
     //   emulateJSON: true
     // })

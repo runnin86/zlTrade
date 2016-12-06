@@ -16,27 +16,56 @@
     <div class="user-info2">
       <p>
         <strong>账户</strong>
-        <input type="button" class="txt" value="18012345678">
+        <input type="button" class="txt" :value="user.userPhone">
       </p>
       <p>
         <strong>昵称</strong>
-        <input type="button" class="txt" value="听说昵称越长越牛逼">
+        <input type="button" class="txt" :value="user.userName">
       </p>
     </div>
-    <input type="button" v-link="{path: '/login', replace: false}"
+    <input type="button" @click="logout(this.$route.router)"
       class="com-btn" style="height: 2.2rem;margin:1rem auto;" value="退出登录" />
   </div>
 </template>
 
 <script>
+// import $ from 'zepto'
+// import {api} from '../../util/service'
+
 export default {
   ready () {
   },
   data () {
     return {
+      user: JSON.parse(window.localStorage.getItem('zlUser'))
     }
   },
   methods: {
+    /*
+     * 退出
+     */
+    logout (route) {
+      window.localStorage.removeItem('zlUser')
+      window.localStorage.removeItem('zlToken')
+      route.go({path: '/login', replace: true})
+      // let token = window.localStorage.getItem('zlToken')
+      // this.$http.delete(api.logout, {}, {
+      //   headers: {
+      //     'x-token': token
+      //   },
+      //   emulateJSON: true
+      // })
+      // .then(({data: {data, code, msg}})=>{
+      //   if (code === 1) {
+      //     window.localStorage.removeItem('zlUser')
+      //     window.localStorage.removeItem('zlToken')
+      //     route.go({path: '/login', replace: true})
+      //   }
+      //   $.toast(msg)
+      // }).catch((e)=>{
+      //   console.error('用户退出失败:' + e)
+      // })
+    }
   }
 }
 </script>

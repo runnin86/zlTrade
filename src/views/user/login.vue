@@ -65,7 +65,7 @@ export default {
           else if (data.user.userStatus === 1) {
             $.toast('登录成功')
             window.localStorage.setItem('zlUser', JSON.stringify(data.user))
-            window.localStorage.setItem('token', data.token)
+            window.localStorage.setItem('zlToken', data.token)
             this.$route.router.go({path: '/user', replace: true})
           }
         }
