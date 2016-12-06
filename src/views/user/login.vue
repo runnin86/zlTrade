@@ -98,6 +98,5 @@ export default {
 </script>
 
 <style>
-@import './../../assets/css/modal.css';
 
 </style>
