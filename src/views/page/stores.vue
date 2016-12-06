@@ -28,8 +28,8 @@
               <h3>洋河梦之蓝</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>到店刷卡</span>
-                <span><i class="icon">&#xe643;</i>到店现金</span>
+                <span><i class="icon">&#xe643;</i>刷卡</span>
+                <span><i class="icon">&#xe643;</i>现金</span>
               </div>
               <p>江苏洋河酒厂股份有限公司生产的白酒</p>
             </div>
@@ -48,8 +48,8 @@
               <h3>洋河天之蓝</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>到店刷卡</span>
-                <span><i class="icon">&#xe643;</i>到店现金</span>
+                <span><i class="icon">&#xe643;</i>刷卡</span>
+                <span><i class="icon">&#xe643;</i>现金</span>
               </div>
               <p>江苏洋河酒厂股份有限公司生产的白酒</p>
             </div>
@@ -68,8 +68,8 @@
               <h3>洋河海之蓝</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>到店刷卡</span>
-                <span><i class="icon">&#xe643;</i>到店现金</span>
+                <span><i class="icon">&#xe643;</i>刷卡</span>
+                <span><i class="icon">&#xe643;</i>现金</span>
               </div>
               <p>江苏洋河酒厂股份有限公司生产的白酒</p>
             </div>
@@ -88,8 +88,8 @@
               <h3>洋河梦之蓝</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>到店刷卡</span>
-                <span><i class="icon">&#xe643;</i>到店现金</span>
+                <span><i class="icon">&#xe643;</i>刷卡</span>
+                <span><i class="icon">&#xe643;</i>现金</span>
               </div>
               <p>江苏洋河酒厂股份有限公司生产的白酒</p>
             </div>
@@ -108,8 +108,8 @@
               <h3>洋河天之蓝</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>到店刷卡</span>
-                <span><i class="icon">&#xe643;</i>到店现金</span>
+                <span><i class="icon">&#xe643;</i>刷卡</span>
+                <span><i class="icon">&#xe643;</i>现金</span>
               </div>
               <p>江苏洋河酒厂股份有限公司生产的白酒</p>
             </div>
@@ -128,8 +128,8 @@
               <h3>洋河海之蓝</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>到店刷卡</span>
-                <span><i class="icon">&#xe643;</i>到店现金</span>
+                <span><i class="icon">&#xe643;</i>刷卡</span>
+                <span><i class="icon">&#xe643;</i>现金</span>
               </div>
               <p>江苏洋河酒厂股份有限公司生产的白酒</p>
             </div>
