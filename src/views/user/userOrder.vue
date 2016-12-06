@@ -268,13 +268,11 @@
 </template>
 
 <script>
-import $ from 'zepto'
 require('../../assets/js/jquery.min')
 let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
 
 export default {
   ready () {
-    $.toast('43')
     TouchSlide({
       slideCell: '#tabBox1',
       endFun: function (i) {
