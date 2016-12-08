@@ -101,12 +101,12 @@
 </template>
 
 <script>
-// import {userApi} from '../../util/service'
+// import {api} from '../../util/service'
 // import $ from 'zepto'
 
 export default {
   ready () {
-    // this.$http.post(userApi.team, {}, {
+    // this.$http.post(api.team, {}, {
     //   headers: {
     //     'x-token': window.localStorage.getItem('zlToken')
     //   },

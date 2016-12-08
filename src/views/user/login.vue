@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import {userApi} from '../../util/service'
+import {api} from '../../util/service'
 import $ from 'zepto'
 
 export default {
@@ -53,7 +53,7 @@ export default {
         $.toast('请输入用户名或密码')
         return
       }
-      this.$http.post(userApi.login, {
+      this.$http.post(api.login, {
         'uphone': this.userName,
         'upass': this.password,
         'code': '123'

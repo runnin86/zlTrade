@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import {userApi} from '../../util/service'
+import {api} from '../../util/service'
 
 export default {
   ready () {
@@ -81,7 +81,7 @@ export default {
      * 获取用户账户
      */
     getUseAccount (token) {
-      this.$http.get(userApi.useAccount, {}, {
+      this.$http.get(api.useAccount, {}, {
         headers: {
           'x-token': token
         },
