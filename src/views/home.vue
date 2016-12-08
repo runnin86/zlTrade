@@ -15,7 +15,7 @@
     </div>
     <div class="hy">
       <h3>
-        {{user?user.userName:'足力商贸欢迎您!'}}
+        {{user?user.userName:'欢迎您!'}}
         <!-- <img src="/img/icon-vip.png"> -->
         <!-- <span>普通会员</span> -->
       </h3>
