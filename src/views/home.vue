@@ -113,7 +113,7 @@
           </p>
         </div>
       </li>
-      <li>
+      <!-- <li>
         <div class="lb-img">
           <a v-link="{path: '/usedCarCont', replace: false}">
             <img src="/img/pic-lb1.png">
@@ -123,7 +123,7 @@
           <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
           <p><strong>￥230.00</strong><span>有货</span></p>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
   <!--列表:over-->
