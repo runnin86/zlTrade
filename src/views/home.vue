@@ -1,7 +1,7 @@
 <template>
   <!--顶部-->
   <div class="ind-header">
-    <div class="logo"><a href="#"><img src="/img/logo.png" alt="易车E族"></a></div>
+    <div class="logo"><a href="#"><img src="/img/logo.png" alt="足力商贸"></a></div>
     <div class="local">
       <a href="javascript:void(0)"><i class="iconfont">&#xe614;</i> <!--北京--></a>
     </div>
@@ -99,6 +99,20 @@
   <!--列表-->
   <div class="list" style="padding-top:0.4rem;">
     <ul>
+      <li v-for="p in list" track-by="$index">
+        <div class="lb-img">
+          <a v-link="{path: '/goodsCont', replace: false}">
+            <img :src="'http://114.215.133.77:8000/images/' + p.img">
+          </a>
+        </div>
+        <div class="lb-div">
+          <h3>{{p.productName+'-'+p.productDesc}}</h3>
+          <p>
+            <strong>{{p.price| currency '¥'}}</strong>
+            <span>有货</span>
+          </p>
+        </div>
+      </li>
       <li>
         <div class="lb-img">
           <a v-link="{path: '/usedCarCont', replace: false}">
@@ -110,60 +124,79 @@
           <p><strong>￥230.00</strong><span>有货</span></p>
         </div>
       </li>
-      <li>
-          <div class="lb-img">
-            <a v-link="{path: '/usedCarCont', replace: false}">
-            <img src="/img/pic-lb2.png">
-            </a>
-          </div>
-          <div class="lb-div">
-            <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
-            <p><strong>￥230.00</strong><span>缺货</span></p>
-          </div>
-      </li>
-      <li>
-          <div class="lb-img">
-            <a v-link="{path: '/usedCarCont', replace: false}">
-              <img src="/img/pic-lb3.png">
-            </a>
-          </div>
-          <div class="lb-div">
-            <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
-            <p><strong>￥230.00</strong><span>库存紧张</span></p>
-          </div>
-      </li>
-      <li>
-        <div class="lb-img"><a v-link="{path: '/goodsCont', replace: false}"><img src="/img/pic-lb1.png"></a></div>
-        <div class="lb-div">
-          <h3><a href="#">汽车钥匙扣的金属创意是否..</a></h3>
-          <p><strong>￥230.00</strong><span>已售10件</span></p>
-        </div>
-      </li>
     </ul>
   </div>
   <!--列表:over-->
 </template>
 
 <script>
-import swiper from 'swiper'
+// import swiper from 'swiper'
+import {loader} from './../util/util'
+import {api} from './../util/service'
 
+let num = 1
+let size = 2
 export default {
   ready () {
     // swiper初始化
-    swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      autoHeight: true // enable auto height
-    })
+    // swiper('.swiper-container', {
+    //   pagination: '.swiper-pagination',
+    //   paginationClickable: true,
+    //   nextButton: '.swiper-button-next',
+    //   prevButton: '.swiper-button-prev',
+    //   autoHeight: true // enable auto height
+    // })
+
+    // 默认查询
+    this.getProductList()
   },
   data () {
     return {
-      user: JSON.parse(window.localStorage.getItem('zlUser'))
+      user: JSON.parse(window.localStorage.getItem('zlUser')),
+      list: [],
+      pagenum: num,
+      pagesize: size,
+      loading: false
     }
   },
   methods: {
+    /*
+     * 查询
+     */
+    getProductList () {
+      // 无分页默认不加载更多
+      this.loading = false
+      loader.hide()
+      this.pagenum = -1
+      // 获取商品列表
+      this.$http.post(api.productList, {
+        pagenum: this.pagenum,
+        pagesize: this.pagesize,
+        type: '0'
+      }, {})
+      .then(({data: {code, data, msg}})=>{
+        // console.log(data)
+        if (code === 1) {
+          if (data) {
+            if (data.length === 0) {
+              this.pagenum = -1
+              return
+            }
+            for (let m of data) {
+              this.list.push(m)
+            }
+          }
+        }
+        else {
+          // $.toast(msg)
+        }
+      }).catch((e)=>{
+        console.error('获取商品列表失败:' + e)
+      }).finally(()=>{
+        this.loading = false
+        loader.hide()
+      })
+    }
   }
 }
 </script>
