@@ -135,7 +135,7 @@ import {loader} from './../util/util'
 import {api} from './../util/service'
 
 let num = 1
-let size = 2
+let size = 100
 export default {
   ready () {
     // swiper初始化

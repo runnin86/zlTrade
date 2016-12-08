@@ -15,123 +15,25 @@
   <!--列表:over -->
   <div class="store-list bc-f0f0f0">
     <ul>
-      <li>
+      <li v-for="p in list" track-by="$index">
         <!-- <a v-link="{ path: '/stores/cont', replace: false}"> -->
         <a href="javascript:void(0)">
           <div class="md-top">
             <img src="/img/icon-dhzq.png">
-            <strong>梦之蓝</strong>
+            <strong>{{p.brand}}</strong>
           </div>
           <div class="md-bottom">
-            <div class="md-img"><img src="/img/yh-mzl.jpg"></div>
-            <div class="md-div">
-              <h3>洋河梦之蓝</h3>
-              <div class="md-zf">
-                <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>刷卡</span>
-                <span><i class="icon">&#xe643;</i>现金</span>
-              </div>
-              <p>江苏洋河酒厂股份有限公司生产的白酒</p>
+            <div class="md-img">
+              <img :src="'http://114.215.133.77:8000/images/' + p.img">
             </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <div class="md-top">
-            <img src="/img/icon-dhzq.png">
-            <strong>天之蓝</strong>
-          </div>
-          <div class="md-bottom">
-            <div class="md-img"><img src="/img/yh-tzl.jpg"></div>
             <div class="md-div">
-              <h3>洋河天之蓝</h3>
+              <h3>{{p.productName}}</h3>
               <div class="md-zf">
                 <span><i class="icon">&#xe643;</i>余额</span>
                 <span><i class="icon">&#xe643;</i>刷卡</span>
                 <span><i class="icon">&#xe643;</i>现金</span>
               </div>
-              <p>江苏洋河酒厂股份有限公司生产的白酒</p>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <div class="md-top">
-            <img src="/img/icon-dhzq.png">
-            <strong>海之蓝</strong>
-          </div>
-          <div class="md-bottom">
-            <div class="md-img"><img src="/img/yh-hzl.jpg"></div>
-            <div class="md-div">
-              <h3>洋河海之蓝</h3>
-              <div class="md-zf">
-                <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>刷卡</span>
-                <span><i class="icon">&#xe643;</i>现金</span>
-              </div>
-              <p>江苏洋河酒厂股份有限公司生产的白酒</p>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <div class="md-top">
-            <img src="/img/icon-dhzq.png">
-            <strong>梦之蓝</strong>
-          </div>
-          <div class="md-bottom">
-            <div class="md-img"><img src="/img/yh-mzl.jpg"></div>
-            <div class="md-div">
-              <h3>洋河梦之蓝</h3>
-              <div class="md-zf">
-                <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>刷卡</span>
-                <span><i class="icon">&#xe643;</i>现金</span>
-              </div>
-              <p>江苏洋河酒厂股份有限公司生产的白酒</p>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <div class="md-top">
-            <img src="/img/icon-dhzq.png">
-            <strong>天之蓝</strong>
-          </div>
-          <div class="md-bottom">
-            <div class="md-img"><img src="/img/yh-tzl.jpg"></div>
-            <div class="md-div">
-              <h3>洋河天之蓝</h3>
-              <div class="md-zf">
-                <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>刷卡</span>
-                <span><i class="icon">&#xe643;</i>现金</span>
-              </div>
-              <p>江苏洋河酒厂股份有限公司生产的白酒</p>
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">
-          <div class="md-top">
-            <img src="/img/icon-dhzq.png">
-            <strong>海之蓝</strong>
-          </div>
-          <div class="md-bottom">
-            <div class="md-img"><img src="/img/yh-hzl.jpg"></div>
-            <div class="md-div">
-              <h3>洋河海之蓝</h3>
-              <div class="md-zf">
-                <span><i class="icon">&#xe643;</i>余额</span>
-                <span><i class="icon">&#xe643;</i>刷卡</span>
-                <span><i class="icon">&#xe643;</i>现金</span>
-              </div>
-              <p>江苏洋河酒厂股份有限公司生产的白酒</p>
+              <p>{{p.productDesc}}</p>
             </div>
           </div>
         </a>
@@ -142,10 +44,61 @@
 </template>
 
 <script>
+import {loader} from './../../util/util'
+import {api} from './../../util/service'
+
+let num = 1
+let size = 100
 export default {
   ready () {
+    // 默认查询
+    this.getProductList()
+  },
+  data () {
+    return {
+      list: [],
+      pagenum: num,
+      pagesize: size,
+      loading: false
+    }
   },
   methods: {
+    /*
+     * 查询
+     */
+    getProductList () {
+      // 无分页默认不加载更多
+      this.loading = false
+      loader.hide()
+      this.pagenum = -1
+      // 获取商品列表
+      this.$http.post(api.productList, {
+        pagenum: this.pagenum,
+        pagesize: this.pagesize,
+        type: '1'
+      }, {})
+      .then(({data: {code, data, msg}})=>{
+        if (code === 1) {
+          if (data) {
+            if (data.length === 0) {
+              this.pagenum = -1
+              return
+            }
+            for (let m of data) {
+              this.list.push(m)
+            }
+          }
+        }
+        else {
+          // $.toast(msg)
+        }
+      }).catch((e)=>{
+        console.error('获取赠品列表失败:' + e)
+      }).finally(()=>{
+        this.loading = false
+        loader.hide()
+      })
+    }
   }
 }
 </script>
