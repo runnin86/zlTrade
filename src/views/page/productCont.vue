@@ -99,13 +99,12 @@
 <script>
 require('../../assets/js/jquery.min')
 require('../../assets/js/jquery.event.drag-1.5.min')
-require('../../assets/js/jquery.touchSlider')
-require('../../assets/js/used-banner')
 let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
 
 export default {
   ready () {
     console.log(this.$route.params.id)
+    this.initBanner()
     TouchSlide({
       slideCell: '#tabBox1',
       endFun: function (i) {
@@ -125,6 +124,11 @@ export default {
     }
   },
   methods: {
+    initBanner () {
+      require('../../assets/js/jquery.touchSlider')
+      let ub = require('../../assets/js/used-banner')
+      ub.init()
+    }
   }
 }
 </script>
