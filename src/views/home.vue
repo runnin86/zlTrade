@@ -10,7 +10,7 @@
   <div class="ind-user">
     <div class="tx">
       <a href="javactipt:void(0)">
-        <img src="/img/fw-escmm.png">
+        <img src="/img/touxiang2.png">
       </a>
     </div>
     <div class="hy">
