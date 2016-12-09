@@ -29,8 +29,8 @@
 </template>
 
 <script>
-// import $ from 'zepto'
-// import {api} from '../../util/service'
+import $ from 'zepto'
+import {api} from '../../util/service'
 
 export default {
   ready () {
@@ -45,26 +45,23 @@ export default {
      * 退出
      */
     logout (route) {
-      window.localStorage.removeItem('zlUser')
-      window.localStorage.removeItem('zlToken')
-      route.go({path: '/login', replace: true})
-      // let token = window.localStorage.getItem('zlToken')
-      // this.$http.delete(api.logout, {}, {
-      //   headers: {
-      //     'x-token': token
-      //   },
-      //   emulateJSON: true
-      // })
-      // .then(({data: {data, code, msg}})=>{
-      //   if (code === 1) {
-      //     window.localStorage.removeItem('zlUser')
-      //     window.localStorage.removeItem('zlToken')
-      //     route.go({path: '/login', replace: true})
-      //   }
-      //   $.toast(msg)
-      // }).catch((e)=>{
-      //   console.error('用户退出失败:' + e)
-      // })
+      let token = window.localStorage.getItem('zlToken')
+      this.$http.delete(api.logout, {}, {
+        headers: {
+          'x-token': token
+        },
+        emulateJSON: true
+      })
+      .then(({data: {data, code, msg}})=>{
+        if (code === 1) {
+          window.localStorage.removeItem('zlUser')
+          window.localStorage.removeItem('zlToken')
+          route.go({path: '/login', replace: true})
+        }
+        $.toast(msg)
+      }).catch((e)=>{
+        console.error('用户退出失败:' + e)
+      })
     }
   }
 }
