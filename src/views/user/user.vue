@@ -65,6 +65,7 @@
 
 <script>
 import {api} from '../../util/service'
+import $ from 'zepto'
 
 export default {
   ready () {
@@ -99,12 +100,10 @@ export default {
           this.accountInfo = data
         }
         else {
-          console.log('获取用户账户失败:' + msg)
-          // $.alert(msg, ()=>{
-          //   window.localStorage.clear()
-          //   this.$route.router.go({path: this.path, replace: true})
-          //   this.$route.router.go({path: '/login?from=user', replace: true})
-          // })
+          $.alert(msg, ()=>{
+            window.localStorage.clear()
+            this.$route.router.go({path: '/login?from=user', replace: true})
+          })
         }
       }).catch((e)=>{
         console.error('获取账户盈利失败:' + e)

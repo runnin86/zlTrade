@@ -75,7 +75,7 @@ export default {
       })
       .then(({data: {code, msg, result}})=>{
         if (code === 1) {
-          $.toast('修改成功!')
+          $.toast('修改成功,需要重新登录!')
           this.newPwd = ''
           this.oldPwd = ''
           this.$route.router.go({path: '/login?from=home', replace: true})
