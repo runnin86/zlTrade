@@ -101,7 +101,7 @@
     <ul>
       <li v-for="p in list" track-by="$index">
         <div class="lb-img">
-          <a v-link="{path: '/goodsCont', replace: false}">
+          <a v-link="{name: 'productCont', params: {id: p.productId}, query:{}, activeClass: 'active', replace: false}">
             <img :src="'http://114.215.133.77:8000/images/' + p.img">
           </a>
         </div>

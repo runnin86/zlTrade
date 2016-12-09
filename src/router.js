@@ -62,6 +62,12 @@ export default function (router) {
         require(['./views/user/changePwd'], resolve)
       }
     },
+    '/product/cont/:id': {
+      name: 'productCont',
+      component (resolve) {
+        require(['./views/page/productCont'], resolve)
+      }
+    },
     '/stores': {
       component (resolve) {
         require(['./views/page/stores'], resolve)
