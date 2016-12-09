@@ -25,7 +25,7 @@
     	</ul>
     </div>
   </div>
-  <div class="member2">
+  <div class="member2" v-if="user" v-cloak>
     <ul>
       <li>
         <a v-link="{ path: '/user/order', replace: false}">
@@ -34,7 +34,7 @@
           <i class="icon">&#xe624;</i>
         </a>
       </li>
-      <li v-if="user" v-cloak>
+      <li>
         <a v-link="{ path: '/user/comm', replace: false}">
           <img src="/img/icon-bxdqsj.png">
           <strong>我的佣金</strong>
@@ -49,6 +49,13 @@
         <a v-link="{ path: '/user/team', replace: false}">
           <img src="/img/icon-czxm.png">
           <strong>我的团队</strong>
+          <i class="icon">&#xe624;</i>
+        </a>
+      </li>
+      <li>
+        <a v-link="{ path: '/user/changePwd', replace: false}">
+          <img src="/img/icon-wx.png">
+          <strong>修改密码</strong>
           <i class="icon">&#xe624;</i>
         </a>
       </li>

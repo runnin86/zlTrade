@@ -2,9 +2,10 @@
   <div class="content" transition="pushtop">
     <!--顶部-->
   <div class="com-header">
-    <div class="return">
-      <a @click="this.$root.back()">
-        <i class="iconfont">&#xe624;</i>
+    <div class="return" >
+      <a class="iconfont" @click="cancel"
+        style="transform: scaleX(1);padding-right:1.4rem;">
+        取消
       </a>
     </div>
     <div class="header-title">用户登录</div>
@@ -38,7 +39,6 @@ export default {
   data () {
     return {
       title: '登录',
-      path: '/' + this.$route.query.from,
       userName: window.localStorage.getItem('localPhone') ? window.localStorage.getItem('localPhone') : '',
       password: '',
       submit: false
@@ -76,6 +76,10 @@ export default {
         $.alert('服务器连接中断...')
         console.error('无法连接服务器:' + e)
       })
+    },
+    cancel () {
+      let to = this.$route.query.from ? this.$route.query.from : '/home'
+      this.$route.router.go({path: to, replace: true})
     }
   },
   watch: {

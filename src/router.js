@@ -57,6 +57,11 @@ export default function (router) {
         require(['./views/user/userTeam'], resolve)
       }
     },
+    '/user/changePwd': {
+      component (resolve) {
+        require(['./views/user/changePwd'], resolve)
+      }
+    },
     '/stores': {
       component (resolve) {
         require(['./views/page/stores'], resolve)
