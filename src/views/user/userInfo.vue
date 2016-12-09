@@ -10,7 +10,7 @@
     <div class="user-info1">
       <a href="javascript:;">
         <strong>头像</strong>
-        <div class="tx"><img src="/img/user-tx1.png"><i class="icon">&#xe624;</i></div>
+        <div class="tx"><img src="/img/fw-escmm.png"><i class="icon">&#xe624;</i></div>
       </a>
     </div>
     <div class="user-info2">

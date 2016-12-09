@@ -23,7 +23,7 @@
      	<p>
         <i>
           <span></span>
-          <img src="/img/icon-yzm.png">
+          <img src="/img/icon-mdd.png">
         </i>
         <input class="for-txt2" type="password" v-model="oldPwd" placeholder="输入旧密码">
       </p>
