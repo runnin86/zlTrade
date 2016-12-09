@@ -172,7 +172,7 @@ export default {
       this.$http.post(api.productList, {
         pagenum: this.pagenum,
         pagesize: this.pagesize,
-        type: '0'
+        type: '1'
       }, {})
       .then(({data: {code, data, msg}})=>{
         // console.log(data)

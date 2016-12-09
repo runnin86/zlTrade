@@ -12,18 +12,21 @@
     <div class="main_visual" style="height: 100%;">
       <div class="flicking_con">
         <span>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
+          <a href="javascript:void(0)"
+            v-for="i in images | orderBy 'createTime'" track-by="$index">
+            {{$index+1+''}}
+          </a>
         </span>
       </div>
       <div class="main_image">
         <ul>
-          <li><span><a href="#"><img src="/img/pic-car1.png"></a></span></li>
-          <li><span><a href="#"><img src="/img/pic-car2.png" style="width:16rem; height: 10.7rem;" alt="" /></a></span></li>
-          <li><span><a href="#"><img src="/img/pic-car1.png" style="width:16rem; height: 10.7rem;" alt="" /></a></span></li>
-          <li><span><a href="#"><img src="/img/pic-car2.png" style="width:16rem; height: 10.7rem;" alt="" /></a></span></li>
+          <li v-for="p in images | orderBy 'createTime'">
+            <span>
+              <a href="javascript:void(0)">
+                <img :src="'http://114.215.133.77:8000/images/' + p.resource"/>
+              </a>
+            </span>
+          </li>
         </ul>
         <a href="javascript:;" id="btn_prev"></a>
         <a href="javascript:;" id="btn_next"></a>
@@ -31,11 +34,14 @@
     </div>
   </div>
   <!--图片展示:over-->
-  <div class="cont-title">
+  <div class="cont-title" v-if="info">
     <div class="cont-title1">
       <div class="cont-title1-left">
-        <h3>迪加伦 汽车钥匙扣 金属 创意 挂件装饰品 bv编织 卡通 车用钥匙链 </h3>
-        <p>￥230.00</p>
+        <h3>{{info.productName + '-' + info.comments}}</h3>
+        <p>{{info.price| currency '¥'}}</p>
+      </div>
+      <div class="cont-title1-right">
+        <a href="#" class="active"><i class="iconfont">&#xe605;</i><p>收藏</p></a>
       </div>
     </div>
   </div>
@@ -101,10 +107,14 @@ require('../../assets/js/jquery.min')
 require('../../assets/js/jquery.event.drag-1.5.min')
 let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
 
+import {api} from '../../util/service'
+import $ from 'zepto'
+
 export default {
   ready () {
-    console.log(this.$route.params.id)
-    this.initBanner()
+    // 获取商品信息
+    this.getInfo(this.$route.params.id)
+    // 定义tab标签
     TouchSlide({
       slideCell: '#tabBox1',
       endFun: function (i) {
@@ -120,7 +130,10 @@ export default {
   },
   data () {
     return {
-      showBuy: false
+      showBuy: false,
+      info: null,
+      images: [],
+      attr: null
     }
   },
   methods: {
@@ -128,6 +141,31 @@ export default {
       require('../../assets/js/jquery.touchSlider')
       let ub = require('../../assets/js/used-banner')
       ub.init()
+    },
+    /*
+     * 获取信息
+     */
+    getInfo: function (id) {
+      // 获取商品信息
+      this.$http.post(api.productDetail, {
+        pid: id
+      }, {}).then(({data: {code, msg, data}})=>{
+        // console.log(data)
+        if (code === 1) {
+          this.$set('info', data.main)
+          this.$set('images', data.photo)
+          this.$set('attr', data.attr)
+        }
+        else {
+          $.toast(msg)
+          console.error('获取商品信息失败:' + msg)
+        }
+      }).catch(()=>{
+        console.error('无法连接服务器-获取商品信息')
+      }).finally(()=>{
+        // 初始化轮播图
+        this.initBanner()
+      })
     }
   }
 }

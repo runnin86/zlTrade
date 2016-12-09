@@ -75,7 +75,7 @@ export default {
       this.$http.post(api.productList, {
         pagenum: this.pagenum,
         pagesize: this.pagesize,
-        type: '1'
+        type: '2'
       }, {})
       .then(({data: {code, data, msg}})=>{
         if (code === 1) {
