@@ -18,58 +18,41 @@
     <!--搜索:over-->
     <!--汽车服务-->
     <div class="store-serve" style="margin-top:2rem;">
-      <div class="store-serve-bottom">
+      <div v-if="bList" class="store-serve-bottom">
         <ul>
-          <li>
+          <!-- <li>
        		  <section>
             	<h3>普通洗车服务</h3>
             	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
             	<span>￥20.00</span>
          		</section>
-        	</li>
-        	<li>
-       		  <section>
-            	<h3>普通洗车服务</h3>
-            	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-            	<span>￥20.00</span>
-         		</section>
-        	</li>
-        	<li>
-       		  <section>
-            	<h3>普通洗车服务</h3>
-            	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-            	<span>￥20.00</span>
-         		</section>
-        	</li>
-        	<li>
-       		  <section>
-            	<h3>普通洗车服务</h3>
-            	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-            	<span>￥20.00</span>
-         		</section>
-        	</li>
-        	<li>
-       		  <section>
-            	<h3>普通洗车服务</h3>
-            	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-            	<span>￥20.00</span>
-         		</section>
-        	</li>
-        	<li>
-       		  <section>
-            	<h3>普通洗车服务</h3>
-            	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-            	<span>￥20.00</span>
-         		</section>
-        	</li>
+        	</li> -->
           <li v-for="b in bList" track-by="$index">
             <section>
-              <h3>普通洗车服务</h3>
-              <p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-              <span>{{b.money | currency '¥'}}</span>
+              <h3>{{b.name}}</h3>
+              <!-- <p> -->
+                <div class="cont-title2">
+                  <span class="span1" style="left:0rem;">
+                    {{b.fromPhone | phone}}
+                  </span>
+                  <span class="span3" style="width:6.2rem;margin-right:2rem;text-align:left;">
+                    {{b.createTime | dataFilter 'yyyy-MM-dd HH:mm:ss'}}
+                  </span>
+                </div>
+              <!-- </p> -->
+              <span style="font-weight: bold;">{{b.money | currency '¥'}}</span>
             </section>
           </li>
         </ul>
+      </div>
+      <div v-if="this.bList===null"
+        style="width:100%;text-align:center;margin-top:2rem;margin-bottom:6rem;">
+        <div>
+          <img src="/img/tips.png" height="24" width="152">
+        </div>
+        <div style="font-size:0.38rem;color:#A9A9A9;padding-top:0.2rem;">
+          您还没有佣金
+        </div>
       </div>
     </div>
     <!--汽车服务:over-->
@@ -78,8 +61,25 @@
 
 <script>
 import $ from 'zepto'
-import {loader} from '../../util/util'
+import Vue from 'vue'
+import {loader, dateFormat} from '../../util/util'
 import {api} from '../../util/service'
+
+/*
+ * 日期转换
+ */
+Vue.filter('dataFilter', function (value, format) {
+  return dateFormat(new Date(value), format)
+})
+
+/*
+ * 隐藏手机号码中间四位
+ */
+Vue.filter('phone', function (val) {
+  let phone = val.substr(3, 4)
+  let lphone = val.replace(phone, '****')
+  return lphone
+})
 
 let num = 1
 let size = 5
@@ -90,7 +90,7 @@ export default {
   },
   data () {
     return {
-      bList: [],
+      bList: null,
       pagenum: num,
       pagesize: size,
       loading: false
@@ -119,6 +119,7 @@ export default {
               this.pagenum = -1
               return
             }
+            this.bList = []
             for (let m of data) {
               this.bList.push(m)
             }
@@ -133,6 +134,43 @@ export default {
         this.loading = false
         loader.hide()
       })
+    },
+    /*
+     * 读取更多数据
+     */
+    loadMore () {
+      console.log(4)
+      // // 1.加载中 2.pagenum为负数 3.当前记录的条数<当前页数*每页条数
+      // if (this.loading || this.pagenum === -1) {
+      //   // 满足上述2条件的任一条,均不加载更多
+      //   return
+      // }
+      // this.loading = true
+      // let scroller = $('.native-scroll')
+      // loader.show()
+      // setTimeout(() => {
+      //   // 查询更多数据
+      //   this.pagenum = this.pagenum + 1
+      //   // 需要判断执行哪个查询
+      //   switch (this.showTabs)
+      //   {
+      //     case 1:
+      //       this.getUserOrderGD()
+      //       break
+      //     case 2:
+      //       this.getUserOrderZXMore()
+      //       break
+      //     case 3:
+      //       this.getUserOrderZXOne()
+      //       break
+      //     default:
+      //       this.loading = false
+      //       loader.hide()
+      //       break
+      //   }
+      //   let scrollTop = scroller[0].scrollHeight - scroller.height()
+      //   scroller.scrollTop(scrollTop)
+      // }, 500)
     }
   }
 }
