@@ -14,7 +14,7 @@
   <!--顶部:over-->
   <div class="forget-form">
    	<p><i><span></span><img src="/img/icon-sj.png"></i>
-      <input type="text" class="for-txt2" v-model="userName" placeholder="请输入手机号码">
+      <input type="number" class="for-txt2" v-model="userName" placeholder="请输入手机号码">
     </p>
    	<p><i><span></span><img src="/img/icon-mm.png"></i>
       <input type="password" class="for-txt2" v-model="password" placeholder="请输入密码">

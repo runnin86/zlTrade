@@ -105,10 +105,12 @@ Vue.filter('phone', function (val) {
 })
 
 let num = 1
-let size = 100
+let size = 10
 export default {
   ready () {
+    loader.show()
     // 默认查询
+    this.bList = []
     this.getList()
   },
   data () {
@@ -142,7 +144,6 @@ export default {
               this.pagenum = -1
               return
             }
-            this.bList = []
             for (let m of data) {
               this.bList.push(m)
             }
@@ -162,43 +163,35 @@ export default {
      * 读取更多数据
      */
     loadMore () {
-      console.log(4)
-      // // 1.加载中 2.pagenum为负数 3.当前记录的条数<当前页数*每页条数
-      // if (this.loading || this.pagenum === -1) {
-      //   // 满足上述2条件的任一条,均不加载更多
-      //   return
-      // }
-      // this.loading = true
+      // 1.加载中 2.pagenum为负数 3.当前记录的条数<当前页数*每页条数
+      if (this.loading || this.pagenum === -1) {
+        // 满足上述2条件的任一条,均不加载更多
+        return
+      }
+      this.loading = true
       // let scroller = $('.native-scroll')
-      // loader.show()
-      // setTimeout(() => {
-      //   // 查询更多数据
-      //   this.pagenum = this.pagenum + 1
-      //   // 需要判断执行哪个查询
-      //   switch (this.showTabs)
-      //   {
-      //     case 1:
-      //       this.getUserOrderGD()
-      //       break
-      //     case 2:
-      //       this.getUserOrderZXMore()
-      //       break
-      //     case 3:
-      //       this.getUserOrderZXOne()
-      //       break
-      //     default:
-      //       this.loading = false
-      //       loader.hide()
-      //       break
-      //   }
-      //   let scrollTop = scroller[0].scrollHeight - scroller.height()
-      //   scroller.scrollTop(scrollTop)
-      // }, 500)
+      loader.show()
+      setTimeout(() => {
+        // 查询更多数据
+        this.pagenum = this.pagenum + 1
+        // 执行查询
+        this.getList()
+        // let scrollTop = scroller[0].scrollHeight - scroller.height()
+        // scroller.scrollTop(scrollTop)
+      }, 500)
     }
   }
 }
 </script>
 
 <style>
-
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
 </style>
