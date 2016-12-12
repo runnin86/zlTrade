@@ -130,10 +130,12 @@
   <!--购买信息弹窗-->
   <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
     <div class="buy-info1">
-      <div class="gm-img"><img src="/img/pic-gm.jpg"></div>
+      <div class="gm-img">
+        <img v-if="info" :src="'http://114.215.133.77:8000/images/' + info.img">
+      </div>
       <div class="gm-div">
-        <h3>迪加伦 汽车钥匙扣 金属 创意挂件装饰品 bv编织 卡通 车用钥...</h3>
-        <p>￥230.00</p>
+        <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
+        <p v-if="info">{{info.price| currency '¥'}}</p>
       </div>
       <div class="gm-close"><i class="icon" @click="showBuy=false">&#xe62f;</i></div>
     </div>
@@ -221,10 +223,12 @@ export default {
       }).catch(()=>{
         console.error('无法连接服务器-获取商品信息')
       }).finally(()=>{
-        // 初始化轮播图
-        this.initBanner()
-        // 初始化选项卡
-        this.initTab()
+        if (this.info) {
+          // 初始化轮播图
+          this.initBanner()
+          // 初始化选项卡
+          this.initTab()
+        }
       })
     }
   }
