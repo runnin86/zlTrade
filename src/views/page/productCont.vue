@@ -124,7 +124,7 @@
   <div class="cont-tool-h"></div>
   <div class="used-tool">
     <input type="button" class="used-btn" style="background-color:#ffb744;"
-      value="立即购买" @click="showBuy=true"/>
+      value="立即购买" @click="doBuy"/>
   </div>
   <!--悬浮:over-->
   <!--购买信息弹窗-->
@@ -137,7 +137,9 @@
         <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
         <p v-if="info">{{info.price| currency '¥'}}</p>
       </div>
-      <div class="gm-close"><i class="icon" @click="showBuy=false">&#xe62f;</i></div>
+      <div class="gm-close">
+        <i class="icon" @click="showBuy=false">&#xe62f;</i>
+      </div>
     </div>
     <div class="buy-info3">
       <strong>购买数量</strong>
@@ -230,6 +232,15 @@ export default {
           this.initTab()
         }
       })
+    },
+    doBuy () {
+      if (!this.showBuy) {
+        this.showBuy = true
+        return
+      }
+      else {
+        console.log('发起购买流程!')
+      }
     }
   }
 }
