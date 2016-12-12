@@ -55,7 +55,21 @@
     <div class="bd" id="tabBox1-bd">
       <!--商品介绍-->
       <div class="con">
-        <div class="cont-container">
+        <div class="cont-container" v-if="info">
+          <div class="cont-title1" style="margin-bottom:0.6rem;">
+            <div class="cont-title2">
+              <span class="span">
+                商品名称:&nbsp;&nbsp;
+                <a>{{info.productName}}</a>
+              </span>
+            </div>
+            <div class="cont-title2">
+              <span class="span">
+                说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明:&nbsp;&nbsp;
+                <a>{{{info.comments}}}</a>
+              </span>
+            </div>
+          </div>
           <img v-for="sp in images | orderBy 'createTime' -1"
             :src="'http://114.215.133.77:8000/images/' + sp.resource"/>
         </div>
@@ -64,9 +78,43 @@
       <!--规格参数-->
       <div class="con">
         <div class="cont-container">
-          <p>规格参数后台添加修改规格参数后台添加修改,规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改</p>
-          <p>规格参数后台添加修改规格参数后台添加修改,规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改</p>
-          <p>规格参数后台添加修改规格参数后台添加修改,规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改规格参数后台添加修改</p>
+          <div class="cont-title" v-if="attr">
+            <div class="cont-title2">
+              <span class="span1">
+                长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.length}}</a>
+              </span>
+              <span class="span3" style="margin-right:2rem;text-align:left;">
+                宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.width}}</a>
+              </span>
+            </div>
+            </br>
+            <div class="cont-title2">
+              <span class="span1">
+                高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.height}}</a>
+              </span>
+              <span class="span3" style="margin-right:2rem;text-align:left;">
+                功&nbsp;&nbsp;&nbsp;&nbsp;率：<a>{{attr.power}}</a>
+              </span>
+            </div>
+            </br>
+            <div class="cont-title2">
+              <span class="span1">
+                重&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.nWeight}}</a>
+              </span>
+              <span class="span3" style="margin-right:2rem;text-align:left;">
+                排&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.displacement}}</a>
+              </span>
+            </div>
+            </br>
+            <div class="cont-title2">
+              <span class="span1">
+                轴&nbsp;&nbsp;&nbsp;&nbsp;距：<a>{{attr.wheelBase}}</a>
+              </span>
+              <span class="span3" style="margin-right:2rem;text-align:left;">
+                离地间距：<a>{{attr.distanceGround}}</a>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <!--规格参数:over-->
