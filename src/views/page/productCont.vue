@@ -37,7 +37,7 @@
   <div class="cont-title" v-if="info">
     <div class="cont-title1">
       <div class="cont-title1-left">
-        <h3>{{info.productName + '-' + info.comments}}</h3>
+        <h3>{{info.productName + (info.comments?'-' + info.comments:'')}}</h3>
         <p>{{info.price| currency '¥'}}</p>
       </div>
       <div class="cont-title1-right">
@@ -144,9 +144,9 @@
     <div class="buy-info3">
       <strong>购买数量</strong>
       <div class="num">
-        <input type="button" class="num-minus" value="-">
-        <input type="text" class="num-txt" value="1">
-        <input type="button" class="num-add" value="+">
+        <input type="button" class="num-minus" value="-" @click="this.buyNum<2?1:this.buyNum--">
+        <input type="text" class="num-txt" v-model="buyNum" disabled="true">
+        <input type="button" class="num-add" value="+" @click="this.buyNum++">
       </div>
     </div>
   </div>
@@ -166,6 +166,7 @@ export default {
   },
   data () {
     return {
+      buyNum: 1,
       showBuy: false,
       info: null,
       images: [],
