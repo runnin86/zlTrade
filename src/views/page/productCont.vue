@@ -56,7 +56,8 @@
       <!--商品介绍-->
       <div class="con">
         <div class="cont-container">
-          <img src="/img/pic-spnr.jpg">
+          <img v-for="sp in images | orderBy 'createTime' -1"
+            :src="'http://114.215.133.77:8000/images/' + sp.resource"/>
         </div>
       </div>
       <!--商品介绍:over-->
@@ -103,10 +104,6 @@
 </template>
 
 <script>
-require('../../assets/js/jquery.min')
-require('../../assets/js/jquery.event.drag-1.5.min')
-let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
-
 import {api} from '../../util/service'
 import $ from 'zepto'
 
@@ -114,19 +111,6 @@ export default {
   ready () {
     // 获取商品信息
     this.getInfo(this.$route.params.id)
-    // 定义tab标签
-    TouchSlide({
-      slideCell: '#tabBox1',
-      endFun: function (i) {
-        // 高度自适应
-        var bd = document.getElementById('tabBox1-bd')
-        bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
-        if (i > 0) {
-          // 添加动画效果
-          bd.parentNode.style.transition = '200ms'
-        }
-      }
-    })
   },
   data () {
     return {
@@ -137,10 +121,36 @@ export default {
     }
   },
   methods: {
+    /*
+     * 初始化轮播图
+     * 说明:引入的jquery在initTab中公用,要在vue渲染后再执行,否则vue不会执行
+     */
     initBanner () {
+      require('../../assets/js/jquery.min')
+      require('../../assets/js/jquery.event.drag-1.5.min')
       require('../../assets/js/jquery.touchSlider')
       let ub = require('../../assets/js/used-banner')
       ub.init()
+    },
+    /*
+     * 初始化tab选项卡(在初始轮播图之后执行)
+     */
+    initTab () {
+      // tab选项卡
+      let {TouchSlide} = require('../../assets/js/TouchSlide.1.1')
+      // 定义tab标签
+      TouchSlide({
+        slideCell: '#tabBox1',
+        endFun: function (i) {
+          // 高度自适应
+          var bd = document.getElementById('tabBox1-bd')
+          bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + 'px'
+          if (i > 0) {
+            // 添加动画效果
+            bd.parentNode.style.transition = '200ms'
+          }
+        }
+      })
     },
     /*
      * 获取信息
@@ -165,6 +175,8 @@ export default {
       }).finally(()=>{
         // 初始化轮播图
         this.initBanner()
+        // 初始化选项卡
+        this.initTab()
       })
     }
   }
