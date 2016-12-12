@@ -29,7 +29,10 @@
         	</li> -->
           <li v-for="b in bList" track-by="$index">
             <section>
-              <h3>{{b.name}}</h3>
+              <h3>
+                {{b.name}}
+                <span style="float:right;margin-right:0.4rem;">{{b.status | statusFilter}}</span>
+              </h3>
               <!-- <p> -->
                 <div class="cont-title2">
                   <span class="span1" style="left:0rem;">
@@ -65,6 +68,26 @@ import Vue from 'vue'
 import {loader, dateFormat} from '../../util/util'
 import {api} from '../../util/service'
 
+Vue.filter('statusFilter', function (value) {
+  let desc = ''
+  switch (value)
+  {
+    case 0:
+      desc = '冻结中'
+      break
+    case 1:
+      desc = '可用'
+      break
+    case 2:
+      desc = '已使用'
+      break
+    default:
+      desc = '未知'
+      break
+  }
+  return desc
+})
+
 /*
  * 日期转换
  */
@@ -82,7 +105,7 @@ Vue.filter('phone', function (val) {
 })
 
 let num = 1
-let size = 5
+let size = 100
 export default {
   ready () {
     // 默认查询

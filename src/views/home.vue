@@ -102,7 +102,7 @@
       <li v-for="p in list" track-by="$index">
         <div class="lb-img">
           <a v-link="{name: 'productCont', params: {id: p.productId}, query:{}, activeClass: 'active', replace: false}">
-            <img :src="'http://114.215.133.77:8000/images/' + p.img">
+            <img :src="'http://img.zulibuy.com/images/' + p.img">
           </a>
         </div>
         <div class="lb-div">

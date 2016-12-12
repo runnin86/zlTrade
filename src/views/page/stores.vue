@@ -24,7 +24,7 @@
           </div>
           <div class="md-bottom">
             <div class="md-img">
-              <img :src="'http://114.215.133.77:8000/images/' + p.img">
+              <img :src="'http://img.zulibuy.com/images/' + p.img">
             </div>
             <div class="md-div">
               <h3>{{p.productName}}</h3>

@@ -23,7 +23,7 @@
           <li v-for="p in images | orderBy 'createTime'">
             <span>
               <a href="javascript:void(0)">
-                <img :src="'http://114.215.133.77:8000/images/' + p.resource"/>
+                <img :src="'http://img.zulibuy.com/images/' + p.resource"/>
               </a>
             </span>
           </li>
@@ -71,7 +71,7 @@
             </div>
           </div>
           <img v-for="sp in images | orderBy 'createTime' -1"
-            :src="'http://114.215.133.77:8000/images/' + sp.resource"/>
+            :src="'http://img.zulibuy.com/images/' + sp.resource"/>
         </div>
       </div>
       <!--商品介绍:over-->
@@ -131,7 +131,7 @@
   <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
     <div class="buy-info1">
       <div class="gm-img">
-        <img v-if="info" :src="'http://114.215.133.77:8000/images/' + info.img">
+        <img v-if="info" :src="'http://img.zulibuy.com/images/' + info.img">
       </div>
       <div class="gm-div">
         <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
