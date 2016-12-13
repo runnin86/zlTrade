@@ -52,6 +52,11 @@ export default function (router) {
         require(['./views/user/userCommission'], resolve)
       }
     },
+    '/user/withdraw': {
+      component (resolve) {
+        require(['./views/user/userWithdraw'], resolve)
+      }
+    },
     '/user/team': {
       component (resolve) {
         require(['./views/user/userTeam'], resolve)

@@ -308,7 +308,7 @@ opacity:1;
 .store-serve-bottom li section { /*width: 10.6rem;*/ overflow: hidden; }
 .store-serve-bottom li section h3 { font-size: 0.6rem; color: #383838; }
 .store-serve-bottom li section p { font-size: 0.5rem; color: #9c9c9c; line-height: 0.65rem; padding: 0.2rem 0; }
-.store-serve-bottom li section span { font-size: 0.6rem; color: #ff0000; }
+.store-serve-bottom li section span { font-size: 0.6rem; }
 .store-serve-bottom li a.a1 { width: 2.5rem; height: 1.2rem; display: block; position: absolute; top: 50%; margin-top: -1rem; right: 0; z-index: 5; background-color: #009ad9; border-radius: 0.2rem; font-size: 0.6rem; color: #fff; text-align: center; line-height: 1.2rem; }
 .store-serve-bottom li a.a2 { width: 2.5rem; height: 1.2rem; display: block; position: absolute; top: 50%; margin-top: 0.5rem; right: 0; z-index: 5; background-color: #ffb744; border-radius: 0.2rem; font-size: 0.6rem; color: #fff; text-align: center; line-height: 1.2rem; }
 .store-serve-search { width: 16rem; height: 1.8rem; overflow: hidden; }

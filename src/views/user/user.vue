@@ -41,8 +41,15 @@
       </li>
       <li>
         <a v-link="{ path: '/user/comm', replace: false}">
-          <img src="/img/icon-bxdqsj.png">
+          <img src="/img/icon-wddd.png">
           <strong>我的佣金</strong>
+          <i class="icon">&#xe624;</i>
+        </a>
+      </li>
+      <li>
+        <a v-link="{ path: '/user/withdraw', replace: false}">
+          <img src="/img/icon-bxdqsj.png">
+          <strong>我的提现</strong>
           <i class="icon">&#xe624;</i>
         </a>
       </li>
