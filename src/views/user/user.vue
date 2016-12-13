@@ -136,10 +136,6 @@ export default {
       if (!this.windowShow) {
         this.withdrawMoney = null
         this.windowShow = true
-        return
-      }
-      else {
-        console.log('提交提现请求!')
       }
     },
     /*
@@ -166,12 +162,15 @@ export default {
         }
       })
       .then(({data: {code, msg}})=>{
-        $.toast(msg)
         if (code === 1) {
           this.withdrawMoney = null
           this.windowShow = false
           // 查询用户账户
           this.getUseAccount(token)
+          $.toast('您的提现申请已经成功提交，请等待管理员审核。')
+        }
+        else {
+          $.toast(msg)
         }
       }).catch((e)=>{
         console.error('提现失败:' + e)
