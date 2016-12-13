@@ -18,7 +18,7 @@
         {{user?user.userName:'尚未登录'}}
       </span>
       <span>
-        <a class="wbtn" @click="doWithdraw">提现</a>
+        <a class="wbtn" @click="showWithdraw">提现</a>
         <!-- <img src="/img/icon-vip.png"> -->
       </span>
     </div>
@@ -68,16 +68,19 @@
   </div>
   <div class="change-dialog" :style="[{'display': (windowShow?'block':'none'),'z-index':1003}]">
     <div class="change-dialog-top">
-      <input type="text" class="price-txt" placeholder="请输入提现金额" />
+      <input v-model="withdrawMoney" class="price-txt"
+        placeholder="输入提现金额" type="number" min=10 max=10000
+        onKeyPress="if(event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"
+        onKeyUp="this.value=this.value.replace(/\D/g,'')"/>
       <!-- <h3>兑换码：<strong>AXS123456</strong></h3> -->
-      <p style="color:red;">(提示:提现将有10%金额转为余额)</p>
+      <p style="color:red;">(提示:提现将有{{toAccountPer}}%金额转为余额)</p>
     </div>
     <div class="change-dialog-bottom">
       <input type="button" class="btn-no" value="取消" @click="windowShow=false">
-      <input type="button" class="btn-ok" value="提交" >
+      <input type="button" class="btn-ok" value="提交" @click="submitWithdraw">
     </div>
   </div>
-  <div class="black" :style="{'display': (windowShow?'block':'none')}"></div>
+  <div class="userBlack" :style="{'display': (windowShow?'block':'none')}"></div>
 </template>
 
 <script>
@@ -99,7 +102,9 @@ export default {
     return {
       user: JSON.parse(window.localStorage.getItem('zlUser')),
       accountInfo: null,
-      windowShow: false
+      windowShow: false,
+      withdrawMoney: null,
+      toAccountPer: 10
     }
   },
   methods: {
@@ -127,14 +132,50 @@ export default {
         console.error('获取账户盈利失败:' + e)
       })
     },
-    doWithdraw () {
+    showWithdraw () {
       if (!this.windowShow) {
+        this.withdrawMoney = null
         this.windowShow = true
         return
       }
       else {
         console.log('提交提现请求!')
       }
+    },
+    /*
+     * 提交提现
+     */
+    submitWithdraw () {
+      if (this.withdrawMoney < 10) {
+        $.toast('提现金额必须大于10元!')
+        this.withdrawMoney = null
+        return
+      }
+      if (this.withdrawMoney > parseFloat(this.accountInfo.brokerage.replace(',', ''))) {
+        $.toast('提现金额大于账户佣金!')
+        this.withdrawMoney = null
+        return
+      }
+      let token = window.localStorage.getItem('zlToken')
+      this.$http.post(api.withdraw, {
+        wamount: this.withdrawMoney,
+        per: this.toAccountPer
+      }, {
+        headers: {
+          'x-token': token
+        }
+      })
+      .then(({data: {code, msg}})=>{
+        $.toast(msg)
+        if (code === 1) {
+          this.withdrawMoney = null
+          this.windowShow = false
+          // 查询用户账户
+          this.getUseAccount(token)
+        }
+      }).catch((e)=>{
+        console.error('提现失败:' + e)
+      })
     }
   }
 }
@@ -157,7 +198,7 @@ export default {
   text-align: center;
   line-height: 1rem;
 }
-.black {
+.userBlack {
   display: none;
   width: 100%;
   height: 100%;

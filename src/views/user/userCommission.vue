@@ -29,21 +29,19 @@
         	</li> -->
           <li v-for="b in bList" track-by="$index">
             <section>
-              <h3>
+              <h3 :style="{color:(b.status===0?'#9c9c9c':'')}">
                 {{b.name}}
                 <span style="float:right;margin-right:0.4rem;">{{b.status | statusFilter}}</span>
               </h3>
-              <!-- <p> -->
-                <div class="cont-title2">
-                  <span class="span1" style="left:0rem;">
-                    {{b.fromPhone | phone}}
-                  </span>
-                  <span class="span3" style="width:6.2rem;margin-right:2rem;text-align:left;">
-                    {{b.createTime | dataFilter 'yyyy-MM-dd HH:mm:ss'}}
-                  </span>
-                </div>
-              <!-- </p> -->
-              <span style="font-weight: bold;">{{b.money | currency '¥'}}</span>
+              <div class="cont-title2">
+                <span class="span1" style="left:0rem;">
+                  {{b.fromPhone | phone}}
+                </span>
+                <span class="span3" style="width:6.2rem;margin-right:2rem;text-align:left;">
+                  {{b.createTime | dataFilter 'yyyy-MM-dd HH:mm:ss'}}
+                </span>
+              </div>
+              <span :style="[{'font-weight': 'bold','color':(b.status===0?'#9c9c9c':'')}]">{{b.money | currency '¥'}}</span>
             </section>
           </li>
         </ul>
@@ -76,13 +74,13 @@ Vue.filter('statusFilter', function (value) {
       desc = '冻结中'
       break
     case 1:
-      desc = '可用'
+      desc = ''
       break
     case 2:
-      desc = '已使用'
+      desc = ''
       break
     default:
-      desc = '未知'
+      desc = ''
       break
   }
   return desc
