@@ -240,7 +240,29 @@ export default {
         return
       }
       else {
-        console.log('发起购买流程!')
+        if (this.info.productId && this.buyNum > 0) {
+          let token = window.localStorage.getItem('zlToken')
+          this.$http.post(api.saveOrder, {
+            pid: this.info.productId,
+            num: this.buyNum
+          }, {
+            headers: {
+              'x-token': token
+            }
+          })
+          .then(({data: {code, msg, data}})=>{
+            if (code === 1) {
+              this.showBuy = false
+              this.buyNum = 1
+              $.toast('购买成功，请至店内提车')
+            }
+            else {
+              $.toast(msg)
+            }
+          }).catch((e)=>{
+            console.error('购买失败:' + e)
+          })
+        }
       }
     }
   }
