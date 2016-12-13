@@ -10,10 +10,10 @@
     <ul>
       <li class="item-content2 item-link"  @click="showInfo('expertHistory',$event)">
         <div class="item-inner">
-          <div class="item-title2">
+          <div class="item-title2" style="font-size:0.6rem;">
             <img src="/img/一级用户icon.png" width="27" height="21"
               style="margin-right:0.4rem;margin-bottom:-0.16rem;">
-            一级用户
+            一级客户
           </div>
           <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"
@@ -51,10 +51,10 @@
     <ul>
       <li class="item-content2">
         <div class="item-inner">
-          <div class="item-title2">
+          <div class="item-title2" style="font-size:0.6rem;">
             <img src="/img/二级用户icon.png" width="27" height="21"
               style="margin-right:0.4rem;margin-bottom:-0.16rem;">
-            二级用户
+            二级客户
           </div>
           <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"
@@ -72,10 +72,10 @@
     <ul>
       <li class="item-content2">
         <div class="item-inner">
-          <div class="item-title2">
+          <div class="item-title2" style="font-size:0.6rem;">
             <img src="/img/三级用户icon.png" width="27" height="19"
               style="margin-right:0.4rem;margin-bottom:-0.16rem;">
-            三级用户
+            三级客户
           </div>
           <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"

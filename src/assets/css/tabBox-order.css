@@ -20,11 +20,11 @@
 .tabBox .bd li a .odlb-middle .od-img a { width: 3.75rem; height: 3.75rem; display: block; text-align: center; vertical-align: middle; }
 .tabBox .bd li a .odlb-middle .od-img a span { height: 100%; vertical-align: middle; display: inline-block; }
 .tabBox .bd li a .odlb-middle .od-img a img { max-width: 100%; max-height: 100%; vertical-align: middle; }
-.tabBox .bd li a .odlb-middle .od-div { width: 10.75rem; height: 3.75rem; overflow: hidden; float: right; }
-.tabBox .bd li a .odlb-middle .od-div-left { width: 7.25rem; height: 3.75rem; overflow: hidden; float: left; }
+.tabBox .bd li a .odlb-middle .od-div { width: 10.75rem; overflow: hidden; float: right; }
+.tabBox .bd li a .odlb-middle .od-div-left { width: 7.25rem; overflow: hidden; float: left; }
 .tabBox .bd li a .odlb-middle .od-div-left a { width: 7.25rem; max-height: 2.55rem; display: block; overflow: hidden; line-height: 0.85rem; font-size: 0.6rem; color: #4e4e4e; }
 .tabBox .bd li a .odlb-middle .od-div-left p { font-size: 0.55rem; color: #9c9c9c; padding-top: 0.2rem; }
-.tabBox .bd li a .odlb-middle .od-div-right { width: 3.3rem; height: 3.75rem; overflow: hidden; float: right; font-size: 0.55rem; color: #9c9c9c; line-height: 0.85rem; text-align: right; }
+.tabBox .bd li a .odlb-middle .od-div-right { width: 3.3rem; overflow: hidden; float: right; font-size: 0.55rem; color: #9c9c9c; line-height: 0.85rem; text-align: right; }
 .tabBox .bd li a .odlb-middle .od-div-right strong { font-size: 0.6rem; color: #383838; }
 .tabBox .bd li .odlb-bottom{ width:15rem; overflow:hidden; margin:0 auto; padding:0.3rem 0 0.3rem;}
 .tabBox .bd li .odlb-bottom p{ width:100%; text-align:right; font-size:0.5rem; color:#383838; padding:0.1rem 0;}

@@ -25,50 +25,7 @@
         <!--全部-->
         <div class="con">
           <ul>
-            <li>
-              <a v-link="{path: '/user/orderCont', replace: false}">
-                <div class="odlb-top">
-                  <strong>订单编号：AED48815646</strong>
-                  <span>交易成功</span>
-                </div>
-                <div class="odlb-middle">
-                  <div class="od-img">
-                    <span></span>
-                    <img src="/img/pic-odnr.png">
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left">
-                      360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-                      <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
-                    </div>
-                    <div class="od-div-right">
-                      <p><strong>￥200.00</strong></p>
-                      <p>X 1</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="odlb-middle">
-                  <div class="od-img">
-                    <span></span><img src="/img/pic-odnr.png">
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left">
-                      360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-                      <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
-                    </div>
-                    <div class="od-div-right">
-                      <p><strong>￥200.00</strong></p>
-                      <p>X 1</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="odlb-bottom">
-                <p>共计1件商品  合计:<span>￥200.00</span></p>
-                <p><a href="#">删除订单</a></p>
-              </div>
-            </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <div class="odlb-top">
                   <strong>订单编号：AED48815646</strong><span>待付款</span>
@@ -91,119 +48,174 @@
                 </div>
               </a>
               <div class="odlb-bottom">
-                <p>共计1件商品  合计:<span>￥200.00</span></p>
-                <p><a href="#">去付款</a></p>
+                <p>共计 1 件商品  合计:<span>￥200.00</span></p>
               </div>
+            </li> -->
+            <li v-for="o in orderList" track-by="$index">
+              <a>
+                <div class="odlb-top">
+                  <strong>订单编号：{{o.order_no}}</strong>
+                  <span>{{o.order_status | statusFilter}}</span>
+                </div>
+                <div class="odlb-middle">
+                  <div class="od-img">
+                    <span></span>
+                    <img :src="'http://img.zulibuy.com/images/' + o.img">
+                  </div>
+                  <div class="od-div">
+                    <div class="od-div-left">
+                      {{o.product_name}}
+                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="od-div-right">
+                      <p><strong>{{o.price| currency '¥'}}</strong></p>
+                      <p>X {{o.nums}}</p>
+                    </div>
+                  </div>
+                  <div class="od-div">
+                    <div class="od-div-left" style="width:3.3rem;">
+                      <p>订单日期:&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="odlb-bottom">
+                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
+              </div>
+              <hr/>
             </li>
           </ul>
         </div>
         <!--全部:over-->
-        <!--服务订单-->
+        <!--未提-->
         <div class="con">
           <ul>
-            <li>
-              <a href="#">
-                <div class="odlb-top"><strong>订单编号：AED48815646</strong><span>交易成功</span></div>
+            <li v-if="o.order_status === 0" v-for="o in orderList" track-by="$index">
+              <a>
+                <div class="odlb-top">
+                  <strong>订单编号：{{o.order_no}}</strong>
+                  <span>{{o.order_status | statusFilter}}</span>
+                </div>
                 <div class="odlb-middle">
-                  <div class="od-img"><span></span><img src="/img/pic-odnr.png"></div>
+                  <div class="od-img">
+                    <span></span>
+                    <img :src="'http://img.zulibuy.com/images/' + o.img">
+                  </div>
                   <div class="od-div">
                     <div class="od-div-left">
-                      360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-                      <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
+                      {{o.product_name}}
+                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
                     </div>
                     <div class="od-div-right">
-                      <p><strong>￥200.00</strong></p>
-                      <p>X 1</p>
+                      <p><strong>{{o.price| currency '¥'}}</strong></p>
+                      <p>X {{o.nums}}</p>
+                    </div>
+                  </div>
+                  <div class="od-div">
+                    <div class="od-div-left" style="width:3.3rem;">
+                      <p>订单日期:&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
                     </div>
                   </div>
                 </div>
               </a>
               <div class="odlb-bottom">
-                <p>共计1件商品  合计:<span>￥200.00</span></p>
-                <p><a href="#">删除订单</a></p>
+                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
               </div>
-            </li>
-            <li>
-              <a href="#">
-                <div class="odlb-top"><strong>订单编号：AED48815646</strong><span>待付款</span></div>
-                <div class="odlb-middle">
-                  <div class="od-img"><span></span><img src="/img/pic-odnr.png"></div>
-                  <div class="od-div">
-                    <div class="od-div-left">
-                    360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-                    <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
-                    </div>
-                    <div class="od-div-right">
-                      <p><strong>￥200.00</strong></p>
-                      <p>X 1</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="odlb-bottom">
-                <p>共计1件商品  合计:<span>￥200.00</span></p>
-                <p><a href="#">去付款</a></p>
-              </div>
+              <hr/>
             </li>
           </ul>
         </div>
-        <!--服务订单:over-->
-        <!--待付款-->
+        <!--未提:over-->
+        <!--已提-->
         <div class="con">
           <ul>
-            <li>
-              <a href="#">
-                <div class="odlb-top"><strong>订单编号：AED48815646</strong><span>待付款</span></div>
+            <li v-if="o.order_status === 1" v-for="o in orderList" track-by="$index">
+              <a>
+                <div class="odlb-top">
+                  <strong>订单编号：{{o.order_no}}</strong>
+                  <span>{{o.order_status | statusFilter}}</span>
+                </div>
                 <div class="odlb-middle">
-                  <div class="od-img"><span></span><img src="/img/pic-odnr.png"></div>
+                  <div class="od-img">
+                    <span></span>
+                    <img :src="'http://img.zulibuy.com/images/' + o.img">
+                  </div>
                   <div class="od-div">
                     <div class="od-div-left">
-                      360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-                      <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
+                      {{o.product_name}}
+                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
                     </div>
                     <div class="od-div-right">
-                      <p><strong>￥200.00</strong></p>
-                      <p>X 1</p>
+                      <p><strong>{{o.price| currency '¥'}}</strong></p>
+                      <p>X {{o.nums}}</p>
+                    </div>
+                  </div>
+                  <div class="od-div">
+                    <div class="od-div-left" style="width:3.3rem;">
+                      <p>订单日期:&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
                     </div>
                   </div>
                 </div>
               </a>
               <div class="odlb-bottom">
-                <p>共计1件商品  合计:<span>￥200.00</span></p>
-                <p><a href="#">去付款</a></p>
+                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
               </div>
+              <hr/>
             </li>
           </ul>
         </div>
-        <!--待付款:over-->
-        <!--待收货-->
+        <!--已提:over-->
+        <!--取消-->
         <div class="con">
           <ul>
-            <li>
-              <a href="#">
-                <div class="odlb-top"><strong>订单编号：AED48815646</strong><span>待收货</span></div>
+            <li v-if="o.order_status === 2" v-for="o in orderList" track-by="$index">
+              <a>
+                <div class="odlb-top">
+                  <strong>订单编号：{{o.order_no}}</strong>
+                  <span>{{o.order_status | statusFilter}}</span>
+                </div>
                 <div class="odlb-middle">
-                  <div class="od-img"><span></span><img src="/img/pic-odnr.png"></div>
+                  <div class="od-img">
+                    <span></span>
+                    <img :src="'http://img.zulibuy.com/images/' + o.img">
+                  </div>
                   <div class="od-div">
                     <div class="od-div-left">
-                      360度可调角度 汽车小圆镜盲点镜倒车镜 两个装
-                      <p>颜色:黑白&nbsp;&nbsp;尺寸:46码</p>
+                      {{o.product_name}}
+                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
                     </div>
                     <div class="od-div-right">
-                      <p><strong>￥200.00</strong></p>
-                      <p>X 1</p>
+                      <p><strong>{{o.price| currency '¥'}}</strong></p>
+                      <p>X {{o.nums}}</p>
+                    </div>
+                  </div>
+                  <div class="od-div">
+                    <div class="od-div-left" style="width:3.3rem;">
+                      <p>订单日期:&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
                     </div>
                   </div>
                 </div>
               </a>
               <div class="odlb-bottom">
-                <p>共计1件商品  合计:<span>￥200.00</span></p>
-                <p><a href="#">去收货</a></p>
+                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
               </div>
+              <hr/>
             </li>
           </ul>
         </div>
-        <!--待收货:over-->
+        <!--取消:over-->
       </div>
     </div>
 </div>
@@ -222,12 +234,31 @@ Vue.filter('dataFilter', function (value, format) {
   return dateFormat(new Date(value), format)
 })
 
+Vue.filter('statusFilter', function (value) {
+  let desc = ''
+  switch (value)
+  {
+    case 0:
+      desc = '待提车'
+      break
+    case 1:
+      desc = '已提车'
+      break
+    case 2:
+      desc = '取消'
+      break
+    default:
+      desc = ''
+      break
+  }
+  return desc
+})
+
 let num = 1
 let size = 10
 
 export default {
   ready () {
-    this.initTab()
     loader.show()
     // 默认查询
     this.orderList = []
@@ -274,23 +305,23 @@ export default {
         }
       })
       .then(({data: {code, data, msg}})=>{
-        console.log(data)
+        // console.log(data)
         if (code === 1) {
-          // if (data) {
-          //   if (data.length === 0) {
-          //     this.pagenum = -1
-          //     return
-          //   }
-          //   for (let m of data) {
-          //     this.orderList.push(m)
-          //   }
-          // }
+          if (data) {
+            if (data.length === 0) {
+              this.pagenum = -1
+              return
+            }
+            for (let m of data) {
+              this.orderList.push(m)
+            }
+          }
         }
         else {
           $.toast(msg)
         }
       }).catch((e)=>{
-        console.error('获取我佣金失败:' + e)
+        console.error('获取我的订单失败:' + e)
       }).finally(()=>{
         this.loading = false
         loader.hide()
@@ -300,6 +331,7 @@ export default {
         else {
           this.$set('showWarning', true)
         }
+        this.initTab()
       })
     },
     /*
