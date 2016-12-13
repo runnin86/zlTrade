@@ -4,7 +4,7 @@
 .tabBox { width: 100%; margin:0; }
 .tabBox .hd { width: 100%; height: 1.9rem; border-bottom: 1px solid #dddddd; background-color: #fff; position:fixed; top:2.15rem; left:0; z-index:5;}
 .tabBox .hd ul { width: 100%; }
-.tabBox .hd ul li { width: 20%; height: 1.9rem; display: block; float: left; }
+.tabBox .hd ul li { width: 25%; height: 1.9rem; display: block; float: left; }
 .tabBox .hd ul li a { width: 99%; height: 1.2rem; display: block; text-align: center; line-height: 1.2rem; margin: 0.35rem 0;  font-size: 0.6rem; color: #333; }
 .tabBox .hd ul li.on { height: 1.9rem; border-bottom: 0.1rem #009ad9 solid; }
 .tabBox .hd ul li.on a { color: #009ad9; }
@@ -30,5 +30,3 @@
 .tabBox .bd li .odlb-bottom p{ width:100%; text-align:right; font-size:0.5rem; color:#383838; padding:0.1rem 0;}
 .tabBox .bd li .odlb-bottom p span{ font-size:0.6rem; color:#ff0000;}
 .tabBox .bd li .odlb-bottom p a{ width:3.1rem; height:1.05rem; display:inline-block; border:1px #c8c8c8 solid; background-color:#fff; border-radius:0.1rem; text-align:center; line-height:1.05rem; font-size:0.55rem; color:#5c5c5c;}
-
-
