@@ -13,9 +13,14 @@
         <img src="/img/touxiang2.png">
       </a>
     </div>
-    <div class="name">
-      {{user?user.userName:'尚未登录'}}
-      <!-- <img src="/img/icon-vip.png"> -->
+    <div class="name" v-if="accountInfo" v-cloak>
+      <span style="margin-left:2.1rem;">
+        {{user?user.userName:'尚未登录'}}
+      </span>
+      <span>
+        <a class="wbtn" @click="doWithdraw">提现</a>
+        <!-- <img src="/img/icon-vip.png"> -->
+      </span>
     </div>
     <div class="member1-tool" v-if="accountInfo" v-cloak>
     	<ul>
@@ -61,6 +66,18 @@
       </li>
     </ul>
   </div>
+  <div class="change-dialog" :style="[{'display': (windowShow?'block':'none'),'z-index':1003}]">
+    <div class="change-dialog-top">
+      <input type="text" class="price-txt" placeholder="请输入提现金额" />
+      <!-- <h3>兑换码：<strong>AXS123456</strong></h3> -->
+      <p style="color:red;">(提示:提现将有10%金额转为余额)</p>
+    </div>
+    <div class="change-dialog-bottom">
+      <input type="button" class="btn-no" value="取消" @click="windowShow=false">
+      <input type="button" class="btn-ok" value="提交" >
+    </div>
+  </div>
+  <div class="black" :style="{'display': (windowShow?'block':'none')}"></div>
 </template>
 
 <script>
@@ -81,7 +98,8 @@ export default {
   data () {
     return {
       user: JSON.parse(window.localStorage.getItem('zlUser')),
-      accountInfo: null
+      accountInfo: null,
+      windowShow: false
     }
   },
   methods: {
@@ -108,11 +126,46 @@ export default {
       }).catch((e)=>{
         console.error('获取账户盈利失败:' + e)
       })
+    },
+    doWithdraw () {
+      if (!this.windowShow) {
+        this.windowShow = true
+        return
+      }
+      else {
+        console.log('提交提现请求!')
+      }
     }
   }
 }
 </script>
 
 <style>
-
+.wbtn{
+  width: 2rem;
+  height: 1rem;
+  display: inline-block;
+  /*position: absolute;*/
+  /*top: 50%;*/
+  margin-top: -1rem;
+  /*right: 0;*/
+  z-index: 5;
+  background-color: #ffb744;
+  border-radius: 0.2rem;
+  font-size: 0.6rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1rem;
+}
+.black {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
 </style>
