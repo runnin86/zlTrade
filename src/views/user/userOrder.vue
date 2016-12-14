@@ -21,7 +21,7 @@
           <li><a href="javascript:void(0)">取消</a></li>
         </ul>
       </div>
-      <div class="bd" id="tabBox1-bd">
+      <div class="bd" id="tabBox1-bd" style="display:none;">
         <!--全部-->
         <div class="con">
           <ul>
@@ -331,7 +331,9 @@ export default {
         else {
           this.$set('showWarning', true)
         }
-        this.initTab()
+        setTimeout(() => {
+          this.initTab()
+        }, 500)
       })
     },
     /*
