@@ -91,7 +91,8 @@ npm run main
 -->
 ### 更新记录
 参看 [CHANGELOG.md](./CHANGELOG.md)
-使用Chrome修改user agent模拟微信内置浏览器
+
+# 使用Chrome修改user agent模拟微信内置浏览器
 
 F12或者右键审查元素进入开发者模式，点击Emulation，然后点击Network，把Spoof user agent改成Other，并把下面的带复制进去，有三句，大家自己尝试。回车然后刷新页面即可。
 
