@@ -31,7 +31,7 @@
             <section>
               <h3 :style="{color:(b.status===0?'#9c9c9c':'')}">
                 {{b.name}}
-                <span style="float:right;margin-right:0.4rem;">{{b.status | statusFilter}}</span>
+                <span style="float:right;margin-right:0.4rem;">{{b.status | statusCommFilter}}</span>
               </h3>
               <div class="cont-title2">
                 <span class="span1" style="left:0rem;">
@@ -66,7 +66,7 @@ import Vue from 'vue'
 import {loader, dateFormat} from '../../util/util'
 import {api} from '../../util/service'
 
-Vue.filter('statusFilter', function (value) {
+Vue.filter('statusCommFilter', function (value) {
   let desc = ''
   switch (value)
   {

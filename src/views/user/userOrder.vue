@@ -55,7 +55,7 @@
               <a>
                 <div class="odlb-top">
                   <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusFilter}}</span>
+                  <span>{{o.order_status | statusOrderFilter}}</span>
                 </div>
                 <div class="odlb-middle">
                   <div class="od-img">
@@ -97,7 +97,7 @@
               <a>
                 <div class="odlb-top">
                   <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusFilter}}</span>
+                  <span>{{o.order_status | statusOrderFilter}}</span>
                 </div>
                 <div class="odlb-middle">
                   <div class="od-img">
@@ -139,7 +139,7 @@
               <a>
                 <div class="odlb-top">
                   <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusFilter}}</span>
+                  <span>{{o.order_status | statusOrderFilter}}</span>
                 </div>
                 <div class="odlb-middle">
                   <div class="od-img">
@@ -181,7 +181,7 @@
               <a>
                 <div class="odlb-top">
                   <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusFilter}}</span>
+                  <span>{{o.order_status | statusOrderFilter}}</span>
                 </div>
                 <div class="odlb-middle">
                   <div class="od-img">
@@ -234,7 +234,7 @@ Vue.filter('dataFilter', function (value, format) {
   return dateFormat(new Date(value), format)
 })
 
-Vue.filter('statusFilter', function (value) {
+Vue.filter('statusOrderFilter', function (value) {
   let desc = ''
   switch (value)
   {

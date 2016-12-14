@@ -28,7 +28,7 @@
                   {{w.withdrawMoney | currency '¥'}}
                 </span>
                 <span style="float:right;margin-right:1.4rem;">
-                  {{w.withdrawStatus | statusFilter}}
+                  {{w.withdrawStatus | statusWithdrawFilter}}
                 </span>
               </div>
             </section>
@@ -55,7 +55,7 @@ import Vue from 'vue'
 import {loader, dateFormat} from '../../util/util'
 import {api} from '../../util/service'
 
-Vue.filter('statusFilter', function (value) {
+Vue.filter('statusWithdrawFilter', function (value) {
   let desc = ''
   switch (value)
   {
