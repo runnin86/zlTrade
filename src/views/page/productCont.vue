@@ -227,10 +227,12 @@ export default {
         console.error('无法连接服务器-获取商品信息')
       }).finally(()=>{
         if (this.info) {
-          // 初始化轮播图
-          this.initBanner()
-          // 初始化选项卡
-          this.initTab()
+          setTimeout(() => {
+            // 初始化轮播图
+            this.initBanner()
+            // 初始化选项卡
+            this.initTab()
+          }, 500)
         }
       })
     },
