@@ -1,5 +1,4 @@
 <template>
-<div class="content" transition="bounce">
   <!--顶部-->
   <div class="com-header">
     <div class="return">
@@ -10,7 +9,8 @@
     <div class="header-title">我的订单</div>
   </div>
   <div class="header-h"></div>
-    <!--顶部:over-->
+  <!--顶部:over-->
+  <div class="content" transition="bounce">
     <div class="tabBox-hd-h"></div>
     <div id="tabBox1" class="tabBox">
       <div class="hd">
@@ -218,7 +218,7 @@
         <!--取消:over-->
       </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>

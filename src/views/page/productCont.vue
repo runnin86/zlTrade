@@ -1,5 +1,4 @@
 <template>
-  <div class="content" transition="bounce">
   <!--顶部-->
   <div class="com-header">
     <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
@@ -7,151 +6,152 @@
   </div>
   <div class="header-h"></div>
   <!--顶部:over-->
-  <!--图片展示-->
-  <div class="used-banner">
-    <div class="main_visual" style="height: 100%;">
-      <div class="flicking_con">
-        <span>
-          <a href="javascript:void(0)"
-            v-for="i in images | orderBy 'createTime'" track-by="$index">
-            {{$index+1+''}}
-          </a>
-        </span>
+  <div class="content" transition="bounce">
+    <!--图片展示-->
+    <div class="used-banner">
+      <div class="main_visual" style="height: 100%;">
+        <div class="flicking_con">
+          <span>
+            <a href="javascript:void(0)"
+              v-for="i in images | orderBy 'createTime'" track-by="$index">
+              {{$index+1+''}}
+            </a>
+          </span>
+        </div>
+        <div class="main_image">
+          <ul>
+            <li v-for="p in images | orderBy 'createTime'">
+              <span>
+                <a href="javascript:void(0)">
+                  <img :src="'http://img.zulibuy.com/images/' + p.resource"/>
+                </a>
+              </span>
+            </li>
+          </ul>
+          <a href="javascript:;" id="btn_prev"></a>
+          <a href="javascript:;" id="btn_next"></a>
+        </div>
       </div>
-      <div class="main_image">
+    </div>
+    <!--图片展示:over-->
+    <div class="cont-title" v-if="info">
+      <div class="cont-title1">
+        <div class="cont-title1-left">
+          <h3>{{info.productName + (info.comments?'-' + info.comments:'')}}</h3>
+          <p>{{info.price| currency '¥'}}</p>
+        </div>
+        <div class="cont-title1-right">
+          <a href="#" class="active"><i class="iconfont">&#xe605;</i><p>收藏</p></a>
+        </div>
+      </div>
+    </div>
+    <div id="tabBox1" class="tabBox">
+      <div class="hd">
         <ul>
-          <li v-for="p in images | orderBy 'createTime'">
-            <span>
-              <a href="javascript:void(0)">
-                <img :src="'http://img.zulibuy.com/images/' + p.resource"/>
-              </a>
-            </span>
-          </li>
+          <li><a href="javascript:void(0)">商品介绍</a></li>
+          <li><a href="javascript:void(0)">规格参数</a></li>
         </ul>
-        <a href="javascript:;" id="btn_prev"></a>
-        <a href="javascript:;" id="btn_next"></a>
       </div>
-    </div>
-  </div>
-  <!--图片展示:over-->
-  <div class="cont-title" v-if="info">
-    <div class="cont-title1">
-      <div class="cont-title1-left">
-        <h3>{{info.productName + (info.comments?'-' + info.comments:'')}}</h3>
-        <p>{{info.price| currency '¥'}}</p>
-      </div>
-      <div class="cont-title1-right">
-        <a href="#" class="active"><i class="iconfont">&#xe605;</i><p>收藏</p></a>
-      </div>
-    </div>
-  </div>
-  <div id="tabBox1" class="tabBox">
-    <div class="hd">
-      <ul>
-        <li><a href="javascript:void(0)">商品介绍</a></li>
-        <li><a href="javascript:void(0)">规格参数</a></li>
-      </ul>
-    </div>
-    <div class="bd" id="tabBox1-bd">
-      <!--商品介绍-->
-      <div class="con">
-        <div class="cont-container" v-if="info">
-          <div class="cont-title1" style="margin-bottom:0.6rem;">
-            <div class="cont-title2">
-              <span class="span">
-                商品名称:&nbsp;&nbsp;
-                <a>{{info.productName}}</a>
-              </span>
+      <div class="bd" id="tabBox1-bd">
+        <!--商品介绍-->
+        <div class="con">
+          <div class="cont-container" v-if="info">
+            <div class="cont-title1" style="margin-bottom:0.6rem;">
+              <div class="cont-title2">
+                <span class="span">
+                  商品名称:&nbsp;&nbsp;
+                  <a>{{info.productName}}</a>
+                </span>
+              </div>
+              <div class="cont-title2">
+                <span class="span">
+                  说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明:&nbsp;&nbsp;
+                  <a>{{{info.comments}}}</a>
+                </span>
+              </div>
             </div>
-            <div class="cont-title2">
-              <span class="span">
-                说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明:&nbsp;&nbsp;
-                <a>{{{info.comments}}}</a>
-              </span>
-            </div>
+            <img v-for="sp in images | orderBy 'createTime' -1"
+              :src="'http://img.zulibuy.com/images/' + sp.resource"/>
           </div>
-          <img v-for="sp in images | orderBy 'createTime' -1"
-            :src="'http://img.zulibuy.com/images/' + sp.resource"/>
         </div>
-      </div>
-      <!--商品介绍:over-->
-      <!--规格参数-->
-      <div class="con">
-        <div class="cont-container">
-          <div class="cont-title" v-if="attr">
-            <div class="cont-title2">
-              <span class="span1">
-                长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.length}}</a>
-              </span>
-              <span class="span3" style="margin-right:2rem;text-align:left;">
-                宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.width}}</a>
-              </span>
-            </div>
-            </br>
-            <div class="cont-title2">
-              <span class="span1">
-                高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.height}}</a>
-              </span>
-              <span class="span3" style="margin-right:2rem;text-align:left;">
-                功&nbsp;&nbsp;&nbsp;&nbsp;率：<a>{{attr.power}}</a>
-              </span>
-            </div>
-            </br>
-            <div class="cont-title2">
-              <span class="span1">
-                重&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.nWeight}}</a>
-              </span>
-              <span class="span3" style="margin-right:2rem;text-align:left;">
-                排&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.displacement}}</a>
-              </span>
-            </div>
-            </br>
-            <div class="cont-title2">
-              <span class="span1">
-                轴&nbsp;&nbsp;&nbsp;&nbsp;距：<a>{{attr.wheelBase}}</a>
-              </span>
-              <span class="span3" style="margin-right:2rem;text-align:left;">
-                离地间距：<a>{{attr.distanceGround}}</a>
-              </span>
+        <!--商品介绍:over-->
+        <!--规格参数-->
+        <div class="con">
+          <div class="cont-container">
+            <div class="cont-title" v-if="attr">
+              <div class="cont-title2">
+                <span class="span1">
+                  长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.length}}</a>
+                </span>
+                <span class="span3" style="margin-right:2rem;text-align:left;">
+                  宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.width}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="span1">
+                  高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.height}}</a>
+                </span>
+                <span class="span3" style="margin-right:2rem;text-align:left;">
+                  功&nbsp;&nbsp;&nbsp;&nbsp;率：<a>{{attr.power}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="span1">
+                  重&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.nWeight}}</a>
+                </span>
+                <span class="span3" style="margin-right:2rem;text-align:left;">
+                  排&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.displacement}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="span1">
+                  轴&nbsp;&nbsp;&nbsp;&nbsp;距：<a>{{attr.wheelBase}}</a>
+                </span>
+                <span class="span3" style="margin-right:2rem;text-align:left;">
+                  离地间距：<a>{{attr.distanceGround}}</a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!--规格参数:over-->
-    </div>
-  </div>
-  <!--悬浮-->
-  <div class="cont-tool-h"></div>
-  <div class="used-tool">
-    <input type="button" class="used-btn" style="background-color:#ffb744;"
-      value="立即购买" @click="doBuy"/>
-  </div>
-  <!--悬浮:over-->
-  <!--购买信息弹窗-->
-  <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
-    <div class="buy-info1">
-      <div class="gm-img">
-        <img v-if="info" :src="'http://img.zulibuy.com/images/' + info.img">
-      </div>
-      <div class="gm-div">
-        <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
-        <p v-if="info">{{info.price| currency '¥'}}</p>
-      </div>
-      <div class="gm-close">
-        <i class="icon" @click="showBuy=false">&#xe62f;</i>
+        <!--规格参数:over-->
       </div>
     </div>
-    <div class="buy-info3">
-      <strong>购买数量</strong>
-      <div class="num">
-        <input type="button" class="num-minus" value="-" @click="this.buyNum<2?1:this.buyNum--">
-        <input type="text" class="num-txt" v-model="buyNum" disabled="true">
-        <input type="button" class="num-add" value="+" @click="this.buyNum++">
+    <!--悬浮-->
+    <div class="cont-tool-h"></div>
+    <div class="used-tool">
+      <input type="button" class="used-btn" style="background-color:#ffb744;"
+        value="立即购买" @click="doBuy"/>
+    </div>
+    <!--悬浮:over-->
+    <!--购买信息弹窗-->
+    <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
+      <div class="buy-info1">
+        <div class="gm-img">
+          <img v-if="info" :src="'http://img.zulibuy.com/images/' + info.img">
+        </div>
+        <div class="gm-div">
+          <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
+          <p v-if="info">{{info.price| currency '¥'}}</p>
+        </div>
+        <div class="gm-close">
+          <i class="icon" @click="showBuy=false">&#xe62f;</i>
+        </div>
+      </div>
+      <div class="buy-info3">
+        <strong>购买数量</strong>
+        <div class="num">
+          <input type="button" class="num-minus" value="-" @click="this.buyNum<2?1:this.buyNum--">
+          <input type="text" class="num-txt" v-model="buyNum" disabled="true">
+          <input type="button" class="num-add" value="+" @click="this.buyNum++">
+        </div>
       </div>
     </div>
-  </div>
-  <div class="black" id="buy-black" @click="showBuy=false" :style="{'display': (showBuy?'block':'none')}"></div>
-  <!--购买信息弹窗-->
+    <div class="black" id="buy-black" @click="showBuy=false" :style="{'display': (showBuy?'block':'none')}"></div>
+    <!--购买信息弹窗-->
   </div>
 </template>
 

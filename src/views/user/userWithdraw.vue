@@ -1,12 +1,12 @@
 <template>
-  <div class="content bc-f0f0f0" transition="bounce" v-infinite-scroll="loadMore">
-    <!--顶部-->
-    <div class="com-header">
-      <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
-      <div class="header-title">我的提现</div>
-    </div>
-    <div class="header-h"></div>
-    <!--顶部:over-->
+  <!--顶部-->
+  <div class="com-header">
+    <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
+    <div class="header-title">我的提现</div>
+  </div>
+  <div class="header-h"></div>
+  <!--顶部:over-->
+  <div class="content bc-f0f0f0" style="top:2.1rem;" transition="bounce" v-infinite-scroll="loadMore">
     <!--我的提现-->
     <div class="store-serve" style="background-color: #f0f0f0;">
       <div v-if="wList" class="store-serve-bottom">

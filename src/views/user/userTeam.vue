@@ -1,10 +1,10 @@
 <template>
+<!--顶部-->
+<div class="com-header">
+  <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
+  <div class="header-title">我的团队</div>
+</div>
 <div class="content team bc-f0f0f0" transition="bounce">
-  <!--顶部-->
-  <div class="com-header">
-    <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
-    <div class="header-title">我的团队</div>
-  </div>
   <!--顶部:over-->
   <div class="list-block">
     <ul>

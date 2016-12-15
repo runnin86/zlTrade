@@ -1,21 +1,21 @@
 <template>
+  <!--顶部-->
+  <div class="com-header">
+    <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
+    <div class="header-title">我的佣金</div>
+  </div>
+  <div class="header-h"></div>
+  <!--顶部:over-->
+  <!--搜索-->
+  <div class="store-serve-search"
+    style="position: fixed;height:2rem; top: 2.15rem; left: 0; z-index: 10;background-color:floralwhite;">
+    <div class="serve-white"><i class="icon">&#xe649;</i>
+      <input type="text" class="serve-txt" placeholder="请输入……">
+    </div>
+    <input type="submit" class="serve-btn" value="搜索">
+  </div>
+  <!--搜索:over-->
   <div class="content bc-f0f0f0" transition="bounce" v-infinite-scroll="loadMore">
-    <!--顶部-->
-    <div class="com-header">
-      <div class="return"><a @click="this.$root.back()"><i class="iconfont">&#xe624;</i></a></div>
-      <div class="header-title">我的佣金</div>
-    </div>
-    <div class="header-h"></div>
-    <!--顶部:over-->
-    <!--搜索-->
-    <div class="store-serve-search"
-      style="position: fixed;height:2rem; top: 2.15rem; left: 0; z-index: 10;background-color:floralwhite;">
-      <div class="serve-white"><i class="icon">&#xe649;</i>
-        <input type="text" class="serve-txt" placeholder="请输入……">
-      </div>
-      <input type="submit" class="serve-btn" value="搜索">
-    </div>
-    <!--搜索:over-->
     <!--汽车服务-->
     <div class="store-serve" style="margin-top:2rem;background-color: #f0f0f0;">
       <div v-if="bList" class="store-serve-bottom">
@@ -192,7 +192,7 @@ export default {
 <style>
 .content {
   position: absolute;
-  top: 0;
+  top: 2.1rem;
   right: 0;
   bottom: 0;
   left: 0;
