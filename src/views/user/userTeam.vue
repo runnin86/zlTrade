@@ -17,8 +17,8 @@
           </div>
           <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"
-              style="margin-left:-1.8rem;margin-right:0.1rem;margin-bottom:-0.01rem;">
-            {{oneLevelNum > 0 ? oneLevelNum : ''}}
+              style="margin-left:-1.8rem;margin-right:0.5rem;margin-bottom:0.18rem;">
+            {{one.length > 0 ? one.length : ''}}
           </div>
           <div class="item-title2">
             <img src="/img/销量icon.png" width="18" height="19"
@@ -29,17 +29,17 @@
       </li>
       <li class="item-content2" id="expertHistory" style="display: none;font-size:0.6rem;">
         <div class="item-inner fcfcfc"
-          v-for="u in oneLevelUsers | orderBy 'user_id' -1">
+          v-for="u in one | orderBy 'user_id' -1">
           <div class="item-title2">
             <img src="/img/用户icon.png" width="21" height="20"
-              style="margin-left:1.6rem;margin-right:0.1rem;margin-bottom:-0.16rem;">
+              style="margin-left:1.6rem;margin-right:0.5rem;margin-bottom:-0.1rem;">
             {{u.user_phone}}
           </div>
-          <div class="item-title2">
+          <!-- <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"
               style="margin-right:0.1rem;margin-bottom:-0.06rem;">
             {{u.oneLevelNum}}
-          </div>
+          </div> -->
           <div class="item-title2">
             <img src="/img/销量icon.png" width="18" height="19"
               style="margin-right:0.4rem;margin-bottom:-0.16rem;">
@@ -58,8 +58,8 @@
           </div>
           <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"
-              style="margin-left:-1.8rem;margin-right:0.1rem;margin-bottom:-0.01rem;">
-            {{twoLevelNum > 0 ? twoLevelNum : ''}}
+              style="margin-left:-2.1rem;margin-right:0.5rem;margin-bottom:0.18rem;">
+            {{two.length > 0 ? two.length : ''}}
           </div>
           <div class="item-title2">
             <img src="/img/销量icon.png" width="18" height="19"
@@ -79,13 +79,27 @@
           </div>
           <div class="item-title2">
             <img src="/img/人数icon.png" width="24" height="12"
-              style="margin-left:-1.8rem;margin-right:0.1rem;margin-bottom:-0.01rem;">
-            {{threeLevelNum > 0 ? threeLevelNum : ''}}
+              style="margin-left:-2.1rem;margin-right:0.5rem;margin-bottom:0.18rem;">
+            {{three.length > 0 ? three.length : ''}}
           </div>
           <div class="item-title2">
             <img src="/img/销量icon.png" width="18" height="19"
               style="margin-right:0.4rem;margin-bottom:-0.16rem;">
             {{threeLevelFlow | currency '¥'}}
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul v-show="total>0" v-cloak>
+      <li class="item-content2">
+        <div class="item-inner">
+          <div class="item-title2" style="font-size:0.6rem;">
+            总人数
+          </div>
+          <div class="item-title2">
+          </div>
+          <div class="item-title2">
+            {{total}}
           </div>
         </div>
       </li>
@@ -101,45 +115,38 @@
 </template>
 
 <script>
-// import {api} from '../../util/service'
-// import $ from 'zepto'
+import {api} from '../../util/service'
+import $ from 'zepto'
 
 export default {
   ready () {
-    // this.$http.post(api.team, {}, {
-    //   headers: {
-    //     'x-token': window.localStorage.getItem('zlToken')
-    //   },
-    //   emulateJSON: true
-    // })
-    // .then(({data: {code, msg, result}})=>{
-    //   if (code === 1) {
-    //     // console.log(result)
-    //     this.$set('oneLevelNum', result.oneLevelNum)
-    //     this.$set('twoLevelNum', result.twoLevelNum)
-    //     this.$set('threeLevelNum', result.threeLevelNum)
-    //     this.$set('oneLevelUsers', result.oneLevelUsers)
-    //     this.$set('oneLevelFlow', result.oneLevelFlow)
-    //     this.$set('twoLevelFlow', result.twoLevelFlow)
-    //     this.$set('threeLevelFlow', result.threeLevelFlow)
-    //   }
-    //   else {
-    //     $.toast(msg)
-    //   }
-    // }).catch((e)=>{
-    //   console.error('获取我的团队失败:' + e)
-    // })
+    this.$http.get(api.myTeam, {}, {
+      headers: {
+        'x-token': window.localStorage.getItem('zlToken')
+      },
+      emulateJSON: true
+    })
+    .then(({data: {code, msg, data}})=>{
+      if (code === 1) {
+        // console.log(data)
+        this.$set('one', data.one)
+        this.$set('two', data.two)
+        this.$set('three', data.three)
+        this.$set('total', data.total)
+      }
+      else {
+        $.toast(msg)
+      }
+    }).catch((e)=>{
+      console.error('获取我的团队失败:' + e)
+    })
   },
   data () {
     return {
-      title: '我的团队',
-      oneLevelNum: 0,
-      twoLevelNum: 0,
-      threeLevelNum: 0,
-      oneLevelUsers: [],
-      oneLevelFlow: 0,
-      twoLevelFlow: 0,
-      threeLevelFlow: 0
+      one: [],
+      two: [],
+      three: [],
+      total: 0
     }
   },
   methods: {
