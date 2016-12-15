@@ -10,9 +10,10 @@
   <div class="store-serve-search"
     style="position: fixed;height:2rem; top: 2.15rem; left: 0; z-index: 10;background-color:floralwhite;">
     <div class="serve-white"><i class="icon">&#xe649;</i>
-      <input type="text" class="serve-txt" placeholder="请输入……">
+      <input type="text" v-model="keyword" class="serve-txt" placeholder="请输入……">
     </div>
-    <input type="submit" class="serve-btn" value="搜索">
+    <input type="submit" class="serve-btn" style="background-color: #009ad9"
+     value="搜索" @click="search">
   </div>
   <!--搜索:over-->
   <div class="content bc-f0f0f0" transition="bounce" v-infinite-scroll="loadMore">
@@ -117,7 +118,8 @@ export default {
       pagenum: num,
       pagesize: size,
       loading: false,
-      showWarning: false
+      showWarning: false,
+      keyword: ''
     }
   },
   methods: {
@@ -129,7 +131,8 @@ export default {
       // 获取跟单选购列表
       this.$http.get(api.brokerageList, {
         pagenum: this.pagenum,
-        pagesize: this.pagesize
+        pagesize: this.pagesize,
+        keyword: this.keyword
       }, {
         headers: {
           'x-token': token
@@ -184,6 +187,12 @@ export default {
         // let scrollTop = scroller[0].scrollHeight - scroller.height()
         // scroller.scrollTop(scrollTop)
       }, 500)
+    },
+    search () {
+      this.pagenum = 1
+      this.pagesize = 10
+      this.bList = []
+      this.getList()
     }
   }
 }
