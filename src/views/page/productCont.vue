@@ -6,7 +6,7 @@
   </div>
   <div class="header-h"></div>
   <!--顶部:over-->
-  <div class="content" transition="bounce">
+  <div class="content" transition="bounce" style="top:2.1rem;">
     <!--图片展示-->
     <div class="used-banner">
       <div class="main_visual" style="height: 100%;">
@@ -124,10 +124,10 @@
     <div class="cont-tool-h"></div>
     <div class="used-tool">
       <input type="button" class="used-btn" style="background-color:#ffb744;"
-        value="立即购买" @click="doBuy"/>
+        value="立即预定" @click="doBuy"/>
     </div>
     <!--悬浮:over-->
-    <!--购买信息弹窗-->
+    <!--预定信息弹窗-->
     <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
       <div class="buy-info1">
         <div class="gm-img">
@@ -142,16 +142,16 @@
         </div>
       </div>
       <div class="buy-info3">
-        <strong>购买数量</strong>
+        <strong>预定数量</strong>
         <div class="num">
-          <input type="button" class="num-minus" value="-" @click="this.buyNum<2?1:this.buyNum--">
+          <input type="button" class="num-minus" value="-" disabled="true" @click="this.buyNum<2?1:this.buyNum--">
           <input type="text" class="num-txt" v-model="buyNum" disabled="true">
-          <input type="button" class="num-add" value="+" @click="this.buyNum++">
+          <input type="button" class="num-add" value="+" disabled="true" @click="this.buyNum++">
         </div>
       </div>
     </div>
     <div class="black" id="buy-black" @click="showBuy=false" :style="{'display': (showBuy?'block':'none')}"></div>
-    <!--购买信息弹窗-->
+    <!--预定信息弹窗-->
   </div>
 </template>
 
@@ -256,13 +256,13 @@ export default {
             if (code === 1) {
               this.showBuy = false
               this.buyNum = 1
-              $.toast('购买成功，请至店内提车')
+              $.toast('预定成功，请至店内提车')
             }
             else {
               $.toast(msg)
             }
           }).catch((e)=>{
-            console.error('购买失败:' + e)
+            console.error('预定失败:' + e)
           })
         }
       }

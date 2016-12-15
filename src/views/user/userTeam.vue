@@ -158,7 +158,6 @@ export default {
 <style scoped>
 @import './../../assets/css/list.css';
 .team .content-padded {
-  margin: 2.2rem 0 0 0;
   height: 100%;
   padding: .4rem .4rem;
 }
