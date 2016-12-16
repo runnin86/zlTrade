@@ -10,7 +10,7 @@
   </div>
   <div class="header-h"></div>
   <!--顶部:over-->
-  <div class="content" transition="bounce" style="margin:-2.15rem;">
+  <div class="content" transition="bounce">
     <div class="tabBox-hd-h"></div>
     <div id="tabBox1" class="tabBox">
       <div class="hd">
@@ -93,41 +93,43 @@
         <!--未提-->
         <div class="con">
           <ul>
-            <li v-if="o.order_status === 0" v-for="o in orderList" track-by="$index">
-              <a>
-                <div class="odlb-top">
-                  <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusOrderFilter}}</span>
+            <li v-for="o in orderList" track-by="$index">
+              <div v-if="o.order_status === 0">
+                <a>
+                  <div class="odlb-top">
+                    <strong>订单编号：{{o.order_no}}</strong>
+                    <span>{{o.order_status | statusOrderFilter}}</span>
+                  </div>
+                  <div class="odlb-middle">
+                    <div class="od-img">
+                      <span></span>
+                      <img :src="'http://img.zulibuy.com/images/' + o.img">
+                    </div>
+                    <div class="od-div">
+                      <div class="od-div-left">
+                        {{o.product_name}}
+                        <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right">
+                        <p><strong>{{o.price| currency '¥'}}</strong></p>
+                        <p>X {{o.nums}}</p>
+                      </div>
+                    </div>
+                    <div class="od-div">
+                      <div class="od-div-left" style="width:3.3rem;">
+                        <p>订单日期:&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                        <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="odlb-bottom">
+                  <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
                 </div>
-                <div class="odlb-middle">
-                  <div class="od-img">
-                    <span></span>
-                    <img :src="'http://img.zulibuy.com/images/' + o.img">
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left">
-                      {{o.product_name}}
-                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
-                    </div>
-                    <div class="od-div-right">
-                      <p><strong>{{o.price| currency '¥'}}</strong></p>
-                      <p>X {{o.nums}}</p>
-                    </div>
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left" style="width:3.3rem;">
-                      <p>订单日期:&nbsp;&nbsp;</p>
-                    </div>
-                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
-                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="odlb-bottom">
-                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
+                <hr/>
               </div>
-              <hr/>
             </li>
           </ul>
         </div>
@@ -135,41 +137,43 @@
         <!--已提-->
         <div class="con">
           <ul>
-            <li v-if="o.order_status === 1" v-for="o in orderList" track-by="$index">
-              <a>
-                <div class="odlb-top">
-                  <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusOrderFilter}}</span>
+            <li v-for="o in orderList" track-by="$index">
+              <div v-if="o.order_status === 1">
+                <a>
+                  <div class="odlb-top">
+                    <strong>订单编号：{{o.order_no}}</strong>
+                    <span>{{o.order_status | statusOrderFilter}}</span>
+                  </div>
+                  <div class="odlb-middle">
+                    <div class="od-img">
+                      <span></span>
+                      <img :src="'http://img.zulibuy.com/images/' + o.img">
+                    </div>
+                    <div class="od-div">
+                      <div class="od-div-left">
+                        {{o.product_name}}
+                        <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right">
+                        <p><strong>{{o.price| currency '¥'}}</strong></p>
+                        <p>X {{o.nums}}</p>
+                      </div>
+                    </div>
+                    <div class="od-div">
+                      <div class="od-div-left" style="width:3.3rem;">
+                        <p>订单日期:&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                        <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="odlb-bottom">
+                  <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
                 </div>
-                <div class="odlb-middle">
-                  <div class="od-img">
-                    <span></span>
-                    <img :src="'http://img.zulibuy.com/images/' + o.img">
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left">
-                      {{o.product_name}}
-                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
-                    </div>
-                    <div class="od-div-right">
-                      <p><strong>{{o.price| currency '¥'}}</strong></p>
-                      <p>X {{o.nums}}</p>
-                    </div>
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left" style="width:3.3rem;">
-                      <p>订单日期:&nbsp;&nbsp;</p>
-                    </div>
-                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
-                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="odlb-bottom">
-                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
+                <hr/>
               </div>
-              <hr/>
             </li>
           </ul>
         </div>
@@ -177,41 +181,43 @@
         <!--取消-->
         <div class="con">
           <ul>
-            <li v-if="o.order_status === 2" v-for="o in orderList" track-by="$index">
-              <a>
-                <div class="odlb-top">
-                  <strong>订单编号：{{o.order_no}}</strong>
-                  <span>{{o.order_status | statusOrderFilter}}</span>
+            <li v-for="o in orderList" track-by="$index">
+              <div v-if="o.order_status === 2">
+                <a>
+                  <div class="odlb-top">
+                    <strong>订单编号：{{o.order_no}}</strong>
+                    <span>{{o.order_status | statusOrderFilter}}</span>
+                  </div>
+                  <div class="odlb-middle">
+                    <div class="od-img">
+                      <span></span>
+                      <img :src="'http://img.zulibuy.com/images/' + o.img">
+                    </div>
+                    <div class="od-div">
+                      <div class="od-div-left">
+                        {{o.product_name}}
+                        <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right">
+                        <p><strong>{{o.price| currency '¥'}}</strong></p>
+                        <p>X {{o.nums}}</p>
+                      </div>
+                    </div>
+                    <div class="od-div">
+                      <div class="od-div-left" style="width:3.3rem;">
+                        <p>订单日期:&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
+                        <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <div class="odlb-bottom">
+                  <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
                 </div>
-                <div class="odlb-middle">
-                  <div class="od-img">
-                    <span></span>
-                    <img :src="'http://img.zulibuy.com/images/' + o.img">
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left">
-                      {{o.product_name}}
-                      <p>说明:{{o.product_desc}}&nbsp;&nbsp;</p>
-                    </div>
-                    <div class="od-div-right">
-                      <p><strong>{{o.price| currency '¥'}}</strong></p>
-                      <p>X {{o.nums}}</p>
-                    </div>
-                  </div>
-                  <div class="od-div">
-                    <div class="od-div-left" style="width:3.3rem;">
-                      <p>订单日期:&nbsp;&nbsp;</p>
-                    </div>
-                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
-                      <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="odlb-bottom">
-                <p>共计 {{o.nums}} 件商品  合计:<span>{{o.total_price| currency '¥'}}</span></p>
+                <hr/>
               </div>
-              <hr/>
             </li>
           </ul>
         </div>

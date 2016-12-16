@@ -28,7 +28,7 @@
             	<span>￥20.00</span>
          		</section>
         	</li> -->
-          <li v-for="b in bList" track-by="$index">
+          <li v-for="b in bList" track-by="$index" :class="b.status===2?'grayLi':''">
             <section>
               <h3 :style="{color:(b.status===0?'#9c9c9c':'')}">
                 {{b.name}}
@@ -78,7 +78,7 @@ Vue.filter('statusCommFilter', function (value) {
       desc = ''
       break
     case 2:
-      desc = ''
+      desc = '撤销'
       break
     default:
       desc = ''
@@ -198,7 +198,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .content {
   position: absolute;
   top: 2.1rem;
@@ -207,5 +207,9 @@ export default {
   left: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.grayLi {
+  background-color: #DDDDDD;
 }
 </style>

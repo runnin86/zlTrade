@@ -120,39 +120,39 @@
         <!--规格参数:over-->
       </div>
     </div>
-    <!--悬浮-->
-    <div class="cont-tool-h"></div>
-    <div class="used-tool">
-      <input type="button" class="used-btn" style="background-color:#ffb744;"
-        value="立即预定" @click="doBuy"/>
-    </div>
-    <!--悬浮:over-->
-    <!--预定信息弹窗-->
-    <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
-      <div class="buy-info1">
-        <div class="gm-img">
-          <img v-if="info" :src="'http://img.zulibuy.com/images/' + info.img">
-        </div>
-        <div class="gm-div">
-          <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
-          <p v-if="info">{{info.price| currency '¥'}}</p>
-        </div>
-        <div class="gm-close">
-          <i class="icon" @click="showBuy=false">&#xe62f;</i>
-        </div>
-      </div>
-      <div class="buy-info3">
-        <strong>预定数量</strong>
-        <div class="num">
-          <input type="button" class="num-minus" value="-" disabled="true" @click="this.buyNum<2?1:this.buyNum--">
-          <input type="text" class="num-txt" v-model="buyNum" disabled="true">
-          <input type="button" class="num-add" value="+" disabled="true" @click="this.buyNum++">
-        </div>
-      </div>
-    </div>
-    <div class="black" id="buy-black" @click="showBuy=false" :style="{'display': (showBuy?'block':'none')}"></div>
-    <!--预定信息弹窗-->
   </div>
+  <!--悬浮-->
+  <div class="cont-tool-h"></div>
+  <div class="used-tool">
+    <input type="button" class="used-btn" style="background-color:#ffb744;"
+      value="立即预定" @click="doBuy"/>
+  </div>
+  <!--悬浮:over-->
+  <!--预定信息弹窗-->
+  <div class="buy-info" id="buy-light" :style="{'display': (showBuy?'block':'none')}">
+    <div class="buy-info1">
+      <div class="gm-img">
+        <img v-if="info" :src="'http://img.zulibuy.com/images/' + info.img">
+      </div>
+      <div class="gm-div">
+        <h3 v-if="info">{{info.productName + '-' + info.productDesc}}</h3>
+        <p v-if="info">{{info.price| currency '¥'}}</p>
+      </div>
+      <div class="gm-close">
+        <i class="icon" @click="showBuy=false">&#xe62f;</i>
+      </div>
+    </div>
+    <div class="buy-info3">
+      <strong>预定数量</strong>
+      <div class="num">
+        <input type="button" class="num-minus" value="-" disabled="true" @click="this.buyNum<2?1:this.buyNum--">
+        <input type="text" class="num-txt" v-model="buyNum" disabled="true">
+        <input type="button" class="num-add" value="+" disabled="true" @click="this.buyNum++">
+      </div>
+    </div>
+  </div>
+  <div class="black" id="buy-black" @click="showBuy=false" :style="{'display': (showBuy?'block':'none')}"></div>
+  <!--预定信息弹窗-->
 </template>
 
 <script>
