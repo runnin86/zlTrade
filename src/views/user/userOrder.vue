@@ -10,7 +10,7 @@
   </div>
   <div class="header-h"></div>
   <!--顶部:over-->
-  <div class="content" transition="bounce">
+  <div class="content" style="top:2.1rem;" transition="bounce">
     <div class="tabBox-hd-h"></div>
     <div id="tabBox1" class="tabBox">
       <div class="hd">
@@ -60,7 +60,8 @@
                 <div class="odlb-middle">
                   <div class="od-img">
                     <span></span>
-                    <img :src="'http://img.zulibuy.com/images/' + o.img">
+                    <img style="width: 3.75rem; height: 3.75rem; display: block;"
+                      :src="'http://img.zulibuy.com/images/' + o.img">
                   </div>
                   <div class="od-div">
                     <div class="od-div-left">
@@ -78,6 +79,14 @@
                     </div>
                     <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
                       <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                    </div>
+                  </div>
+                  <div class="od-div" v-if="o.remarks">
+                    <div class="od-div-left" style="width:3.3rem;">
+                      <p>备注:&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;color:#5c5c5c;">
+                      <p>{{o.remarks}}</p>
                     </div>
                   </div>
                 </div>
@@ -103,7 +112,8 @@
                   <div class="odlb-middle">
                     <div class="od-img">
                       <span></span>
-                      <img :src="'http://img.zulibuy.com/images/' + o.img">
+                      <img style="width: 3.75rem; height: 3.75rem; display: block;"
+                        :src="'http://img.zulibuy.com/images/' + o.img">
                     </div>
                     <div class="od-div">
                       <div class="od-div-left">
@@ -121,6 +131,14 @@
                       </div>
                       <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
                         <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                      </div>
+                    </div>
+                    <div class="od-div" v-if="o.remarks">
+                      <div class="od-div-left" style="width:3.3rem;">
+                        <p>备注:&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;color:#5c5c5c;">
+                        <p>{{o.remarks}}</p>
                       </div>
                     </div>
                   </div>
@@ -147,7 +165,8 @@
                   <div class="odlb-middle">
                     <div class="od-img">
                       <span></span>
-                      <img :src="'http://img.zulibuy.com/images/' + o.img">
+                      <img style="width: 3.75rem; height: 3.75rem; display: block;"
+                        :src="'http://img.zulibuy.com/images/' + o.img">
                     </div>
                     <div class="od-div">
                       <div class="od-div-left">
@@ -165,6 +184,14 @@
                       </div>
                       <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
                         <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                      </div>
+                    </div>
+                    <div class="od-div" v-if="o.remarks">
+                      <div class="od-div-left" style="width:3.3rem;">
+                        <p>备注:&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;color:#5c5c5c;">
+                        <p>{{o.remarks}}</p>
                       </div>
                     </div>
                   </div>
@@ -191,7 +218,8 @@
                   <div class="odlb-middle">
                     <div class="od-img">
                       <span></span>
-                      <img :src="'http://img.zulibuy.com/images/' + o.img">
+                      <img style="width: 3.75rem; height: 3.75rem; display: block;"
+                        :src="'http://img.zulibuy.com/images/' + o.img">
                     </div>
                     <div class="od-div">
                       <div class="od-div-left">
@@ -209,6 +237,14 @@
                       </div>
                       <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;">
                         <p>{{o.order_date | dataFilter 'yyyy-MM-dd HH:mm:ss'}}</p>
+                      </div>
+                    </div>
+                    <div class="od-div" v-if="o.remarks">
+                      <div class="od-div-left" style="width:3.3rem;">
+                        <p>备注:&nbsp;&nbsp;</p>
+                      </div>
+                      <div class="od-div-right" style="width:7.2rem;margin-top:0.2rem;color:#5c5c5c;">
+                        <p>{{o.remarks}}</p>
                       </div>
                     </div>
                   </div>
