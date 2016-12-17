@@ -106,7 +106,7 @@
           </a>
         </div>
         <div class="lb-div">
-          <h3>{{p.productName+'-'+p.productDesc}}</h3>
+          <h3>{{p.productName}}</h3>
           <p>
             <strong>{{p.price| currency '¥'}}</strong>
             <span>有货</span>

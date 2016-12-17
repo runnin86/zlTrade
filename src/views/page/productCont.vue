@@ -80,40 +80,86 @@
           <div class="cont-container">
             <div class="cont-title" v-if="attr">
               <div class="cont-title2">
-                <span class="span1">
-                  长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.length}}</a>
+                <span class="pcSpan1" style="width:auto;">
+                  轴距(mm)：<a>{{attr.wheelBase}}</a>
                 </span>
                 <span class="span3" style="margin-right:2rem;text-align:left;">
-                  宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.width}}</a>
+                  制动(m)：<a>{{attr.distanceGround}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
-                <span class="span1">
+                <span class="pcSpan1">
+                  电机：<a>{{attr.engine}}</a>
+                </span>
+                <span class="span3" style="margin-right:2rem;text-align:left;">
+                  整车备重：<a>{{attr.transmissionCase}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
                   高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.height}}</a>
                 </span>
                 <span class="span3" style="margin-right:2rem;text-align:left;">
-                  功&nbsp;&nbsp;&nbsp;&nbsp;率：<a>{{attr.power}}</a>
+                  颜&nbsp;&nbsp;&nbsp;&nbsp;色：<a>{{attr.cube}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
-                <span class="span1">
-                  重&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.nWeight}}</a>
+                <span class="pcSpan1">
+                  方向盘电动助力：<a>{{attr.size === '1' ? '是' : '否'}}</a>
                 </span>
                 <span class="span3" style="margin-right:2rem;text-align:left;">
-                  排&nbsp;&nbsp;&nbsp;&nbsp;量：<a>{{attr.displacement}}</a>
+                  空调系统：<a>{{attr.specification.size === '1' ? '是' : '否'}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
-                <span class="span1">
-                  轴&nbsp;&nbsp;&nbsp;&nbsp;距：<a>{{attr.wheelBase}}</a>
+                <span class="pcSpan1">
+                  座位：<a>{{attr.color}}</a>
                 </span>
                 <span class="span3" style="margin-right:2rem;text-align:left;">
-                  离地间距：<a>{{attr.distanceGround}}</a>
+                  中控门锁：<a>{{attr.shelfLife}}</a>
                 </span>
               </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  最小离地距离(mm)：<a>{{attr.displacement}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  最小转弯半径(m)：<a>{{attr.nw}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  最大爬坡(％)：<a>{{attr.rpw}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  电池：<a>{{attr.power}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  最高车速(km／h)：<a>{{attr.gWeight}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  续航里程(km)：<a>{{attr.nWeight}}</a>
+                </span>
+              </div>
+              </br>
             </div>
           </div>
         </div>
@@ -272,6 +318,8 @@ export default {
 </script>
 
 <style scoped>
+.pcSpan1 { height: 1rem; display: inline-block; font-size: 0.55rem; color: #9c9c9c; position: absolute; top: 0; left: 0.5rem; }
+
 .tabBox { width: 100%; overflow: hidden; margin:0.25rem 0; background-color:#fff;}
 .tabBox .hd { width: 100%; height: 1.9rem; border: 1px solid #dddddd; background-color: #fff; }
 .tabBox .hd ul { width: 105%; }
