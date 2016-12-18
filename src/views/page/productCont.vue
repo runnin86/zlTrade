@@ -63,7 +63,7 @@
                   <a>{{info.productName}}</a>
                 </span>
               </div>
-              <div class="cont-title2">
+              <div class="cont-title2" v-if="info.comments">
                 <span class="span">
                   说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明:&nbsp;&nbsp;
                   <a>{{{info.comments}}}</a>
@@ -99,6 +99,15 @@
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
+                  长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.length}}</a>
+                </span>
+                <span class="span3" style="margin-right:2rem;text-align:left;">
+                  宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.width}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
                   高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.height}}</a>
                 </span>
                 <span class="span3" style="margin-right:2rem;text-align:left;">
@@ -126,25 +135,13 @@
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  最小离地距离(mm)：<a>{{attr.displacement}}</a>
-                </span>
-              </div>
-              </br>
-              <div class="cont-title2">
-                <span class="pcSpan1">
-                  最小转弯半径(m)：<a>{{attr.nw}}</a>
-                </span>
-              </div>
-              </br>
-              <div class="cont-title2">
-                <span class="pcSpan1">
                   最大爬坡(％)：<a>{{attr.rpw}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  电池：<a>{{attr.power}}</a>
+                  续航里程(km)：<a>{{attr.nWeight}}</a>
                 </span>
               </div>
               </br>
@@ -156,10 +153,21 @@
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  续航里程(km)：<a>{{attr.nWeight}}</a>
+                  最小转弯半径(m)：<a>{{attr.nw}}</a>
                 </span>
               </div>
               </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  最小离地距离(mm)：<a>{{attr.displacement}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  电池：<a>{{attr.power}}</a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
