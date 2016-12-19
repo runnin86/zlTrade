@@ -102,7 +102,7 @@ Vue.filter('isShowWithdraw', function (bro) {
     if (this.user['userPhone'] === '13403129958') {
       return true
     }
-    else if (bro['team_id'] === '13403129958' && bro['oneLevelCount'] > 3) {
+    else if (bro['team_id'] === '13403129958' && bro['oneLevelCount'] > 2) {
       return true
     }
     else {
