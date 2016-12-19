@@ -21,13 +21,6 @@
     <div class="store-serve" style="margin-top:2rem;background-color: #f0f0f0;">
       <div v-if="bList" class="store-serve-bottom">
         <ul>
-          <!-- <li>
-       		  <section>
-            	<h3>普通洗车服务</h3>
-            	<p>整车泡沫冲洗，轮胎冲洗，车内吸尘，内饰简单清洁除尘。</p>
-            	<span>￥20.00</span>
-         		</section>
-        	</li> -->
           <li v-for="b in bList" track-by="$index" :class="b.status===2?'grayLi':''">
             <section>
               <h3 :style="{color:(b.status===0?'#9c9c9c':'')}">
@@ -36,13 +29,17 @@
               </h3>
               <div class="cont-title2">
                 <span class="span1" style="left:0rem;">
-                  {{b.fromPhone | phone}}
+                  {{b.from_phone | phone}}
                 </span>
                 <span class="span3" style="width:6.2rem;margin-right:2rem;text-align:left;">
-                  {{b.createTime | dataFilter 'yyyy-MM-dd HH:mm:ss'}}
+                  {{b.create_time | dataFilter 'yyyy-MM-dd HH:mm:ss'}}
                 </span>
               </div>
               <span :style="[{'font-weight': 'bold','color':(b.status===0?'#9c9c9c':'')}]">{{b.money | currency '¥'}}</span>
+              <span style="float: right;" v-cloak v-if="b | isShowWithdraw">
+                <a class="wucbtn" @click="withdrawBro(b['id'])">提现</a>
+                <!-- <img src="/img/icon-vip.png"> -->
+              </span>
             </section>
           </li>
         </ul>
@@ -78,13 +75,40 @@ Vue.filter('statusCommFilter', function (value) {
       desc = ''
       break
     case 2:
-      desc = '撤销'
+      desc = '不可用'
       break
     default:
       desc = ''
       break
   }
   return desc
+})
+
+Vue.filter('isShowWithdraw', function (bro) {
+  // aid: "pzPNvzRu"
+  // create_time: 1482053963000
+  // from_phone: "15830849689"
+  // id: 104
+  // money: 2500
+  // name: "一级佣金(客户)"
+  // oneLevelCount: 1
+  // status: 1
+  // team_id: "13403129958"
+  // to_phone: "13403129958"
+  if (bro['money'] !== 2500 || bro['status'] !== 1) {
+    return false
+  }
+  else {
+    if (this.user['userPhone'] === '13403129958') {
+      return true
+    }
+    else if (bro['team_id'] === '13403129958' && bro['oneLevelCount'] > 3) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
 })
 
 /*
@@ -114,6 +138,7 @@ export default {
   },
   data () {
     return {
+      user: JSON.parse(window.localStorage.getItem('zlUser')),
       bList: null,
       pagenum: num,
       pagesize: size,
@@ -193,6 +218,31 @@ export default {
       this.pagesize = 10
       this.bList = []
       this.getList()
+    },
+    /*
+     * 佣金直接提现
+     */
+    withdrawBro (id) {
+      let token = window.localStorage.getItem('zlToken')
+      this.$http.post(api.withdrawByBid, {
+        bid: id
+      }, {
+        headers: {
+          'x-token': token
+        }
+      })
+      .then(({data: {code, msg}})=>{
+        if (code === 1) {
+          // 重新查询
+          this.search()
+          $.toast('提现申请已提交，请等待审核。')
+        }
+        else {
+          $.toast(msg)
+        }
+      }).catch((e)=>{
+        console.error('直接提现佣金失败:' + e)
+      })
     }
   }
 }
@@ -211,5 +261,22 @@ export default {
 
 .grayLi {
   background-color: #DDDDDD;
+}
+
+.wucbtn{
+  width: 2rem;
+  height: 1rem;
+  display: inline-block;
+  /*position: absolute;*/
+  /*top: 50%;*/
+  margin-top: -1rem;
+  /*right: 0;*/
+  z-index: 5;
+  background-color: #aaa744;
+  border-radius: 0.2rem;
+  font-size: 0.6rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1rem;
 }
 </style>

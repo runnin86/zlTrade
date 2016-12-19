@@ -174,7 +174,7 @@ export default {
           this.windowShow = false
           // 查询用户账户
           this.getUseAccount(token)
-          $.toast('您的提现申请已经成功提交，请等待管理员审核。')
+          $.toast('提现申请已提交，请等待审核。')
         }
         else {
           $.toast(msg)
