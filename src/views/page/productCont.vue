@@ -81,91 +81,99 @@
             <div class="cont-title" v-if="attr">
               <div class="cont-title2">
                 <span class="pcSpan1" style="width:auto;">
-                  轴距(mm)：<a>{{attr.wheelBase}}</a>
+                  轴距(mm)：<a>{{attr.column01}}</a>
                 </span>
-                <span class="span3" style="margin-right:2rem;text-align:left;">
-                  制动(m)：<a>{{attr.distanceGround}}</a>
-                </span>
-              </div>
-              </br>
-              <div class="cont-title2">
-                <span class="pcSpan1">
-                  电机：<a>{{attr.engine}}</a>
-                </span>
-                <span class="span3" style="margin-right:2rem;text-align:left;">
-                  整车备重：<a>{{attr.transmissionCase}}</a>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  制动(m)：<a>{{attr.column02}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.length}}</a>
+                  电机：<a>{{attr.column03}}</a>
                 </span>
-                <span class="span3" style="margin-right:2rem;text-align:left;">
-                  宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.width}}</a>
-                </span>
-              </div>
-              </br>
-              <div class="cont-title2">
-                <span class="pcSpan1">
-                  高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.height}}</a>
-                </span>
-                <span class="span3" style="margin-right:2rem;text-align:left;">
-                  颜&nbsp;&nbsp;&nbsp;&nbsp;色：<a>{{attr.cube}}</a>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  整车备重：<a>{{attr.column08}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  方向盘电动助力：<a>{{attr.size === '1' ? '是' : '否'}}</a>
+                  长&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.column09}}</a>
                 </span>
-                <span class="span3" style="margin-right:2rem;text-align:left;">
-                  空调系统：<a>{{attr.specification.size === '1' ? '是' : '否'}}</a>
-                </span>
-              </div>
-              </br>
-              <div class="cont-title2">
-                <span class="pcSpan1">
-                  座位：<a>{{attr.color}}</a>
-                </span>
-                <span class="span3" style="margin-right:2rem;text-align:left;">
-                  中控门锁：<a>{{attr.shelfLife}}</a>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  宽&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.column10}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  最大爬坡(％)：<a>{{attr.rpw}}</a>
+                  高&nbsp;&nbsp;&nbsp;&nbsp;度：<a>{{attr.column11}}</a>
+                </span>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  颜&nbsp;&nbsp;&nbsp;&nbsp;色：<a>{{attr.column12}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  续航里程(km)：<a>{{attr.nWeight}}</a>
+                  方向盘电动助力：<a>{{attr.column15 === '1' ? '是' : '否'}}</a>
+                </span>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  中控门锁：<a>{{attr.column16 === '1' ? '是' : '否'}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  最高车速(km／h)：<a>{{attr.gWeight}}</a>
+                  座位：<a>{{attr.column17}}</a>
+                </span>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  空调系统：<a>{{attr.column18}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  最小转弯半径(m)：<a>{{attr.nw}}</a>
+                  续航里程(km)：<a>{{attr.column14}}</a>
+                </span>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  最大爬坡(％)：<a>{{attr.column06}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  最小离地距离(mm)：<a>{{attr.displacement}}</a>
+                  最小离地距离(mm)：<a>{{attr.column04}}</a>
+                </span>
+                <span class="span3" style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  最小转弯半径(m)：<a>{{attr.column05}}</a>
                 </span>
               </div>
               </br>
               <div class="cont-title2">
                 <span class="pcSpan1">
-                  电池：<a>{{attr.power}}</a>
+                  最高车速(km／h)：<a>{{attr.column13}}</a>
+                </span>
+                <span class="span3" v-show="attr.column19"
+                  style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  变速箱：<a>{{attr.column19}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1">
+                  电池：<a>{{attr.column07}}</a>
+                </span>
+              </div>
+              </br>
+              <div class="cont-title2">
+                <span class="pcSpan1" v-show="attr.column20">
+                  发动机：<a>{{attr.column20}}</a>
+                </span>
+                <span class="span3" v-show="attr.column21"
+                  style="width:6.6rem;margin-right:0.8rem;text-align:left;">
+                  整车质保：<a>{{attr.column21}}</a>
                 </span>
               </div>
             </div>
